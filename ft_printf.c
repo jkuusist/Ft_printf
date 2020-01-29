@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/01/29 12:34:43 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/01/29 13:02:51 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	handle_specifier(char *str)
 
 }
 
-int		printf(const char *format, ...)
+int		ft_printf(const char *format, ...)
 {
 	va_list ap;
 
