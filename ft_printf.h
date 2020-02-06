@@ -6,14 +6,14 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 11:13:36 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/06 12:19:55 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/06 14:12:56 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdarg.h>
+# include <stdarg.h>
 
 typedef struct	s_struct
 {
@@ -23,5 +23,7 @@ typedef struct	s_struct
 	int			res;
 	int			index;
 }				t_struct;
+
+int				ft_printf(const char *format, ...);
 
 #endif
