@@ -6,35 +6,32 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/01/29 13:02:51 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/06 12:21:20 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
-
-void	handle_specifier(char *str)
-{
-
-}
+#include <stdlib.h>
 
 int		ft_printf(const char *format, ...)
 {
-	va_list ap;
+	t_struct *new;
 
-	va_start(ap, format);
-	formatcpy = format;
-	while (*format != '\0')
+	if !(new = (t_struct*)malloc(sizeof(t_struct)))
+		return (-1);
+	if (format)
 	{
-		while (*format != '%')
-		{
-			ft_putchar(*format);
-			format++;
-		}
-		format++;
-		handle_specifier(*format);
+		new->format = format;
+		va_start(new->ap, format);
+
+		//do the actual printf-ing here
+
+		va_end(new-ap);	
 	}
 	
 	va_end(arg);
+	free(new);
+	return (new->res);
 	//These functions return the number of characters printed (not including the trailing `\0')
 	//These functions return a negative value if an error occurs.
 }
