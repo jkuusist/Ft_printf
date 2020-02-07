@@ -6,11 +6,11 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 14:13:39 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/06 15:25:52 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/07 12:31:39 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 t_struct	*initializer(t_struct *new)
 {

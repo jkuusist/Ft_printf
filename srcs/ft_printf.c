@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/07 11:49:21 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/07 12:31:24 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 #include <stdarg.h>
 #include <stdlib.h>
-#include "ft_printf.h"
-#include "Libft/libft.h"
+#include "../includes/ft_printf.h"
+#include "../Libft/libft.h"
 
 int		ft_printf(const char *format, ...)
 {
