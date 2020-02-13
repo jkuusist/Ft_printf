@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 13:01:17 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/13 13:17:08 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/13 13:26:01 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_strrev(char *str, int len)
 {
 	int		i;
 	int		j;
-	char	temp;
 
 	i = 0;
 	j = len - 1;
