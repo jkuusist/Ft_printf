@@ -6,38 +6,27 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 11:20:21 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/10 15:57:05 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/13 11:31:02 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../Libft/libft.h"
 
 #include <stdio.h>
 
 void	print_double(double dub, int precision)
 {
 	int int_part;
-	int frac_part;
+	double frac_part;
 	
 	int_part = (int)dub;
-	frac_part = dub - int_part;
-
-	//ft_putnbr(int_part);
-
-	if (frac_part != 0)
+	frac_part = dub - (double)int_part;
+	ft_putnbr(int_part);
+	if (precision != 0)
 	{
-		//ft_putchar('.');
-		frac_part = (int)(frac_part * precision);
+		ft_putchar('.');
+		frac_part = (frac_part * ft_pow(10, precision));
+		ft_putnbr((int)frac_part);
 	}
 
-	printf("int_part is %d\nfrac_part is %d\n", int_part, frac_part);	
-}
-
-int main()
-{
-	double dub = 7438.438219731;
-
-	printf("frac_part should be %.12f\n", (dub - 7438));
-
-	print_double(dub, 12);
-
-	return 0;
 }
