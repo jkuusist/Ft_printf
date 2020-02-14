@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 11:20:21 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/14 11:05:15 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/14 11:29:37 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,18 @@ void	double_to_str(double dub, char *result, int precision)
 	int_part = (int)dub;
 	frac_part = dub - (double)int_part;
 	
+	if (dub < 0)
+	{
+		*result = '-';
+		result++;
+		int_part *= -1;
+		frac_part *= -1;
+	}
+
 	i = int_to_str(int_part, result, 0);
 
-	printf("i is now %d\n", i);
-	printf("frac_part is now %lf\n", frac_part);
+	//printf("i is now %d\n", i);
+	//printf("frac_part is now %lf\n", frac_part);
 	//ft_putnbr(int_part);
 
 	if (precision != 0)
@@ -74,10 +82,10 @@ void	double_to_str(double dub, char *result, int precision)
 
 int main()
 {
-	//double doo = 1.61803398;
+	//double doo = -1.61803398;
 	//char *s = (char*)malloc(sizeof(char) * 20);
 	char string[20];
-	double doo = 233.007;
+	double doo = -233.107;
 
 	//printf("printf: %lf\n", doo);
 
