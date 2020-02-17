@@ -6,12 +6,11 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 12:20:07 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/17 13:07:10 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/17 13:16:03 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 char	*ft_itoa_base(int num, int base)
 {
@@ -23,7 +22,8 @@ char	*ft_itoa_base(int num, int base)
 	i = 1;
 	while ((n /= base) >= 1)
 		i++;
-	s = (char*)malloc(sizeof(char) * (i + 1));
+	if (!(s = (char*)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
 	s[i] = '\0';
 	n = num;
 	while (i--)
