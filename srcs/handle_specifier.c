@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/17 14:12:40 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/17 14:28:20 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,12 @@ void	handle_specifier(t_struct *new)
 		ft_putstr(s);
 		free(s);
 	}
-
+	if ((new->format)[new->index] == 'b')
+	{
+		s = ft_itoa_base(va_arg(new->ap, int), 2);
+		ft_putstr(s);
+		free(s);
+	}
 
 		
 		//6 is the default precision of the real printf
