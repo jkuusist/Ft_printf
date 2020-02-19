@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/19 13:04:20 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/19 14:05:58 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	handle_specifier(t_struct *new)
 	char *s;
 
 	if ((new->format)[new->index] == 'c' || (new->format)[new->index] == 'C')
-	   ft_putchar(va_arg(new->ap, char));
+	   ft_putchar(va_arg(new->ap, int));
 	if ((new->format)[new->index] == 's')
 		ft_putstr(va_arg(new->ap, char*));
 	if ((new->format)[new->index] == 'd' || (new->format)[new->index] == 'i' || (new->format)[new->index] == 'D')
@@ -51,7 +51,7 @@ void	handle_specifier(t_struct *new)
 	}
 	if ((new->format)[new->index] == 'p')
 	{
-		s = ft_strlower(ft_itoa_base((unsigned long)(va_arg(new->ap, void*)), 16));
+		s = pointer_to_str((unsigned long)(va_arg(new->ap, void*)));
 		ft_putstr(s);
 		free(s);
 	}
