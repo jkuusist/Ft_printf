@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/17 14:28:20 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/19 13:04:20 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ void	handle_specifier(t_struct *new)
 	if ((new->format)[new->index] == 'X')
 	{
 		s = ft_itoa_base(va_arg(new->ap, int), 16);
+		ft_putstr(s);
+		free(s);
+	}
+	if ((new->format)[new->index] == 'p')
+	{
+		s = ft_strlower(ft_itoa_base((unsigned long)(va_arg(new->ap, void*)), 16));
 		ft_putstr(s);
 		free(s);
 	}
