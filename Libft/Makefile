@@ -6,7 +6,7 @@
 #    By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:12:39 by jkuusist          #+#    #+#              #
-#    Updated: 2020/02/17 14:11:39 by jkuusist         ###   ########.fr        #
+#    Updated: 2020/02/19 13:35:01 by jkuusist         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,14 @@ OBJ = ft_atoi.o ft_bzero.o ft_isascii.o ft_isalnum.o ft_isdigit.o ft_isalpha.o f
 all: $(NAME)
 
 $(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRC)
+	gcc -c -Wall -Wextra -Werror -g $(SRC)
 	ar rc libft.a $(OBJ)
 	ranlib $(NAME)
 
 clean:
-	/bin/rm -f $(OBJ) 
+	@/bin/rm -f $(OBJ) 
 	
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
