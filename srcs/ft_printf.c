@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/07 13:15:43 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/20 11:32:57 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,32 +19,32 @@
 
 int		ft_printf(const char *format, ...)
 {
-	t_struct *thingy;
+	t_pf *pf;
 
-	if (!(thingy = (t_struct*)malloc(sizeof(t_struct))))
+	if (!(pf = (t_pf*)malloc(sizeof(t_pf))))
 		return (-1);
-	thingy->format = format;	
-	thingy->formatcpy = (char*)thingy->format;
+	pf->format = format;
+	pf->formatcpy = (char*)pf->format;
 	if (format)
 	{
-		va_start(thingy->ap, format);
-		thingy = initializer(thingy);
+		va_start(pf->ap, format);
+		pf = initializer(pf);
 
-		while (thingy->formatcpy[thingy->index] != '\0')
+		while (pf->formatcpy[pf->index] != '\0')
 		{
-			if (thingy->formatcpy[thingy->index] == '%')
+			if (pf->formatcpy[pf->index] == '%')
 			{
-				thingy->index++;
-				handle_specifier(thingy);
+				pf->index++;
+				handle_specifier(pf);
 			}
 			else
-				ft_putchar(thingy->formatcpy[thingy->index]);
-			thingy->index++;
+				ft_putchar(pf->formatcpy[pf->index]);
+			pf->index++;
 		}
-		va_end(thingy->ap);
+		va_end(pf->ap);
 	}
-	free(thingy);
-	return (thingy->res);
+	free(pf);
+	return (pf->res);
 	//These functions return the number of characters printed (not including the trailing `\0')
 	//These functions return a negative value if an error occurs.
 }
