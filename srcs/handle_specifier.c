@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/20 11:28:04 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/20 15:27:23 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,16 @@ void	handle_specifier(t_pf *pf)
 	}
 	if ((pf->format)[pf->index] == 'x')
 	{
+		if (ft_strchr(pf->flags, '#'))
+			ft_putstr("0x");
 		s = ft_strlower(ft_itoa_base(va_arg(pf->ap, int), 16));
 		ft_putstr(s);
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'X')
 	{
+		if (ft_strchr(pf->flags, '#'))
+			ft_putstr("0X");
 		s = ft_itoa_base(va_arg(pf->ap, int), 16);
 		ft_putstr(s);
 		free(s);
