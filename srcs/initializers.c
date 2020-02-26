@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 14:13:39 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/26 11:38:09 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/26 12:30:25 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_flags	*initialize_flags(t_flags *flags)
 	flags->zero_flag = 0;
 	flags->minus_flag = 0;
 	flags->plus_flag = 0;
+	flags->space_flag = 0;
 	return (flags);
 }
 

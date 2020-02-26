@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 11:13:36 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/26 12:12:21 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/26 12:29:47 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct	s_flags
 	int			zero_flag;
 	int			minus_flag;
 	int			plus_flag;
+	int			space_flag;
 }				t_flags;
 
 typedef struct	s_pf
