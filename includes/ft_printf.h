@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 11:13:36 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/21 11:32:42 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/26 12:12:21 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,15 @@ typedef struct	s_pf
 	int			res;
 	int			index;
 	char		*spec_mask;
+	t_flags		*flags;
 }				t_pf;
 
 int				ft_printf(const char *format, ...);
 void			handle_specifier(t_pf *pf);
-t_pf			*initializer(t_pf *pf);
+t_flags			*initialize_flags(t_flags *flags);
+t_pf			*initialize_pf(t_pf *pf);
 void			double_to_str(double dub, char *result, int precision);
 char			*pointer_to_str(unsigned long pointer);
-t_pf			*check_flag(t_pf *pf, char c);
+t_flags			*check_flag(t_flags *flags, char c);
 
 #endif

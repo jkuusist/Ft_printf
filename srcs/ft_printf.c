@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/20 14:48:24 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/02/26 11:59:33 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_printf(const char *format, ...)
 	if (format)
 	{
 		va_start(pf->ap, format);
-		pf = initializer(pf);
+		pf = initialize_pf(pf);
 		while (pf->formatcpy[pf->index] != '\0')
 		{
 			if (pf->formatcpy[pf->index] == '%')
@@ -38,6 +38,20 @@ int		ft_printf(const char *format, ...)
 				{
 					handle_specifier(pf);
 				}
+				else if (pf->formatcpy[pf->index] == 'h')
+				{
+					if (pf->formatcpy[pf->index + 1] == 'h')
+					{
+						(pf->flags)->hh_flag = 1;
+						pf->index += 2;
+					}
+					else
+					{
+						(pf->flags)->h_flag = 1;
+						pf->index++;
+					}
+				}
+				/*
 				else if (ft_strchr(pf->flag_mask, pf->formatcpy[pf->index]))
 				{
 					check_flag(pf, pf->formatcpy[pf->index]);
@@ -45,6 +59,7 @@ int		ft_printf(const char *format, ...)
 					if (ft_strchr(pf->spec_mask, pf->formatcpy[pf->index]))
 						handle_specifier(pf);
 				}
+				*/
 			}
 			else
 				ft_putchar(pf->formatcpy[pf->index]);
@@ -52,6 +67,7 @@ int		ft_printf(const char *format, ...)
 		}
 		va_end(pf->ap);
 	}
+	free(pf->flags);
 	free(pf);
 	return (pf->res);
 	//These functions return the number of characters printed (not including the trailing `\0')
