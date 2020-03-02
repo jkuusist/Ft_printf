@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 11:13:36 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/02 12:09:17 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/02 12:21:24 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ t_flags			*initialize_flags(t_flags *flags);
 t_pf			*initialize_pf(t_pf *pf);
 void			double_to_str(double dub, char *result, int precision);
 char			*pointer_to_str(unsigned long pointer);
-t_flags			*check_flag(t_flags *flags, char c);
+t_flags			*toggle_flag(t_flags *flags, char c);
 
 #endif

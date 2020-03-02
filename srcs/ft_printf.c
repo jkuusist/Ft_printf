@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/02 12:08:43 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/02 12:20:55 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		ft_printf(const char *format, ...)
 				}
 				else if (ft_strchr(pf->flag_mask, pf->formatcpy[pf->index]))
 				{
-					check_flag(pf->flags, pf->formatcpy[pf->index]);
+					toggle_flag(pf->flags, pf->formatcpy[pf->index]);
 					pf->index++;
 				}
 				if (ft_strchr(pf->spec_mask, pf->formatcpy[pf->index]))
