@@ -15,7 +15,7 @@ int main()
 	printf("   printf output: %i\n", 789878908);
 	ft_printf("ft_printf output: %i\n", 789878908);
 	printf("\n");
-*/
+
 	//char test
 	printf("   printf output: %c\n", 'E');
 	ft_printf("ft_printf output: %c\n", 'E');
@@ -29,7 +29,7 @@ int main()
 	wint_t c = 38;
 	printf("%lc\n", c);
 	ft_printf("%lc\n", c);
-/*
+
 	//string test
 	printf("   printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	ft_printf("ft_printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
@@ -54,7 +54,7 @@ int main()
 	ft_printf("ft_printf output: %f\n", -56.485849);
 	printf("\n");
 */
-/*
+
 	//octal test
 	printf("   printf output: %o\n", 9836);
 	ft_printf("ft_printf output: %o\n", 9836);
@@ -62,8 +62,15 @@ int main()
 	printf("   printf output: %O\n", 37131);
 	ft_printf("ft_printf output: %O\n", 37131);
 	printf("\n");
+	printf("   printf output: %#o\n", 93423);
+	ft_printf("ft_printf output: %#o\n", 93423);
+	printf("\n");
+	printf("   printf output: %#O\n", 6641);
+	ft_printf("ft_printf output: %#O\n", 6641);
+	printf("\n");
 
 
+/*
 	//hex test
 	printf("   printf output: %x\n", 147050);
 	ft_printf("ft_printf output: %x\n", 147050);
