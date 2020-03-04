@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 11:20:21 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/17 13:36:07 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/04 13:24:42 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	double_to_str(double dub, char *result, int precision)
 	}
 	if (dub > 1.0)
 		i = int_to_str(int_part, result, 0, 0);
-	if ((dub < 1.0) && (dub > 0.0))
+	if ((dub < 1.0) && (dub >= 0.0))
 	{
 		result[0] = '0';
 		i = 1;

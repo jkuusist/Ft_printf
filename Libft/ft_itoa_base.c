@@ -6,17 +6,17 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 12:20:07 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/17 13:16:03 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/02 15:30:48 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_itoa_base(int num, int base)
+char	*ft_itoa_base(long num, int base)
 {
 	char	*s;
-	int		n;
-	int		i;
+	long	n;
+	long	i;
 
 	n = num;
 	i = 1;

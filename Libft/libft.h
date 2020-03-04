@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:19:32 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/17 14:12:00 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/02 15:31:10 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,9 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_pow(int base, unsigned int exp);
 void				ft_strrev(char *str, int len);
-char				*ft_itoa_base(int num, int base);
+char				*ft_itoa_base(long num, int base);
 char				*ft_strupper(char *s);
 char				*ft_strlower(char *s);
+void				ft_putlong(long n);
 
 #endif

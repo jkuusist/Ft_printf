@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/02/26 12:06:10 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/04 12:59:29 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,39 @@ void	handle_specifier(t_pf *pf)
 	   ft_putchar(va_arg(pf->ap, int));
 	if ((pf->format)[pf->index] == 's')
 		ft_putstr(va_arg(pf->ap, char*));
-	if ((pf->format)[pf->index] == 'd' || (pf->format)[pf->index] == 'i' || (pf->format)[pf->index] == 'D')
-		ft_putnbr(va_arg(pf->ap, int));
+	if ((pf->format)[pf->index] == 'd' || (pf->format)[pf->index] == 'i' || (pf->format)[pf->index] == 'D'
+		|| (pf->format)[pf->index] == 'u')
+	{
+		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
+			ft_putlong(va_arg(pf->ap, long));
+		else
+			ft_putnbr(va_arg(pf->ap, int));
+	}
 	if ((pf->format)[pf->index] == 'f' || (pf->format)[pf->index] == 'F')
 	{
-		double_to_str(va_arg(pf->ap, double), temp, 6);
+		if ((pf->flags)->L_flag)
+			double_to_str(va_arg(pf->ap, long double), temp, 6);
+		else
+			double_to_str(va_arg(pf->ap, double), temp, 6);
 		ft_putstr(temp);
 	}
 	if ((pf->format)[pf->index] == 'o' || (pf->format)[pf->index] == 'O')
 	{
-		s = ft_itoa_base(va_arg(pf->ap, int), 8);
+		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
+			s = ft_itoa_base(va_arg(pf->ap, long), 8);
+		else
+			s = ft_itoa_base(va_arg(pf->ap, int), 8);
 		ft_putstr(s);
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'x')
 	{
 		if ((pf->flags)->hash_flag)
-			ft_putstr("0x");
-		s = ft_strlower(ft_itoa_base(va_arg(pf->ap, int), 16));
+			ft_putstr("0x");	
+		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
+			s = ft_strlower(ft_itoa_base(va_arg(pf->ap, long), 16));
+		else
+			s = ft_strlower(ft_itoa_base(va_arg(pf->ap, int), 16));
 		ft_putstr(s);
 		free(s);
 	}
@@ -49,7 +64,10 @@ void	handle_specifier(t_pf *pf)
 	{
 		if ((pf->flags)->hash_flag)
 			ft_putstr("0X");
-		s = ft_itoa_base(va_arg(pf->ap, int), 16);
+		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
+			s = ft_itoa_base(va_arg(pf->ap, long), 16);
+		else
+			s = ft_itoa_base(va_arg(pf->ap, int), 16);
 		ft_putstr(s);
 		free(s);
 	}
@@ -64,7 +82,7 @@ void	handle_specifier(t_pf *pf)
 		s = ft_itoa_base(va_arg(pf->ap, int), 2);
 		ft_putstr(s);
 		free(s);
-	}	
+	}
 		//6 is the default precision of the real printf
 		//TBA: handling for different precisions
 }

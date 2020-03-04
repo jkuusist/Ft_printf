@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_flag.c                                       :+:      :+:    :+:   */
+/*   ft_putlong.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 12:02:14 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/04 12:02:44 by jkuusist         ###   ########.fr       */
+/*   Created: 2020/03/02 14:24:35 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/03/02 14:44:59 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include "../Libft/libft.h"
+#include "libft.h"
 
-t_flags	*toggle_flag(t_flags *flags, char c)
+void	ft_putlong(long n)
 {
-	if (c == '#')
-		flags->hash_flag = 1;
-	if (c == '0')
-		flags->zero_flag = 1;
-	if (c == '-')
-		flags->minus_flag = 1;
-	if (c == '+')
-		flags->plus_flag = 1;
-	if (c == ' ')
-		flags->space_flag = 1;
-	if (c == 'L')
-		flags->L_flag = 1;
-	return (flags);
+	long i;
+/*
+	if (n == -9223372036854775807)
+	{
+		ft_putstr("-9223372036854775807");
+		return ;
+	}
+*/
+	if (n < 0)
+	{
+		i = -n;
+		ft_putchar('-');
+	}
+	else
+		i = n;
+	if ((i / 10) > 0)
+		ft_putlong(i / 10);
+	ft_putchar((i % 10) + 48);
 }
