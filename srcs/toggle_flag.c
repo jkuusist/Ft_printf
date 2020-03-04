@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 12:02:14 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/04 12:02:44 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/04 14:04:10 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ t_flags	*toggle_flag(t_flags *flags, char c)
 		flags->space_flag = 1;
 	if (c == 'L')
 		flags->L_flag = 1;
+	if (c == '.')
+		flags->dot_flag = 1;
 	return (flags);
 }

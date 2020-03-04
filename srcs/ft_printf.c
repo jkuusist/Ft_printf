@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/02 15:39:31 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/04 14:35:08 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ int		ft_printf(const char *format, ...)
 				{
 					toggle_flag(pf->flags, pf->formatcpy[pf->index]);
 					pf->index++;
+					if (pf->formatcpy[pf->index - 1] == '.')
+						while (pf->formatcpy[pf->index] != 'f')
+							pf->index++;
 				}
 				if (ft_strchr(pf->spec_mask, pf->formatcpy[pf->index]))
 				{

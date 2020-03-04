@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/04 13:47:51 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/04 14:52:21 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 #include "../includes/ft_printf.h"
 #include "../Libft/libft.h"
 
+#include <stdio.h>
+
 void	handle_specifier(t_pf *pf)
 {
-	char temp[20];
-	char *s;
+	char 	temp[20];
+	char 	*s;
+	int		precision;
 
 	if ((pf->format)[pf->index] == 'c' || (pf->format)[pf->index] == 'C')
 	   ft_putchar(va_arg(pf->ap, int));
@@ -34,10 +37,16 @@ void	handle_specifier(t_pf *pf)
 	}
 	if ((pf->format)[pf->index] == 'f' || (pf->format)[pf->index] == 'F')
 	{
+		precision = 6;
+		if ((pf->flags)->dot_flag)
+		{
+			precision = get_precision(pf);
+		//	printf("precision is now %d\n", precision);
+		}
 		if ((pf->flags)->L_flag)
-			double_to_str(va_arg(pf->ap, long double), temp, 6);
+			double_to_str(va_arg(pf->ap, long double), temp, precision);
 		else
-			double_to_str(va_arg(pf->ap, double), temp, 6);
+			double_to_str(va_arg(pf->ap, double), temp, precision);
 		ft_putstr(temp);
 	}
 	if ((pf->format)[pf->index] == 'o' || (pf->format)[pf->index] == 'O')

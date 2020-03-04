@@ -35,7 +35,8 @@ int main()
 	ft_printf("ft_printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	printf("\n");
 
-
+*/
+/*
 	//double test
 	printf("   printf output: %f\n", 1.61803398);
 	ft_printf("ft_printf output: %f\n", 1.61803398);
@@ -55,6 +56,17 @@ int main()
 	printf("\n");
 */
 
+	double preci = 456.346565787232;
+	printf("   printf output: %.10f\n", preci);
+	ft_printf("ft_printf output: %.10f\n", preci);
+	printf("\n");
+
+/*
+	double pointy = 83525.0;
+	printf("   printf output: %#6.0f\n", pointy);
+	ft_printf("ft_printf output: %#6.0f\n", pointy);
+*/
+/*
 	//octal test
 	printf("   printf output: %o\n", 9836);
 	ft_printf("ft_printf output: %o\n", 9836);
@@ -68,7 +80,7 @@ int main()
 	printf("   printf output: %#O\n", 6641);
 	ft_printf("ft_printf output: %#O\n", 6641);
 	printf("\n");
-
+*/
 
 /*
 	//hex test

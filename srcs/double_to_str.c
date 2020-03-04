@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 11:20:21 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/04 13:24:42 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/04 15:18:06 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <stdio.h>
 
-int		int_to_str(int num, char *str, int precision, int is_negative)
+int		int_to_str(long num, char *str, int precision, int is_negative)
 {
 	int i;
 
@@ -47,7 +47,13 @@ void	double_to_str(double dub, char *result, int precision)
 	int		i;
 
 	int_part = (int)dub;
+
+	//printf("int part is %d\n", int_part);
+
 	frac_part = dub - (double)int_part;
+
+	//printf("frac part is %f\n", frac_part);
+
 	if (dub < 0)
 	{
 		//result[0] = '-';
@@ -66,10 +72,14 @@ void	double_to_str(double dub, char *result, int precision)
 	{
 		result[i] = '.';
 		frac_part = frac_part * ft_pow(10, precision);
+
+	//	printf("ft_pow returned %ld\n", ft_pow(10, 10));
+	//	printf("frac part is now %f\n", frac_part);
+
 		result = result + i + 1;
-		if ((int)(frac_part + 0.5))
-			int_to_str((int)(frac_part + 0.5), result, precision, 0);
+		if ((long)(frac_part + 0.5))
+			int_to_str((long)(frac_part + 0.5), result, precision, 0);
 		else
-			int_to_str((int)frac_part, result, precision, 0);
+			int_to_str((long)frac_part, result, precision, 0);
 	}
 }
