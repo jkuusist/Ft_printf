@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/04 14:52:21 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/05 12:36:04 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,22 @@ void	handle_specifier(t_pf *pf)
 		|| (pf->format)[pf->index] == 'u')
 	{
 		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
-			ft_putlong(va_arg(pf->ap, long));
+			ft_putlong_pf(va_arg(pf->ap, long), pf->flags);
 		else
-			ft_putnbr(va_arg(pf->ap, int));
+			ft_putnbr_pf(va_arg(pf->ap, int), pf->flags);
 	}
 	if ((pf->format)[pf->index] == 'f' || (pf->format)[pf->index] == 'F')
 	{
 		precision = 6;
 		if ((pf->flags)->dot_flag)
-		{
 			precision = get_precision(pf);
-		//	printf("precision is now %d\n", precision);
-		}
 		if ((pf->flags)->L_flag)
-			double_to_str(va_arg(pf->ap, long double), temp, precision);
+			double_to_str(va_arg(pf->ap, long double), temp, precision, pf->flags);
 		else
-			double_to_str(va_arg(pf->ap, double), temp, precision);
+			double_to_str(va_arg(pf->ap, double), temp, precision, pf->flags);
 		ft_putstr(temp);
+		if ((pf->flags)->hash_flag && (precision == 0))
+			ft_putchar('.');
 	}
 	if ((pf->format)[pf->index] == 'o' || (pf->format)[pf->index] == 'O')
 	{
@@ -94,6 +93,4 @@ void	handle_specifier(t_pf *pf)
 		ft_putstr(s);
 		free(s);
 	}
-		//6 is the default precision of the real printf
-		//TBA: handling for different precisions
 }

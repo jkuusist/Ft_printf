@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/04 14:35:08 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/05 11:19:49 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,53 +34,48 @@ int		ft_printf(const char *format, ...)
 			if (pf->formatcpy[pf->index] == '%')
 			{
 				pf->index++;
-				if (pf->formatcpy[pf->index] == 'h')
+				while (!ft_strchr(pf->spec_mask, pf->formatcpy[pf->index]))
 				{
-					if (pf->formatcpy[pf->index + 1] == 'h')
+					//pf->index++;
+					if (pf->formatcpy[pf->index] == 'h')
 					{
-						(pf->flags)->hh_flag = 1;
-						pf->index += 2;
-					}
-					else
-					{
-						(pf->flags)->h_flag = 1;
-						pf->index++;
-					}
-				}
-				else if (pf->formatcpy[pf->index] == 'l')
-				{
-					if (pf->formatcpy[pf->index + 1] == 'l')
-					{
-						(pf->flags)->ll_flag = 1;
-						pf->index += 2;
-					}
-					else
-					{
-						(pf->flags)->l_flag = 1;
-						pf->index++;
-					}
-				}
-				else if (ft_strchr(pf->flag_mask, pf->formatcpy[pf->index]))
-				{
-					toggle_flag(pf->flags, pf->formatcpy[pf->index]);
-					pf->index++;
-					if (pf->formatcpy[pf->index - 1] == '.')
-						while (pf->formatcpy[pf->index] != 'f')
+						if (pf->formatcpy[pf->index + 1] == 'h')
+						{
+							(pf->flags)->hh_flag = 1;
+							pf->index += 2;
+						}
+						else
+						{
+							(pf->flags)->h_flag = 1;
 							pf->index++;
+						}
+					}
+					else if (pf->formatcpy[pf->index] == 'l')
+					{
+						if (pf->formatcpy[pf->index + 1] == 'l')
+						{
+							(pf->flags)->ll_flag = 1;
+							pf->index += 2;
+						}
+						else
+						{
+							(pf->flags)->l_flag = 1;
+							pf->index++;
+						}
+					}
+					else if (ft_strchr(pf->flag_mask, pf->formatcpy[pf->index]))
+					{
+						toggle_flag(pf->flags, pf->formatcpy[pf->index]);
+						pf->index++;
+						if (pf->formatcpy[pf->index - 1] == '.')
+							while (pf->formatcpy[pf->index] != 'f')
+								pf->index++;
+					}
 				}
 				if (ft_strchr(pf->spec_mask, pf->formatcpy[pf->index]))
 				{
 					handle_specifier(pf);
 				}
-				/*
-				else if (ft_strchr(pf->flag_mask, pf->formatcpy[pf->index]))
-				{
-					check_flag(pf, pf->formatcpy[pf->index]);
-					pf->index++;
-					if (ft_strchr(pf->spec_mask, pf->formatcpy[pf->index]))
-						handle_specifier(pf);
-				}
-				*/
 			}
 			else
 				ft_putchar(pf->formatcpy[pf->index]);

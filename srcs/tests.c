@@ -27,14 +27,14 @@ int main()
 //	ft_printf("ft_printf output: %c\n", 27);
 	printf("\n");
 	wint_t c = 38;
-	printf("%lc\n", c);
-	ft_printf("%lc\n", c);
+	printf("   printf output: %lc\n", c);
+	ft_printf("ft_printf output: %lc\n", c);
+	printf("\n");
 
 	//string test
 	printf("   printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	ft_printf("ft_printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	printf("\n");
-
 */
 /*
 	//double test
@@ -54,18 +54,20 @@ int main()
 	printf("   printf output: %f\n", -56.485849);
 	ft_printf("ft_printf output: %f\n", -56.485849);
 	printf("\n");
-*/
 
-	double preci = 456.346565787232;
-	printf("   printf output: %.10f\n", preci);
-	ft_printf("ft_printf output: %.10f\n", preci);
+
+	double preci = 456.346565787232453476458;
+	printf("   printf output: %.17f\n", preci);
+	ft_printf("ft_printf output: %.17f\n", preci);
 	printf("\n");
 
-/*
+
+	//double with # flag test
 	double pointy = 83525.0;
-	printf("   printf output: %#6.0f\n", pointy);
-	ft_printf("ft_printf output: %#6.0f\n", pointy);
-*/
+	printf("   printf output: %#.0f\n", pointy);
+	ft_printf("ft_printf output: %#.0f\n", pointy);
+*/	
+
 /*
 	//octal test
 	printf("   printf output: %o\n", 9836);
@@ -181,6 +183,27 @@ int main()
 	printf("   printf output: %Lf\n", itd);
 	ft_printf("ft_printf output: %Lf\n", itd);
 */
+/*
+	//double flags test
+	double bub = 89843.3447658;
+	printf("%+#f\n", bub);
+	ft_printf("%+#f\n", bub);
+*/
+/*
+	//space flag test
+	printf("   printf output: % d\n", 894);
+	ft_printf("ft_printf output: % d\n", 894);
+	printf("   printf output: % d\n", -545);
+	ft_printf("ft_printf output: % d\n", -545);
+	printf("\n");
+*/
+	printf("% f\n", 1.23562);
+	ft_printf("% f\n", 1.23562);
+	printf("\n");
+	printf("% f\n", 0.00000);
+	ft_printf("% f\n", 0.00000);
+	printf("% f\n", -2.655);
+	ft_printf("% f\n", -2.655);
 
 	return (0);
 }
