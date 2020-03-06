@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 11:13:36 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/05 12:40:00 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/06 11:24:40 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct	s_flags
 	int			space_flag;
 	int			L_flag;
 	int			dot_flag;
+	int			width;
 }				t_flags;
 
 typedef struct	s_pf
@@ -52,5 +53,7 @@ t_flags			*toggle_flag(t_flags *flags, char c);
 int				get_precision(t_pf *pf);
 void			ft_putlong_pf(long n, t_flags *flags);
 void			ft_putnbr_pf(int n, t_flags *flags);
+int				numlen(long num, int base);
+void			ft_putstr_pf(char const *s, t_flags *flags);
 
 #endif

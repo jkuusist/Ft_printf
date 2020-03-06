@@ -8,6 +8,15 @@
 int main()
 {
 /*
+	//multiple format specifiers test
+	unsigned long ul = 95483845;
+	char c5 = '$';
+	double f5 = 99.999999;
+
+	printf("   printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
+	ft_printf("ft_printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
+*/
+/*
 	//int test
 	printf("   printf output: %d\n", 93);
 	ft_printf("ft_printf output: %d\n", 93);
@@ -196,7 +205,7 @@ int main()
 	printf("   printf output: % d\n", -545);
 	ft_printf("ft_printf output: % d\n", -545);
 	printf("\n");
-*/
+
 	printf("% f\n", 1.23562);
 	ft_printf("% f\n", 1.23562);
 	printf("\n");
@@ -204,6 +213,38 @@ int main()
 	ft_printf("% f\n", 0.00000);
 	printf("% f\n", -2.655);
 	ft_printf("% f\n", -2.655);
+	printf("\n");
+*/
+/*
+	//field width tests
+	printf("   printf output: %6d\n", 11);
+	ft_printf("ft_printf output: %6d\n", 11);
+	printf("\n");
+	long dude = 3762065;
+	printf("   printf output: %9ld\n", dude);
+	ft_printf("ft_printf output: %9ld\n", dude);
+	printf("\n");
+
+	printf("   printf output: %4c\n", 'Q');
+	ft_printf("ft_printf output: %4c\n", 'Q'); 
+	printf("\n");
+*/
+	char *hi = "hi!";
+	printf("   printf output: %6s\n", hi);
+	ft_printf("ft_printf output: %6s\n", hi);
+	printf("\n");
+/*
+	printf("   printf output: %6o\n", 54743);
+	ft_printf("ft_printf output: %6o\n", 54743);
+	printf("\n");
+	
+	printf("   printf output: %6x\n", 54743);
+	ft_printf("ft_printf output: %6x\n", 54743);
+	printf("\n");
+
+	printf("   printf output: %6X\n", 54743);
+	ft_printf("ft_printf output: %6X\n", 54743);
+*/
 
 	return (0);
 }
