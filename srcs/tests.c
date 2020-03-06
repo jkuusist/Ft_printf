@@ -239,17 +239,25 @@ int main()
 	ft_printf("ft_printf output: %8o\n", 54743);
 	printf("\n");
 */
-//	printf("   printf output: %#8o\n", 46983);
-	ft_printf("%#8o\n", 46983);
-//	printf("\n");
-/*	
+
+	printf("   printf output: %#8o\n", 46983);
+	ft_printf("ft_printf output: %#8o\n", 46983);
+	printf("\n");
+	
 	printf("   printf output: %6x\n", 54743);
 	ft_printf("ft_printf output: %6x\n", 54743);
 	printf("\n");
 
+	printf("   printf output: %#8x\n", 52015);
+	ft_printf("ft_printf output: %#8x\n", 52015);
+	printf("\n");
+
 	printf("   printf output: %6X\n", 54743);
 	ft_printf("ft_printf output: %6X\n", 54743);
-*/
+	printf("\n");
+
+	printf("   printf output: %#8X\n", 49943);
+	ft_printf("ft_printf output: %#8X\n", 49943);
 
 	return (0);
 }
