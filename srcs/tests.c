@@ -228,16 +228,21 @@ int main()
 	printf("   printf output: %4c\n", 'Q');
 	ft_printf("ft_printf output: %4c\n", 'Q'); 
 	printf("\n");
-*/
+
 	char *hi = "hi!";
 	printf("   printf output: %6s\n", hi);
 	ft_printf("ft_printf output: %6s\n", hi);
 	printf("\n");
+*/
 /*
-	printf("   printf output: %6o\n", 54743);
-	ft_printf("ft_printf output: %6o\n", 54743);
+	printf("   printf output: %8o\n", 54743);
+	ft_printf("ft_printf output: %8o\n", 54743);
 	printf("\n");
-	
+*/
+//	printf("   printf output: %#8o\n", 46983);
+	ft_printf("%#8o\n", 46983);
+//	printf("\n");
+/*	
 	printf("   printf output: %6x\n", 54743);
 	ft_printf("ft_printf output: %6x\n", 54743);
 	printf("\n");

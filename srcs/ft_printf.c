@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/05 14:51:01 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/06 11:51:25 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,15 @@ int		ft_printf(const char *format, ...)
 			if (pf->formatcpy[pf->index] == '%')
 			{
 				pf->index++;
+				/*
 				if (ft_isdigit(pf->formatcpy[pf->index]))
 				{
 					(pf->flags)->width = ft_atoi(&(pf->formatcpy[pf->index]));
-					
-				//	printf("width is now %d\n", (pf->flags)->width);
-					
 					while (ft_isdigit(pf->formatcpy[pf->index]))
 						pf->index++;
 				}
-				while (!ft_strchr(pf->spec_mask, pf->formatcpy[pf->index]))
+				*/
+				while ((!ft_strchr(pf->spec_mask, pf->formatcpy[pf->index])) && (!ft_isdigit(pf->formatcpy[pf->index])))
 				{
 					if (pf->formatcpy[pf->index] == 'h')
 					{
@@ -79,6 +78,12 @@ int		ft_printf(const char *format, ...)
 							while (pf->formatcpy[pf->index] != 'f')
 								pf->index++;
 					}
+				}
+				if (ft_isdigit(pf->formatcpy[pf->index]))
+				{
+					(pf->flags)->width = ft_atoi(&(pf->formatcpy[pf->index]));
+					while (ft_isdigit(pf->formatcpy[pf->index]))
+						pf->index++;
 				}
 				if (ft_strchr(pf->spec_mask, pf->formatcpy[pf->index]))
 				{
