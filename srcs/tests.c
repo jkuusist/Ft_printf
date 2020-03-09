@@ -215,11 +215,12 @@ int main()
 	ft_printf("% f\n", -2.655);
 	printf("\n");
 */
-/*
+
 	//field width tests
 	printf("   printf output: %6d\n", 11);
 	ft_printf("ft_printf output: %6d\n", 11);
 	printf("\n");
+
 	long dude = 3762065;
 	printf("   printf output: %9ld\n", dude);
 	ft_printf("ft_printf output: %9ld\n", dude);
@@ -233,12 +234,10 @@ int main()
 	printf("   printf output: %6s\n", hi);
 	ft_printf("ft_printf output: %6s\n", hi);
 	printf("\n");
-*/
-/*
+
 	printf("   printf output: %8o\n", 54743);
 	ft_printf("ft_printf output: %8o\n", 54743);
 	printf("\n");
-*/
 
 	printf("   printf output: %#8o\n", 46983);
 	ft_printf("ft_printf output: %#8o\n", 46983);
