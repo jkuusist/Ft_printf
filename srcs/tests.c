@@ -16,7 +16,7 @@ int main()
 	printf("   printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 	ft_printf("ft_printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 */
-/*
+
 	//int test
 	printf("   printf output: %d\n", 93);
 	ft_printf("ft_printf output: %d\n", 93);
@@ -25,27 +25,7 @@ int main()
 	ft_printf("ft_printf output: %i\n", 789878908);
 	printf("\n");
 
-	//char test
-	printf("   printf output: %c\n", 'E');
-	ft_printf("ft_printf output: %c\n", 'E');
-	printf("\n");
-	printf("   printf output: %c\n", '*');
-	ft_printf("ft_printf output: %c\n", '*');
-//	printf("\n");
-//	printf("   printf output: %c\n", 27);
-//	ft_printf("ft_printf output: %c\n", 27);
-	printf("\n");
-	wint_t c = 38;
-	printf("   printf output: %lc\n", c);
-	ft_printf("ft_printf output: %lc\n", c);
-	printf("\n");
 
-	//string test
-	printf("   printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
-	ft_printf("ft_printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
-	printf("\n");
-*/
-/*
 	//double test
 	printf("   printf output: %f\n", 1.61803398);
 	ft_printf("ft_printf output: %f\n", 1.61803398);
@@ -65,19 +45,50 @@ int main()
 	printf("\n");
 
 
+	//double with # flag test
+	double pointy = 83525.0;
+	printf("   printf output: %#.0f\n", pointy);
+	ft_printf("ft_printf output: %#.0f\n", pointy);
+	printf("\n");
+
+	//double with precision test
 	double preci = 456.346565787232453476458;
 	printf("   printf output: %.17f\n", preci);
 	ft_printf("ft_printf output: %.17f\n", preci);
 	printf("\n");
 
+	//double l and L tests	
+//	double michael = 867.475454567;
+//	printf("   printf output: %lf\n", michael);
+//	ft_printf("ft_printf output: %lf\n", michael);
+//	printf("\n");
 
-	//double with # flag test
-	double pointy = 83525.0;
-	printf("   printf output: %#.0f\n", pointy);
-	ft_printf("ft_printf output: %#.0f\n", pointy);
-*/	
+	long double itd = 43543.232434566564534;
+	printf("   printf output: %Lf\n", itd);
+	ft_printf("ft_printf output: %Lf\n", itd);
+	printf("\n");
 
-/*
+
+	//char test
+	printf("   printf output: %c\n", 'E');
+	ft_printf("ft_printf output: %c\n", 'E');
+	printf("\n");
+
+	printf("   printf output: %c\n", '*');
+	ft_printf("ft_printf output: %c\n", '*');
+	printf("\n");
+
+	wint_t winc = 38;
+	printf("   printf output: %lc\n", winc);
+	ft_printf("ft_printf output: %lc\n", winc);
+	printf("\n");
+
+	//string test
+	printf("   printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
+	ft_printf("ft_printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
+	printf("\n");
+
+
 	//octal test
 	printf("   printf output: %o\n", 9836);
 	ft_printf("ft_printf output: %o\n", 9836);
@@ -91,9 +102,8 @@ int main()
 	printf("   printf output: %#O\n", 6641);
 	ft_printf("ft_printf output: %#O\n", 6641);
 	printf("\n");
-*/
 
-/*
+
 	//hex test
 	printf("   printf output: %x\n", 147050);
 	ft_printf("ft_printf output: %x\n", 147050);
@@ -108,8 +118,8 @@ int main()
 	printf("   printf output: %#X\n", 14606046);
 	ft_printf("ft_printf output: %#X\n", 14606046);
 	printf("\n");
-*/
-/*
+
+
 	//pointer test
 	int a = 8329;
 	int *ap = &a;
@@ -128,12 +138,7 @@ int main()
 	ft_printf("ft_printf output: %p\n", hupp);
 	printf("\n");
 
-	//binary test
-	ft_printf("ft_printf output: %b\n", 8);
-	printf("\n");
-	ft_printf("ft_printf output: %b\n", 20543);
-*/
-/*
+
 	//h test
 	short sh = 32767;
 	printf("   printf output: %hd\n", sh);
@@ -162,8 +167,8 @@ int main()
 	printf("\n");
 	printf("   printf output: %hhu\n", chh);
 	ft_printf("ft_printf output: %hhu\n", chh);
-*/
-/*
+	printf("\n");
+
 	//l test
 	long banana = 3147483647;
 	printf("   printf output: %ld\n", banana);
@@ -177,33 +182,21 @@ int main()
 	printf("\n");
 	printf("   printf output: %lX\n", banana);
 	ft_printf("ft_printf output: %lX\n", banana);
-*/
-/*
-	//double l, ll and L tests
-	float it = 43543.232434566564534;
-	printf("   printf output: %lf\n", it);
-	ft_printf("ft_printf output: %lf\n", it);
-	printf("\n");
-	printf("   printf output: %llf\n", it);
-	ft_printf("ft_printf output: %llf\n", it);
 	printf("\n");
 
-	long double itd = 43543.232434566564534;
-	printf("   printf output: %Lf\n", itd);
-	ft_printf("ft_printf output: %Lf\n", itd);
-*/
-/*
+
 	//double flags test
 	double bub = 89843.3447658;
 	printf("%+#f\n", bub);
 	ft_printf("%+#f\n", bub);
-*/
-/*
+	printf("\n");
+
 	//space flag test
-	printf("   printf output: % d\n", 894);
-	ft_printf("ft_printf output: % d\n", 894);
-	printf("   printf output: % d\n", -545);
-	ft_printf("ft_printf output: % d\n", -545);
+	printf("% d\n", 894);
+	ft_printf("% d\n", 894);
+	printf("\n");
+	printf("% d\n", -545);
+	ft_printf("% d\n", -545);
 	printf("\n");
 
 	printf("% f\n", 1.23562);
@@ -214,7 +207,7 @@ int main()
 	printf("% f\n", -2.655);
 	ft_printf("% f\n", -2.655);
 	printf("\n");
-*/
+
 
 	//field width tests
 	printf("   printf output: %6d\n", 11);
@@ -257,6 +250,14 @@ int main()
 
 	printf("   printf output: %#8X\n", 49943);
 	ft_printf("ft_printf output: %#8X\n", 49943);
+	printf("\n");
+
+	//binary test
+	ft_printf("ft_printf output: %b\n", 8);
+	printf("\n");
+	ft_printf("ft_printf output: %b\n", 20543);
+	printf("\n");
+
 
 	return (0);
 }

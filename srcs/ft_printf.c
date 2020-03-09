@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/09 11:27:54 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/09 11:40:08 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int		ft_printf(const char *format, ...)
 							while (pf->formatcpy[pf->index] != 'f')
 								pf->index++;
 					}
-					pf->index++;
+					//pf->index++;
 					}
 				if (ft_isdigit(pf->formatcpy[pf->index]))
 				{
