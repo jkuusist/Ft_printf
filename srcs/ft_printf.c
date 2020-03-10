@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/09 11:40:08 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/10 11:33:43 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,6 @@ int		ft_printf(const char *format, ...)
 			{
 				pf->index++;
 
-//				printf("index is %d\n", pf->index);
-
 				/*
 				if (ft_isdigit(pf->formatcpy[pf->index]))
 				{
@@ -128,7 +126,6 @@ int		ft_printf(const char *format, ...)
 					while (ft_isdigit(pf->formatcpy[pf->index]))
 					{
 						pf->index++;
-						//printf("index is now %d\n", pf->index);
 						handle_hl(pf);
 					}
 				}

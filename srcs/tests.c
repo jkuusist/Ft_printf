@@ -16,7 +16,7 @@ int main()
 	printf("   printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 	ft_printf("ft_printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 */
-
+/*
 	//int test
 	printf("   printf output: %d\n", 93);
 	ft_printf("ft_printf output: %d\n", 93);
@@ -24,7 +24,7 @@ int main()
 	printf("   printf output: %i\n", 789878908);
 	ft_printf("ft_printf output: %i\n", 789878908);
 	printf("\n");
-
+*/
 
 	//double test
 	printf("   printf output: %f\n", 1.61803398);
@@ -33,6 +33,7 @@ int main()
 	printf("   printf output: %f\n", 0.32567445);
 	ft_printf("ft_printf output: %f\n", 0.32567445);
 	printf("\n");
+
 	printf("   printf output: %f\n", 2376.2565823482);
 	ft_printf("ft_printf output: %f\n", 2376.2565823482);
 	printf("\n");
@@ -40,6 +41,7 @@ int main()
 	printf("   printf output: %f\n", dub);
 	ft_printf("ft_printf output: %f\n", dub);
 	printf("\n");
+
 	printf("   printf output: %f\n", -56.485849);
 	ft_printf("ft_printf output: %f\n", -56.485849);
 	printf("\n");
@@ -51,6 +53,7 @@ int main()
 	ft_printf("ft_printf output: %#.0f\n", pointy);
 	printf("\n");
 
+
 	//double with precision test
 	double preci = 456.346565787232453476458;
 	printf("   printf output: %.17f\n", preci);
@@ -58,17 +61,17 @@ int main()
 	printf("\n");
 
 	//double l and L tests	
-//	double michael = 867.475454567;
-//	printf("   printf output: %lf\n", michael);
-//	ft_printf("ft_printf output: %lf\n", michael);
-//	printf("\n");
+	double michael = 867.475;
+	printf("   printf output: %lf\n", michael);
+	ft_printf("ft_printf output: %lf\n", michael);
+	printf("\n");
 
 	long double itd = 43543.232434566564534;
 	printf("   printf output: %Lf\n", itd);
 	ft_printf("ft_printf output: %Lf\n", itd);
 	printf("\n");
 
-
+/*
 	//char test
 	printf("   printf output: %c\n", 'E');
 	ft_printf("ft_printf output: %c\n", 'E');
@@ -257,7 +260,7 @@ int main()
 	printf("\n");
 	ft_printf("ft_printf output: %b\n", 20543);
 	printf("\n");
-
+*/
 
 	return (0);
 }

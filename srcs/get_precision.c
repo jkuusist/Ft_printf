@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 14:13:24 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/04 14:52:14 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/10 11:32:09 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@ int		get_precision(t_pf *pf)
 	while ((pf->format)[start_index - 1] != '.')
 		start_index--;
 	temp = ft_strsub(pf->format, start_index, (end_index - start_index));
-
-	//printf("start is: %d\nend is: %d\n", start_index, end_index);	
-	//printf("temp is: %s\n", temp);
-	
 	res = ft_atoi(temp);
 	free(temp);
 	return (res);
