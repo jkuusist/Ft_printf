@@ -7,7 +7,7 @@
 
 int main()
 {
-/*
+
 	//multiple format specifiers test
 	unsigned long ul = 95483845;
 	char c5 = '$';
@@ -15,8 +15,8 @@ int main()
 
 	printf("   printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 	ft_printf("ft_printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
-*/
-/*
+
+
 	//int test
 	printf("   printf output: %d\n", 93);
 	ft_printf("ft_printf output: %d\n", 93);
@@ -24,7 +24,7 @@ int main()
 	printf("   printf output: %i\n", 789878908);
 	ft_printf("ft_printf output: %i\n", 789878908);
 	printf("\n");
-*/
+
 
 	//double test
 	printf("   printf output: %f\n", 1.61803398);
@@ -71,7 +71,7 @@ int main()
 	ft_printf("ft_printf output: %Lf\n", itd);
 	printf("\n");
 
-/*
+
 	//char test
 	printf("   printf output: %c\n", 'E');
 	ft_printf("ft_printf output: %c\n", 'E');
@@ -260,7 +260,7 @@ int main()
 	printf("\n");
 	ft_printf("ft_printf output: %b\n", 20543);
 	printf("\n");
-*/
+
 
 	return (0);
 }
