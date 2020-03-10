@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/09 12:36:59 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/10 10:53:23 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	handle_specifier(t_pf *pf)
 	}
 	if ((pf->format)[pf->index] == 'f' || (pf->format)[pf->index] == 'F')
 	{
+		ft_bzero(temp, 20);
 		precision = 6;
 		if ((pf->flags)->dot_flag)
 			precision = get_precision(pf);
