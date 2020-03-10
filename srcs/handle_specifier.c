@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/10 11:14:05 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/10 13:17:57 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 void	handle_specifier(t_pf *pf)
 {
-	//char 	temp[40];
+	char 	temp[40];
 	char 	*s;
 	int		precision;
 
@@ -44,19 +44,17 @@ void	handle_specifier(t_pf *pf)
 	}
 	if ((pf->format)[pf->index] == 'f' || (pf->format)[pf->index] == 'F')
 	{
-		s = (char *)malloc(sizeof(char) * 40);
-		ft_bzero(s, 40);
+		ft_bzero(temp, 40);
 		precision = 6;
 		if ((pf->flags)->dot_flag)
 			precision = get_precision(pf);
 		if ((pf->flags)->L_flag)
-			double_to_str(va_arg(pf->ap, long double), s, precision, pf->flags);
+			double_to_str(va_arg(pf->ap, long double), temp, precision, pf->flags);
 		else
-			double_to_str(va_arg(pf->ap, double), s, precision, pf->flags);
-		ft_putstr(s);
+			double_to_str(va_arg(pf->ap, double), temp, precision, pf->flags);
+		ft_putstr(temp);
 		if ((pf->flags)->hash_flag && (precision == 0))
 			ft_putchar('.');
-		free(s);
 	}
 	if ((pf->format)[pf->index] == 'o' || (pf->format)[pf->index] == 'O')
 	{
