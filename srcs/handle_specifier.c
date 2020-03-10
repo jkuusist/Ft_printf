@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/10 13:17:57 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/10 13:20:11 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,6 @@ void	handle_specifier(t_pf *pf)
 	}
 	if ((pf->format)[pf->index] == 'o' || (pf->format)[pf->index] == 'O')
 	{
-		//if ((pf->flags)->hash_flag)
-		//	ft_putchar('0');
-
-		//printf("width is %d\n", (pf->flags)->width);
-
 		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
 			s = ft_itoa_base_pf(va_arg(pf->ap, long), 8, *(pf->flags), 0);
 		else
@@ -72,8 +67,6 @@ void	handle_specifier(t_pf *pf)
 	}
 	if ((pf->format)[pf->index] == 'x')
 	{
-		//if ((pf->flags)->hash_flag)
-		//	ft_putstr("0x");	
 		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
 			s = ft_strlower(ft_itoa_base_pf(va_arg(pf->ap, long), 16, *(pf->flags), 0));
 		else
@@ -83,8 +76,6 @@ void	handle_specifier(t_pf *pf)
 	}
 	if ((pf->format)[pf->index] == 'X')
 	{
-		//if ((pf->flags)->hash_flag)
-		//	ft_putstr("0X");
 		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
 			s = ft_itoa_base_pf(va_arg(pf->ap, long), 16, *(pf->flags), 1);
 		else

@@ -15,7 +15,7 @@ int main()
 
 	printf("   printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 	ft_printf("ft_printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
-
+	printf("\n");
 
 	//int test
 	printf("   printf output: %d\n", 93);
@@ -25,6 +25,7 @@ int main()
 	ft_printf("ft_printf output: %i\n", 789878908);
 	printf("\n");
 
+	
 
 	//double test
 	printf("   printf output: %f\n", 1.61803398);
@@ -187,6 +188,10 @@ int main()
 	ft_printf("ft_printf output: %lX\n", banana);
 	printf("\n");
 
+	//int with plus flag test
+	printf("   printf output: %+d\n", 1563);
+	printf("ft_printf output: %+d\n", 1563);
+	printf("\n");
 
 	//double flags test
 	double bub = 89843.3447658;
@@ -255,6 +260,7 @@ int main()
 	ft_printf("ft_printf output: %#8X\n", 49943);
 	printf("\n");
 
+	printf("BONUS PART:\n\n");
 	//binary test
 	ft_printf("ft_printf output: %b\n", 8);
 	printf("\n");
