@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 11:20:21 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/05 12:39:29 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 10:55:05 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	double_to_str(double dub, char *result, int precision, t_flags *flags)
 	frac_part = dub - (double)int_part;
 	if (flags->space_flag && (dub >= 0))
 		ft_putchar(' ');
+	else if (flags->plus_flag && (dub >= 0))
+		ft_putchar('+');
 	if (dub < 0)
 	{
 		int_part *= -1;
