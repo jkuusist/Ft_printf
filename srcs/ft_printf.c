@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 13:26:55 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 14:51:32 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,11 @@ int		ft_printf(const char *format, ...)
 					}
 				if (ft_isdigit(pf->formatcpy[pf->index]))
 				{
+					if (pf->formatcpy[pf->index] == '0')
+					{
+						(pf->flags)->zero_flag = 1;
+						pf->index++;
+					}
 					(pf->flags)->width = ft_atoi(&(pf->formatcpy[pf->index]));
 					
 //					printf("width is %d\n", pf->flags->width);

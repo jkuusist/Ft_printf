@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 13:25:51 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 15:07:36 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ void	handle_specifier(t_pf *pf)
 	if ((pf->format)[pf->index] == 'd' || (pf->format)[pf->index] == 'i' || (pf->format)[pf->index] == 'D'
 		|| (pf->format)[pf->index] == 'u')
 	{
+
+//		printf("zero_flag is %d. width is %d\n", pf->flags->zero_flag, pf->flags->width);
+
 		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
 			ft_putlong_pf(va_arg(pf->ap, long), pf->flags);
 		else

@@ -195,7 +195,7 @@ int main()
 	printf("   printf output: %lX\n", banana);
 	ft_printf("ft_printf output: %lX\n", banana);
 	printf("\n");
-
+*/
 	
 
 	//double flags test
@@ -284,7 +284,7 @@ int main()
 
 	printf("   printf output: %d%%\n", 160);
 	ft_printf("ft_printf output: %d%%\n", 160);
-*/
+	printf("\n");
 
 	//minus flag tests
 	printf("%-4dtest\n", 2018);
@@ -321,6 +321,42 @@ int main()
 	ft_printf("%-16ptest\n", fp);
 	printf("\n");
 
+	//zero flag test
+	printf("%04dtest\n", 2018);
+	ft_printf("%-4dtest\n", 2018);
+	printf("\n");
+	
+	printf("%07dtest\n", 6001);
+	ft_printf("%07dtest\n", 6001);
+	printf("\n");
+
+/*
+	printf("%012ftest\n", 4.5465);
+	ft_printf("%012ftest\n", 4.5465);
+	printf("\n");
+
+	printf("%05stest\n", "hi!");
+	ft_printf("%05stest\n", "hi!");
+	printf("\n");
+
+	printf("%03ctest\n", '?');
+	ft_printf("%03ctest\n", '?');
+	printf("\n");
+
+	printf("%04otest\n", 40);
+	ft_printf("%04otest\n", 40);
+	printf("\n");
+
+	printf("%04Xtest\n", 111);
+	ft_printf("%04Xtest\n", 111);
+	printf("\n");
+
+	int e = 439854;
+	int *ep = &e;
+	printf("%016ptest\n", ep);
+	ft_printf("%016ptest\n", ep);
+	printf("\n");
+*/
 /*
 	printf("BONUS PART:\n\n");
 	//binary test

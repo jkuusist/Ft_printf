@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 11:13:36 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/06 13:13:46 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 12:59:29 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int				get_precision(t_pf *pf);
 void			ft_putlong_pf(long n, t_flags *flags);
 void			ft_putnbr_pf(int n, t_flags *flags);
 int				numlen(long num, int base);
-void			ft_putstr_pf(char const *s, t_flags *flags);
+void			ft_putstr_pf(char const *s, t_flags flags);
 char			*ft_itoa_base_pf(long num, int base, t_flags flags, int is_capital);
 
 #endif
