@@ -6,7 +6,7 @@
 #    By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/07 15:49:57 by jkuusist          #+#    #+#              #
-#    Updated: 2020/03/11 14:19:50 by jkuusist         ###   ########.fr        #
+#    Updated: 2020/03/11 14:23:18 by jkuusist         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,9 +44,11 @@ $(NAME): $(OBJS)
 	ranlib $(NAME)
 	
 clean:
-	rm $(OBJS) Libft/$(LIBFTOBJS)
+	rm $(OBJS)
+	make clean -C $(LIBFT)
 
 fclean: clean
 	rm $(NAME)
+	make fclean -C $(LIBFT)
 
 re: fclean all
