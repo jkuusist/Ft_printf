@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 11:54:52 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 12:14:07 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	handle_specifier(t_pf *pf)
 			double_to_str(va_arg(pf->ap, long double), temp, precision, pf->flags);
 		else
 			double_to_str(va_arg(pf->ap, double), temp, precision, pf->flags);
-		ft_putstr(temp);
+		ft_putstr_pf(temp, pf->flags);
 		if ((pf->flags)->hash_flag && (precision == 0))
 			ft_putchar('.');
 	}

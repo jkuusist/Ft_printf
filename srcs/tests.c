@@ -7,7 +7,7 @@
 
 int main()
 {
-/*
+
 	//multiple format specifiers test
 	unsigned long ul = 95483845;
 	char c5 = '$';
@@ -149,6 +149,7 @@ int main()
 	ft_printf("ft_printf output: %p\n", hupp);
 	printf("\n");
 
+	
 
 	//h test
 	short sh = 32767;
@@ -232,6 +233,12 @@ int main()
 	ft_printf("ft_printf output: %9ld\n", dude);
 	printf("\n");
 
+
+	printf("   printf output: %11f\n", 4.34);
+	ft_printf("ft_printf output: %11f\n", 4.34);
+	printf("\n");
+
+
 	printf("   printf output: %4c\n", 'Q');
 	ft_printf("ft_printf output: %4c\n", 'Q'); 
 	printf("\n");
@@ -264,6 +271,12 @@ int main()
 	printf("   printf output: %#8X\n", 49943);
 	ft_printf("ft_printf output: %#8X\n", 49943);
 	printf("\n");
+	
+	char r = 'r';
+	char *rp = &r;
+	printf("%16p\n", rp);
+	ft_printf("%16p\n", rp);
+	printf("\n");
 
 
 	//% sign tests
@@ -273,8 +286,8 @@ int main()
 
 	printf("   printf output: %d%%\n", 160);
 	ft_printf("ft_printf output: %d%%\n", 160);
-*/
 
+/*
 	//minus flag tests
 	printf("%-4d\n", 2018);
 	ft_printf("%-4d\n", 2018);
@@ -309,7 +322,7 @@ int main()
 	printf("%-16ptest\n", fp);
 	ft_printf("%-16ptest\n", fp);
 	printf("\n");
-
+*/
 /*
 	printf("BONUS PART:\n\n");
 	//binary test
