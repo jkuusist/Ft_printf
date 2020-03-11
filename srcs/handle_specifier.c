@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 12:14:07 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 12:22:41 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	handle_specifier(t_pf *pf)
 	if ((pf->format)[pf->index] == 'p')
 	{
 		s = pointer_to_str((unsigned long)(va_arg(pf->ap, void*)));
-		ft_putstr(s);
+		ft_putstr_pf(s, pf->flags);
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'b')

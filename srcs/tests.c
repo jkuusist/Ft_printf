@@ -7,7 +7,7 @@
 
 int main()
 {
-
+/*
 	//multiple format specifiers test
 	unsigned long ul = 95483845;
 	char c5 = '$';
@@ -222,7 +222,6 @@ int main()
 	ft_printf("% f\n", -2.655);
 	printf("\n");
 
-
 	//field width tests
 	printf("   printf output: %6d\n", 11);
 	ft_printf("ft_printf output: %6d\n", 11);
@@ -271,14 +270,15 @@ int main()
 	printf("   printf output: %#8X\n", 49943);
 	ft_printf("ft_printf output: %#8X\n", 49943);
 	printf("\n");
-	
+*/	
+
 	char r = 'r';
 	char *rp = &r;
 	printf("%16p\n", rp);
 	ft_printf("%16p\n", rp);
 	printf("\n");
 
-
+/*
 	//% sign tests
 	printf("   printf output: %%\n");
 	printf("ft_printf output: %%\n");
@@ -287,7 +287,7 @@ int main()
 	printf("   printf output: %d%%\n", 160);
 	ft_printf("ft_printf output: %d%%\n", 160);
 
-/*
+
 	//minus flag tests
 	printf("%-4d\n", 2018);
 	ft_printf("%-4d\n", 2018);
