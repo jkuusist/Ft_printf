@@ -7,7 +7,7 @@
 
 int main()
 {
-
+/*
 	//multiple format specifiers test
 	unsigned long ul = 95483845;
 	char c5 = '$';
@@ -273,12 +273,32 @@ int main()
 
 	printf("   printf output: %d%%\n", 160);
 	ft_printf("ft_printf output: %d%%\n", 160);
-/*
+*/
+
 	//minus flag tests
 	printf("%-7dtest\n", 6001);
 	ft_printf("%-7dtest\n", 6001);
 	printf("\n");
-*/
+
+	printf("%-12ftest\n", 4.5465);
+	ft_printf("%-12ftest\n", 4.5465);
+	printf("\n");
+
+	printf("%-5stest\n", "hi!");
+	ft_printf("%-5stest\n", "hi!");
+	printf("\n");
+
+	printf("%-3ctest\n", '?');
+	ft_printf("%-3ctest\n", '?');
+	printf("\n");
+
+	printf("%-4otest\n", 40);
+	ft_printf("%-4otest\n", 40);
+	printf("\n");
+
+	printf("%-4Xtest\n", 111);
+	ft_printf("%-4Xtest\n", 111);
+	printf("\n");
 /*
 	printf("BONUS PART:\n\n");
 	//binary test
