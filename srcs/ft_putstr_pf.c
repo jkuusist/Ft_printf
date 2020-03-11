@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/06 11:17:22 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/06 11:25:37 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 11:48:34 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,16 @@ void	ft_putstr_pf(char const *s, t_flags *flags)
 	if (!s)
 		return ;
 	len = ft_strlen(s);
-	while (width > len)
+	while ((width > len) && !flags->minus_flag)
 	{
 		ft_putchar(' ');
 		width--;
 	}
 	write(1, s, len);
+	if (flags->minus_flag)
+		while (width > len)
+		{
+			ft_putchar(' ');
+			width--;
+		}
 }
