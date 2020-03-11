@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 11:18:08 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 11:54:52 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,18 @@ void	handle_specifier(t_pf *pf)
 
 	if ((pf->format)[pf->index] == 'c' || (pf->format)[pf->index] == 'C')
 	{
-		while ((pf->flags)->width > 1)
+		while (((pf->flags)->width > 1) && !(pf->flags)->minus_flag) 
 		{
 			ft_putchar(' ');
 			(pf->flags)->width--;
 		}
 		ft_putchar(va_arg(pf->ap, int));
+		if ((pf->flags)->minus_flag)
+			while ((pf->flags)->width > 1)
+			{
+				ft_putchar(' ');
+				(pf->flags)->width--;
+			}
 	}
 	if ((pf->format)[pf->index] == 's')
 		ft_putstr_pf(va_arg(pf->ap, char*), pf->flags);

@@ -303,6 +303,13 @@ int main()
 	printf("%-4Xtest\n", 111);
 	ft_printf("%-4Xtest\n", 111);
 	printf("\n");
+
+	int f = 439854;
+	int *fp = &f;
+	printf("%-16ptest\n", fp);
+	ft_printf("%-16ptest\n", fp);
+	printf("\n");
+
 /*
 	printf("BONUS PART:\n\n");
 	//binary test
