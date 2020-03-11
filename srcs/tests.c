@@ -265,13 +265,28 @@ int main()
 	ft_printf("ft_printf output: %#8X\n", 49943);
 	printf("\n");
 
+
+	//% sign tests
+	printf("   printf output: %%\n");
+	printf("ft_printf output: %%\n");
+	printf("\n");
+
+	printf("   printf output: %d%%\n", 160);
+	ft_printf("ft_printf output: %d%%\n", 160);
+/*
+	//minus flag tests
+	printf("%-7dtest\n", 6001);
+	ft_printf("%-7dtest\n", 6001);
+	printf("\n");
+*/
+/*
 	printf("BONUS PART:\n\n");
 	//binary test
 	ft_printf("ft_printf output: %b\n", 8);
 	printf("\n");
 	ft_printf("ft_printf output: %b\n", 20543);
 	printf("\n");
-
+*/
 
 	return (0);
 }

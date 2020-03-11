@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 11:05:41 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 11:18:08 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,6 @@ void	handle_specifier(t_pf *pf)
 		ft_putstr(s);
 		free(s);
 	}
+	if ((pf->format)[pf->index] == '%')
+		ft_putchar('%');
 }
