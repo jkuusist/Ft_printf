@@ -222,6 +222,7 @@ int main()
 	ft_printf("% f\n", -2.655);
 	printf("\n");
 
+
 	//field width tests
 	printf("   printf output: %6d\n", 11);
 	ft_printf("ft_printf output: %6d\n", 11);
@@ -247,38 +248,35 @@ int main()
 	ft_printf("ft_printf output: %6s\n", hi);
 	printf("\n");
 
-	printf("   printf output: %8o\n", 54743);
-	ft_printf("ft_printf output: %8o\n", 54743);
-	printf("\n");
+//	printf("   printf output: %#7o\n", 983);
+//	ft_printf("ft_printf output: %#7o\n", 983);
+//	printf("\n");
 
-	printf("   printf output: %#8o\n", 46983);
-	ft_printf("ft_printf output: %#8o\n", 46983);
-	printf("\n");
 	
-	printf("   printf output: %6x\n", 54743);
-	ft_printf("ft_printf output: %6x\n", 54743);
+	printf("   printf output: %#6x\n", 54743);
+	ft_printf("ft_printf output: %#6x\n", 54743);
 	printf("\n");
 
 	printf("   printf output: %#8x\n", 52015);
 	ft_printf("ft_printf output: %#8x\n", 52015);
 	printf("\n");
 
-	printf("   printf output: %6X\n", 54743);
-	ft_printf("ft_printf output: %6X\n", 54743);
+	printf("   printf output: %7X\n", 54743);
+	ft_printf("ft_printf output: %7X\n", 54743);
 	printf("\n");
 
 	printf("   printf output: %#8X\n", 49943);
 	ft_printf("ft_printf output: %#8X\n", 49943);
 	printf("\n");
-*/	
+
 
 	char r = 'r';
 	char *rp = &r;
-	printf("%16p\n", rp);
-	ft_printf("%16p\n", rp);
+	printf("   printf output: %16p\n", rp);
+	ft_printf("ft_printf output: %16p\n", rp);
 	printf("\n");
 
-/*
+
 	//% sign tests
 	printf("   printf output: %%\n");
 	printf("ft_printf output: %%\n");
@@ -286,11 +284,11 @@ int main()
 
 	printf("   printf output: %d%%\n", 160);
 	ft_printf("ft_printf output: %d%%\n", 160);
-
+*/
 
 	//minus flag tests
-	printf("%-4d\n", 2018);
-	ft_printf("%-4d\n", 2018);
+	printf("%-4dtest\n", 2018);
+	ft_printf("%-4dtest\n", 2018);
 	printf("\n");
 	
 	printf("%-7dtest\n", 6001);
@@ -322,7 +320,7 @@ int main()
 	printf("%-16ptest\n", fp);
 	ft_printf("%-16ptest\n", fp);
 	printf("\n");
-*/
+
 /*
 	printf("BONUS PART:\n\n");
 	//binary test

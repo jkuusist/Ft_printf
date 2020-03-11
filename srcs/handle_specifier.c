@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 12:22:41 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 13:25:51 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ void	handle_specifier(t_pf *pf)
 	char 	temp[40];
 	char 	*s;
 	int		precision;
+
+	//printf("width is %d\n", (pf->flags)->width);
+
 
 	if ((pf->format)[pf->index] == 'c' || (pf->format)[pf->index] == 'C')
 	{
@@ -39,7 +42,7 @@ void	handle_specifier(t_pf *pf)
 			}
 	}
 	if ((pf->format)[pf->index] == 's')
-		ft_putstr_pf(va_arg(pf->ap, char*), pf->flags);
+		ft_putstr_pf(va_arg(pf->ap, char*), *(pf->flags));
 	if ((pf->format)[pf->index] == 'd' || (pf->format)[pf->index] == 'i' || (pf->format)[pf->index] == 'D'
 		|| (pf->format)[pf->index] == 'u')
 	{
@@ -58,7 +61,7 @@ void	handle_specifier(t_pf *pf)
 			double_to_str(va_arg(pf->ap, long double), temp, precision, pf->flags);
 		else
 			double_to_str(va_arg(pf->ap, double), temp, precision, pf->flags);
-		ft_putstr_pf(temp, pf->flags);
+		ft_putstr_pf(temp, *(pf->flags));
 		if ((pf->flags)->hash_flag && (precision == 0))
 			ft_putchar('.');
 	}
@@ -68,7 +71,11 @@ void	handle_specifier(t_pf *pf)
 			s = ft_itoa_base_pf(va_arg(pf->ap, long), 8, *(pf->flags), 0);
 		else
 			s = ft_itoa_base_pf(va_arg(pf->ap, int), 8, *(pf->flags), 0);
-		ft_putstr(s);
+		
+	
+		//printf("handle_spec after itoa. width is %d\n", pf->flags->width);
+		
+		ft_putstr_pf(s, *(pf->flags));
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'x')
@@ -77,7 +84,11 @@ void	handle_specifier(t_pf *pf)
 			s = ft_strlower(ft_itoa_base_pf(va_arg(pf->ap, long), 16, *(pf->flags), 0));
 		else
 			s = ft_strlower(ft_itoa_base_pf(va_arg(pf->ap, int), 16, *(pf->flags), 0));
-		ft_putstr(s);
+		
+		
+		//printf("handle_spec after itoa. width is %d\n", pf->flags->width);
+		
+		ft_putstr_pf(s, *(pf->flags));
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'X')
@@ -86,13 +97,13 @@ void	handle_specifier(t_pf *pf)
 			s = ft_itoa_base_pf(va_arg(pf->ap, long), 16, *(pf->flags), 1);
 		else
 			s = ft_itoa_base_pf(va_arg(pf->ap, int), 16, *(pf->flags), 1);
-		ft_putstr(s);
+		ft_putstr_pf(s, *(pf->flags));
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'p')
 	{
 		s = pointer_to_str((unsigned long)(va_arg(pf->ap, void*)));
-		ft_putstr_pf(s, pf->flags);
+		ft_putstr_pf(s, *(pf->flags));
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'b')

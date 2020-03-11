@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/06 12:07:27 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/06 13:35:24 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 13:25:37 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,7 @@ char	*ft_itoa_base_pf(long num, int base, t_flags flags, int is_capital)
 	}
 	len = ft_strlen(s);
 
-//printf("width is %d\nlen is %d\n", flags.width, len);
-					
-	while ((flags.width) > len)
-	{
-		//printf("len is %d\n", len);
-		ft_putchar(' ');
-		len++;
-	}
+//	printf("inside itoa. width is %d\n", flags.width);
+
 	return (s);
 }

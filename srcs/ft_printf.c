@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 11:29:06 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 13:26:55 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int		ft_printf(const char *format, ...)
 				{
 
 //					printf("got into inner while loop");
+//				printf("index is %d\n", pf->index);
 
 					if (pf->formatcpy[pf->index] == 'h')
 					{
@@ -123,6 +124,9 @@ int		ft_printf(const char *format, ...)
 				if (ft_isdigit(pf->formatcpy[pf->index]))
 				{
 					(pf->flags)->width = ft_atoi(&(pf->formatcpy[pf->index]));
+					
+//					printf("width is %d\n", pf->flags->width);
+
 					while (ft_isdigit(pf->formatcpy[pf->index]))
 					{
 						pf->index++;
