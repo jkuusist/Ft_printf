@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/05 12:14:26 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/10 13:23:34 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 11:07:41 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_putlong_pf(long n, t_flags *flags)
 		ft_putchar(' ');
 		len++;
 	}
-	if (flags->space_flag && (n >= 0))
+	if (flags->space_flag && !flags->plus_flag && (n >= 0))
 		ft_putchar(' ');
 	if (n < 0)
 	{
@@ -39,7 +39,7 @@ void	ft_putlong_pf(long n, t_flags *flags)
 		ft_putlong(i / 10);
 	ft_putchar((i % 10) + 48);
 }
-
+/*
 void	ft_putnbr_pf(int n, t_flags *flags)
 {
 	int i;
@@ -71,3 +71,4 @@ void	ft_putnbr_pf(int n, t_flags *flags)
 		ft_putnbr(i / 10);
 	ft_putchar((i % 10) + 48);
 }
+*/

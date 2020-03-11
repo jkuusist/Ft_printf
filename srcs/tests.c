@@ -25,7 +25,15 @@ int main()
 	ft_printf("ft_printf output: %i\n", 789878908);
 	printf("\n");
 
-	
+	//int with plus flag test
+	printf("   printf output: %+d\n", 1563);
+	printf("ft_printf output: %+d\n", 1563);
+	printf("\n");
+
+	//int with plus and space flags test
+//	printf("   printf output: % +d\n", 11500);
+	ft_printf("ft_printf output: % +d\n", 11500);
+	printf("\n");
 
 	//double test
 	printf("   printf output: %f\n", 1.61803398);
@@ -123,7 +131,6 @@ int main()
 	ft_printf("ft_printf output: %#X\n", 14606046);
 	printf("\n");
 
-
 	//pointer test
 	int a = 8329;
 	int *ap = &a;
@@ -188,10 +195,7 @@ int main()
 	ft_printf("ft_printf output: %lX\n", banana);
 	printf("\n");
 
-	//int with plus flag test
-	printf("   printf output: %+d\n", 1563);
-	printf("ft_printf output: %+d\n", 1563);
-	printf("\n");
+	
 
 	//double flags test
 	double bub = 89843.3447658;
@@ -212,6 +216,7 @@ int main()
 	printf("\n");
 	printf("% f\n", 0.00000);
 	ft_printf("% f\n", 0.00000);
+	printf("\n");
 	printf("% f\n", -2.655);
 	ft_printf("% f\n", -2.655);
 	printf("\n");
