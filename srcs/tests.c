@@ -276,6 +276,10 @@ int main()
 */
 
 	//minus flag tests
+	printf("%-4d\n", 2018);
+	ft_printf("%-4d\n", 2018);
+	printf("\n");
+	
 	printf("%-7dtest\n", 6001);
 	ft_printf("%-7dtest\n", 6001);
 	printf("\n");

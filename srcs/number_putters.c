@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/05 12:14:26 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 11:07:41 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/11 11:43:41 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putlong_pf(long n, t_flags *flags)
 	len = numlen(n, 10);
 	if (flags->plus_flag && (n >= 0))
 		ft_putchar('+');
-	while (flags->width > len)
+	while ((flags->width > len) && !flags->minus_flag)
 	{
 		ft_putchar(' ');
 		len++;
@@ -38,7 +38,15 @@ void	ft_putlong_pf(long n, t_flags *flags)
 	if ((i / 10) > 0)
 		ft_putlong(i / 10);
 	ft_putchar((i % 10) + 48);
+	if (flags->minus_flag)
+		while (flags->width > len)
+		{
+			ft_putchar(' ');
+			len++;
+		}
 }
+
+
 /*
 void	ft_putnbr_pf(int n, t_flags *flags)
 {
