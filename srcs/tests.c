@@ -387,8 +387,13 @@ int main()
 	printf("real9 is %d\nmy9 is   %d\n", real9, my9);
 	printf("\n");
 
-	int my10 = ft_printf("this is bin: %b\n", 38);
-	printf("my10 is %d\n", my10);
+	int real10 = printf("another scary: %6d\n", 9999);
+	int my10 = ft_printf("another scary: %6d\n", 9999);
+	printf("real10 is %d\nmy10 is   %d\n", real10, my10);
+	printf("\n");
+
+	int my12 = ft_printf("this is bin: %b\n", 38);
+	printf("my122 is %d\n", my12);
 	printf("\n");
 /*
 	printf("BONUS PART:\n\n");

@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/12 11:16:22 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/12 11:27:45 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void	handle_specifier(t_pf *pf)
 		num = ((pf->flags)->l_flag || (pf->flags)->ll_flag) ? va_arg(pf->ap, long) : va_arg(pf->ap, int);
 		ft_putlong_pf(num, pf->flags);
 		pf->res += numlen(num, 10);
+		if ((pf->flags)->width > numlen(num, 10))
+			pf->res += (pf->flags)->width - numlen(num, 10);
 		/*
 		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
 			ft_putlong_pf(va_arg(pf->ap, long), pf->flags);
