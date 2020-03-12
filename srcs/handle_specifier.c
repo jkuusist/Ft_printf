@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/12 10:50:30 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/12 10:54:33 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,8 @@ void	handle_specifier(t_pf *pf)
 			s = ft_itoa_base_pf(va_arg(pf->ap, long), 8, *(pf->flags), 0);
 		else
 			s = ft_itoa_base_pf(va_arg(pf->ap, int), 8, *(pf->flags), 0);
-		
-	
-		//printf("handle_spec after itoa. width is %d\n", pf->flags->width);
-		
 		ft_putstr_pf(s, *(pf->flags));
+		pf->res += ft_strlen(s);
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'x')
@@ -88,11 +85,8 @@ void	handle_specifier(t_pf *pf)
 			s = ft_strlower(ft_itoa_base_pf(va_arg(pf->ap, long), 16, *(pf->flags), 0));
 		else
 			s = ft_strlower(ft_itoa_base_pf(va_arg(pf->ap, int), 16, *(pf->flags), 0));
-		
-		
-		//printf("handle_spec after itoa. width is %d\n", pf->flags->width);
-		
 		ft_putstr_pf(s, *(pf->flags));
+		pf->res += ft_strlen(s);
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'X')
@@ -102,6 +96,7 @@ void	handle_specifier(t_pf *pf)
 		else
 			s = ft_itoa_base_pf(va_arg(pf->ap, int), 16, *(pf->flags), 1);
 		ft_putstr_pf(s, *(pf->flags));
+		pf->res += ft_strlen(s);
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'p')

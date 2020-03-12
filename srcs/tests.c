@@ -377,9 +377,13 @@ int main()
 	printf("real7 is %d\nmy7 is   %d\n", real7, my7);
 	printf("\n");
 
-	int real8 = printf("scary one: %06d\n", 11);
-	int my8 = ft_printf("scary one: %06d\n", 11);
+	int real8 = printf("good point: %p\n", &real7);
+	int my8 = ft_printf("good point: %p\n", &real7);
 	printf("real8 is %d\nmy8 is   %d\n", real8, my8);
+
+	int real9 = printf("scary one: %06d\n", 11);
+	int my9 = ft_printf("scary one: %06d\n", 11);
+	printf("real9 is %d\nmy9 is   %d\n", real9, my9);
 	printf("\n");
 /*
 	printf("BONUS PART:\n\n");
