@@ -386,6 +386,10 @@ int main()
 	int my9 = ft_printf("scary one: %06d\n", 11);
 	printf("real9 is %d\nmy9 is   %d\n", real9, my9);
 	printf("\n");
+
+	int my10 = ft_printf("this is bin: %b\n", 38);
+	printf("my10 is %d\n", my10);
+	printf("\n");
 /*
 	printf("BONUS PART:\n\n");
 	//binary test
