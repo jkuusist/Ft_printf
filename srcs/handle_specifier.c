@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/12 11:27:45 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/12 12:32:53 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	handle_specifier(t_pf *pf)
 	int		precision;
 	int		num;
 
-	if ((pf->format)[pf->index] == 'c' || (pf->format)[pf->index] == 'C')
+	if ((pf->format)[pf->index] == 'c' || (pf->format)[pf->index] == 'C' || (pf->format)[pf->index] == '%')
 	{
 		while (((pf->flags)->width > 1) && !(pf->flags)->minus_flag) 
 		{
@@ -32,7 +32,7 @@ void	handle_specifier(t_pf *pf)
 			pf->res++;
 			(pf->flags)->width--;
 		}
-		ft_putchar(va_arg(pf->ap, int));
+		((pf->format)[pf->index] == '%') ? ft_putchar('%') : ft_putchar(va_arg(pf->ap, int));
 		pf->res++;
 		if ((pf->flags)->minus_flag)
 			while ((pf->flags)->width > 1)
@@ -85,32 +85,32 @@ void	handle_specifier(t_pf *pf)
 	}
 	if ((pf->format)[pf->index] == 'o' || (pf->format)[pf->index] == 'O')
 	{
-		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
-			s = ft_itoa_base_pf(va_arg(pf->ap, long), 8, *(pf->flags), 0);
-		else
-			s = ft_itoa_base_pf(va_arg(pf->ap, int), 8, *(pf->flags), 0);
+		num = ((pf->flags)->l_flag || (pf->flags)->ll_flag) ? va_arg(pf->ap, long) : va_arg(pf->ap, int);
+		s = ft_itoa_base_pf(num, 8, *(pf->flags), 0);
 		ft_putstr_pf(s, *(pf->flags));
 		pf->res += ft_strlen(s);
+		if ((pf->flags)->width > numlen(num, 8))
+			pf->res += (pf->flags)->width - numlen(num, 8);
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'x')
 	{
-		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
-			s = ft_strlower(ft_itoa_base_pf(va_arg(pf->ap, long), 16, *(pf->flags), 0));
-		else
-			s = ft_strlower(ft_itoa_base_pf(va_arg(pf->ap, int), 16, *(pf->flags), 0));
+		num = ((pf->flags)->l_flag || (pf->flags)->ll_flag) ? va_arg(pf->ap, long) : va_arg(pf->ap, int);
+		s = ft_strlower(ft_itoa_base_pf(num, 16, *(pf->flags), 0));
 		ft_putstr_pf(s, *(pf->flags));
 		pf->res += ft_strlen(s);
+		if ((pf->flags)->width > numlen(num, 16))
+			pf->res += (pf->flags)->width - numlen(num, 16);
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'X')
 	{
-		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
-			s = ft_itoa_base_pf(va_arg(pf->ap, long), 16, *(pf->flags), 1);
-		else
-			s = ft_itoa_base_pf(va_arg(pf->ap, int), 16, *(pf->flags), 1);
+		num = ((pf->flags)->l_flag || (pf->flags)->ll_flag) ? va_arg(pf->ap, long) : va_arg(pf->ap, int);
+		s = ft_itoa_base_pf(num, 16, *(pf->flags), 1);
 		ft_putstr_pf(s, *(pf->flags));
 		pf->res += ft_strlen(s);
+		if ((pf->flags)->width > numlen(num, 16))
+			pf->res += (pf->flags)->width - numlen(num, 16);
 		free(s);
 	}
 	if ((pf->format)[pf->index] == 'p')
@@ -127,6 +127,8 @@ void	handle_specifier(t_pf *pf)
 		pf->res += ft_strlen(s);
 		free(s);
 	}
+	/*
 	if ((pf->format)[pf->index] == '%')
 		ft_putchar('%');
+	*/
 }

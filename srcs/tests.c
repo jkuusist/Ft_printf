@@ -341,6 +341,7 @@ int main()
 	ft_printf("%04Xtest\n", 111);
 	printf("\n");
 */
+/*
 	//return value tests
 	int real1 = printf("hello my name is test\n");
 	int my1 = ft_printf("hello my name is test\n");
@@ -395,6 +396,7 @@ int main()
 	int my12 = ft_printf("this is bin: %b\n", 38);
 	printf("my122 is %d\n", my12);
 	printf("\n");
+*/
 /*
 	printf("BONUS PART:\n\n");
 	//binary test
@@ -403,6 +405,21 @@ int main()
 	ft_printf("ft_printf output: %b\n", 20543);
 	printf("\n");
 */
+	
+	//filechecker test
+/*	
+	int r1 = printf("%010x\n", 42);
+	int r2 = ft_printf("%010x\n", 42);
+	printf("real %d\nmine %d\n\n", r1, r2);
+
+	int r3 = printf("%-15x\n", 542);
+	int r4 = ft_printf("%-15x\n", 542);
+	printf("real %d\nmine %d\n\n", r3, r4);
+*/
+	int r5 = printf("%#x\n", 0);
+	int r6 = ft_printf("%#x\n", 0);
+	printf("real %d\nmine %d\n\n", r5, r6);
+
 
 	return (0);
 }

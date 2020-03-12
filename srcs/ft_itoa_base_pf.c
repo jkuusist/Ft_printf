@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/06 12:07:27 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 13:25:37 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/12 12:53:57 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_itoa_base_pf(long num, int base, t_flags flags, int is_capital)
 	if (base == 8)
 		i = (flags.hash_flag) ? 2 : 1;
 	else if (base == 16)
-		i = (flags.hash_flag) ? 3 : 1;
+		i = (flags.hash_flag && (num != 0)) ? 3 : 1;
 	else
 		i = 1;
 	while ((n /= base) >= 1)
@@ -43,16 +43,11 @@ char	*ft_itoa_base_pf(long num, int base, t_flags flags, int is_capital)
 	}
 	if (flags.hash_flag && (base == 8))
 		s[--i] = '0';
-	else if (flags.hash_flag && (base == 16))
+	else if (flags.hash_flag && (base == 16) && (num != 0))
 	{
 		s[1] = (is_capital) ? 'X' : 'x';
 		s[0] = '0';
-		//s[--i] = (is_capital) ? 'X' : 'x';
-		//s[--i] = '0';
 	}
 	len = ft_strlen(s);
-
-//	printf("inside itoa. width is %d\n", flags.width);
-
 	return (s);
 }
