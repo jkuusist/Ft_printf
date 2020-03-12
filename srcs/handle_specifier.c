@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/12 11:04:20 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/12 11:07:44 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	handle_specifier(t_pf *pf)
 		ft_putstr_pf(temp, *(pf->flags));
 		if ((pf->flags)->hash_flag && (precision == 0))
 			ft_putchar('.');
+		pf->res += ((pf->flags)->hash_flag && (precision == 0)) ? (ft_strlen(temp) + 1) : ft_strlen(temp);
 	}
 	if ((pf->format)[pf->index] == 'o' || (pf->format)[pf->index] == 'O')
 	{
