@@ -195,8 +195,7 @@ int main()
 	printf("   printf output: %lX\n", banana);
 	ft_printf("ft_printf output: %lX\n", banana);
 	printf("\n");
-*/
-/*	
+
 
 	//double flags test
 	double bub = 89843.3447658;
@@ -320,7 +319,7 @@ int main()
 	printf("%-16ptest\n", fp);
 	ft_printf("%-16ptest\n", fp);
 	printf("\n");
-*/
+
 	//zero flag test
 	printf("%04dtest\n", 2018);
 	ft_printf("%-4dtest\n", 2018);
@@ -341,8 +340,47 @@ int main()
 	printf("%04Xtest\n", 111);
 	ft_printf("%04Xtest\n", 111);
 	printf("\n");
+*/
+	//return value tests
+	int real1 = printf("hello my name is test\n");
+	int my1 = ft_printf("hello my name is test\n");
+	printf("real1 is %d\nmy1 is   %d\n", real1, my1);
+	printf("\n");
 
+	int real2 = printf("test %d\n", 34);
+	int my2 = ft_printf("test %d\n", 34);
+	printf("real2 is %d\nmy2 is   %d\n", real2, my2);
+	printf("\n");
 
+	int real3 = printf("test oct %o and hex %x\n", 90, 91);
+	int my3 = ft_printf("test oct %o and hex %x\n", 90, 91);
+	printf("real3 is %d\nmy3 is   %d\n", real3, my3);
+	printf("\n");
+
+	int real4 = printf("hello %s mountaineer\n", "Seattle I am a");
+	int my4 = ft_printf("hello %s mountaineer\n", "Seattle I am a");
+	printf("real4 is %d\nmy4 is   %d\n", real4, my4);
+	printf("\n");
+
+	int real5 = printf("%cel%co\n", 'b', 'l');
+	int my5 = ft_printf("%cel%co\n", 'b', 'l');
+	printf("real5 is %d\nmy5 is   %d\n", real5, my5);
+	printf("\n");
+
+	int real6 = printf("floatin' %f\n", 3.605551275);
+	int my6 = ft_printf("floatin' %f\n", 3.605551275);
+	printf("real6 is %d\nmy6 is   %d\n", real6, my6);
+	printf("\n");
+
+	int real7 = printf("more floatin' %8f\n", 7.777777777);
+	int my7 = ft_printf("more floatin' %8f\n", 7.777777777);
+	printf("real7 is %d\nmy7 is   %d\n", real7, my7);
+	printf("\n");
+
+	int real8 = printf("scary one: %06d\n", 11);
+	int my8 = ft_printf("scary one: %06d\n", 11);
+	printf("real8 is %d\nmy8 is   %d\n", real8, my8);
+	printf("\n");
 /*
 	printf("BONUS PART:\n\n");
 	//binary test

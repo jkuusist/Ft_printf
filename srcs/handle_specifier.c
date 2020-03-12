@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 15:07:36 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/12 10:50:30 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	handle_specifier(t_pf *pf)
 	char 	temp[40];
 	char 	*s;
 	int		precision;
-
-	//printf("width is %d\n", (pf->flags)->width);
-
+	int		num;
 
 	if ((pf->format)[pf->index] == 'c' || (pf->format)[pf->index] == 'C')
 	{
@@ -47,12 +45,15 @@ void	handle_specifier(t_pf *pf)
 		|| (pf->format)[pf->index] == 'u')
 	{
 
-//		printf("zero_flag is %d. width is %d\n", pf->flags->zero_flag, pf->flags->width);
-
+		num = ((pf->flags)->l_flag || (pf->flags)->ll_flag) ? va_arg(pf->ap, long) : va_arg(pf->ap, int);
+		ft_putlong_pf(num, pf->flags);
+		pf->res += numlen(num, 10);
+		/*
 		if ((pf->flags)->l_flag || (pf->flags)->ll_flag)
 			ft_putlong_pf(va_arg(pf->ap, long), pf->flags);
 		else
 			ft_putlong_pf(va_arg(pf->ap, int), pf->flags);
+		*/
 	}
 	if ((pf->format)[pf->index] == 'f' || (pf->format)[pf->index] == 'F')
 	{

@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:21:54 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/11 14:51:32 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/12 10:25:34 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,10 @@ int		ft_printf(const char *format, ...)
 				}
 			}
 			else
+			{
 				ft_putchar(pf->formatcpy[pf->index]);
+				pf->res++;
+			}
 			pf->index++;
 		}
 		va_end(pf->ap);
