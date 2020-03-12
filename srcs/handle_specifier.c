@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/12 10:54:33 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/12 11:00:29 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,15 @@ void	handle_specifier(t_pf *pf)
 			}
 	}
 	if ((pf->format)[pf->index] == 's')
-		ft_putstr_pf(va_arg(pf->ap, char*), *(pf->flags));
+	{
+		//POTENTIAL MEMORY LEAK HERE
+		//CHECK BEFORE TURNING IN
+		s = va_arg(pf->ap, char*);
+		ft_putstr_pf(s, *(pf->flags));
+		pf->res += ft_strlen(s);
+		//ft_putstr_pf(va_arg(pf->ap, char*), *(pf->flags));
+		
+	}
 	if ((pf->format)[pf->index] == 'd' || (pf->format)[pf->index] == 'i' || (pf->format)[pf->index] == 'D'
 		|| (pf->format)[pf->index] == 'u')
 	{
