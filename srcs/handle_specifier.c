@@ -6,7 +6,7 @@
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 13:23:11 by jkuusist          #+#    #+#             */
-/*   Updated: 2020/03/12 11:00:29 by jkuusist         ###   ########.fr       */
+/*   Updated: 2020/03/12 11:04:20 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,16 @@ void	handle_specifier(t_pf *pf)
 		while (((pf->flags)->width > 1) && !(pf->flags)->minus_flag) 
 		{
 			ft_putchar(' ');
+			pf->res++;
 			(pf->flags)->width--;
 		}
 		ft_putchar(va_arg(pf->ap, int));
+		pf->res++;
 		if ((pf->flags)->minus_flag)
 			while ((pf->flags)->width > 1)
 			{
 				ft_putchar(' ');
+				pf->res++;
 				(pf->flags)->width--;
 			}
 	}

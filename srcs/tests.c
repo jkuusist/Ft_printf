@@ -380,6 +380,7 @@ int main()
 	int real8 = printf("good point: %p\n", &real7);
 	int my8 = ft_printf("good point: %p\n", &real7);
 	printf("real8 is %d\nmy8 is   %d\n", real8, my8);
+	printf("\n");
 
 	int real9 = printf("scary one: %06d\n", 11);
 	int my9 = ft_printf("scary one: %06d\n", 11);
