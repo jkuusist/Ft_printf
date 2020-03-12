@@ -407,19 +407,19 @@ int main()
 */
 	
 	//filechecker test
-/*	
-	int r1 = printf("%010x\n", 42);
-	int r2 = ft_printf("%010x\n", 42);
+	
+	int r1 = printf("%10s is a string\n", "this");
+	int r2 = ft_printf("%10s is a string\n", "this");
 	printf("real %d\nmine %d\n\n", r1, r2);
+/*
+	int r3 = printf("%.2s is a string\n", "this");
+	int r4 = ft_printf("%.2s is a string\n", "this");
+	printf("\nreal %d\nmine %d\n\n", r3, r4);
 
-	int r3 = printf("%-15x\n", 542);
-	int r4 = ft_printf("%-15x\n", 542);
-	printf("real %d\nmine %d\n\n", r3, r4);
+	int r5 = printf("%5.2s is a string\n", "this");
+	int r6 = ft_printf("%5.2s is a string\n", "this");
+	printf("\nreal %d\nmine %d\n\n", r5, r6);
 */
-	int r5 = printf("%#x\n", 0);
-	int r6 = ft_printf("%#x\n", 0);
-	printf("real %d\nmine %d\n\n", r5, r6);
-
 
 	return (0);
 }

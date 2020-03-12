@@ -6,7 +6,7 @@
 #    By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/07 15:49:57 by jkuusist          #+#    #+#              #
-#    Updated: 2020/03/11 15:03:54 by jkuusist         ###   ########.fr        #
+#    Updated: 2020/03/11 15:22:35 by jkuusist         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	make -C $(LIBFT)
 	cp libft/libft.a ./$(NAME)
-	gcc -c -Wall -Wextra -Werror -g $(SRCS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 	
