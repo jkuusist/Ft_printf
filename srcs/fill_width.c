@@ -1,5 +1,5 @@
-#include "ft_printf.h"
-#include "libft.h"
+#include "../includes/ft_printf.h"
+#include "../Libft/libft.h"
 #include <stdlib.h>
 
 void	fill_width(t_pf *pf, char c, int len, int is_update)

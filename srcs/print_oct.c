@@ -1,5 +1,5 @@
-#include "ft_printf.h"
-#include "libft.h"
+#include "../includes/ft_printf.h"
+#include "../Libft/libft.h"
 #include <stdlib.h>
 
 void	print_oct(t_pf *pf)

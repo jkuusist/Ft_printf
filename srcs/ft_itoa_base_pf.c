@@ -1,5 +1,5 @@
-#include "ft_printf.h"
-#include "libft.h"
+#include "../includes/ft_printf.h"
+#include "../Libft/libft.h"
 #include <stdlib.h>
 
 char	*ft_itoa_base_pf(long num, int base, char* flags, int is_capital)

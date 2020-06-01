@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
-#include "ft_printf.h"
-#include "libft.h"
+#include "../includes/ft_printf.h"
+#include "../Libft/libft.h"
 
 #include <wctype.h>
 
