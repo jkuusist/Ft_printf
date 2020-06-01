@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_printf.h"
+#include "../Libft/libft.h"
+#include "../includes/ft_printf.h"
 
 #include <stdio.h>
 
@@ -41,7 +41,7 @@ int		int_to_str(long num, char *str, int precision, int is_negative)
 	return (i);
 }
 
-void	double_to_str(double dub, char *result, int precision, char *flags)
+void	double_to_str(double dub, char *result, int precision, t_flags *flags)
 {
 	int		int_part;
 	double	frac_part;
@@ -49,9 +49,9 @@ void	double_to_str(double dub, char *result, int precision, char *flags)
 
 	int_part = (int)dub;
 	frac_part = dub - (double)int_part;
-	if ((flags[4] == ' ') && (flags[3] != '+') && (dub >= 0))
+	if (flags->space_flag && !flags->plus_flag && (dub >= 0))
 		ft_putchar(' ');
-	else if ((flags[3] == '+') && (dub >= 0))
+	else if (flags->plus_flag && (dub >= 0))
 		ft_putchar('+');
 	if (dub < 0)
 	{

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
-#include "ft_printf.h"
-#include "libft.h"
+#include "../includes/ft_printf.h"
+#include "../Libft/libft.h"
 
 #include <wctype.h>
 
@@ -16,7 +16,7 @@ int main()
 	printf("   printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 	ft_printf("ft_printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 	printf("\n");
-*/
+
 	//int test
 	printf("   printf output: %d\n", 93);
 	ft_printf("ft_printf output: %d\n", 93);
@@ -25,7 +25,6 @@ int main()
 	ft_printf("ft_printf output: %i\n", 789878908);
 	printf("\n");
 
-/*
 	//int with plus flag test
 	printf("   printf output: %+d\n", 1563);
 	printf("ft_printf output: %+d\n", 1563);
@@ -342,7 +341,6 @@ int main()
 	ft_printf("%04Xtest\n", 111);
 	printf("\n");
 */
-
 /*
 	//return value tests
 	int real1 = printf("hello my name is test\n");
@@ -406,14 +404,13 @@ int main()
 	printf("\n");
 	ft_printf("ft_printf output: %b\n", 20543);
 	printf("\n");
-
+*/
 	
 	//filechecker test
 	
 	int r1 = printf("%10s is a string\n", "this");
 	int r2 = ft_printf("%10s is a string\n", "this");
 	printf("real %d\nmine %d\n\n", r1, r2);
-*/
 /*
 	int r3 = printf("%.2s is a string\n", "this");
 	int r4 = ft_printf("%.2s is a string\n", "this");
