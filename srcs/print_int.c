@@ -8,13 +8,13 @@ void	print_int(t_pf *pf)
 
 	if (pf->spec_flag == 'D')
 		num = (long)va_arg(pf->args, long);
-	else if (ft_strcmp(pf->mod_flag, "hh") == 0)
-		num = (signed char)va_arg(pf->args, int);
-	else if (ft_strchr(pf->mod_flag, 'h'))
+//	else if (ft_strcmp(pf->mod_flag, "hh") == 0)
+//		num = (signed char)va_arg(pf->args, int);
+	else if (pf->mod_flag[2] == 'h')
 		num = (short)va_arg(pf->args, int);
-	else if (ft_strcmp(pf->mod_flag, "ll") == 0)
-		num = (long long)va_arg(pf->args, long long);
-	else if (ft_strchr(pf->mod_flag, 'l'))
+//	else if (ft_strcmp(pf->mod_flag, "ll") == 0)
+//		num = (long long)va_arg(pf->args, long long);
+	else if (pf->mod_flag[0] == 'l')
 		num = (long)va_arg(pf->args, long);
 	else
 		num = (int)va_arg(pf->args, int);

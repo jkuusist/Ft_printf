@@ -9,15 +9,15 @@ void	handle_flags(t_pf *pf)
 	{
 		while (pf->flag_mask[i] == pf->format[pf->i])
 		{
-			while (pf->format[pf->i] == '#' && pf->i++)
+			while ((pf->format[pf->i] == '#') && pf->i++)
 				pf->flags[0] = '#';
-			while (pf->format[pf->i] == '0' && pf->i++)
+			while ((pf->format[pf->i] == '0') && pf->i++)
 				pf->flags[1] = '0';
-			while (pf->format[pf->i] == '-' && pf->i++)
+			while ((pf->format[pf->i] == '-') && pf->i++)
 				pf->flags[2] = '-';
-			while (pf->format[pf->i] == '+' && pf->i++)
+			while ((pf->format[pf->i] == '+') && pf->i++)
 				pf->flags[3] = '+';
-			while (pf->format[pf->i] == ' ' && pf->i++)
+			while ((pf->format[pf->i] == ' ') && pf->i++)
 				pf->flags[4] = ' ';
 			i = 0;
 		}
@@ -59,14 +59,22 @@ void	handle_modifiers(t_pf *pf)
 
 	i = 0;
 	j = 0;
-	while (pf->mod_mask[i] == pf->format[pf->i])
+
+	while (pf->mod_mask[i])
 	{
-		pf->mod_flag[j] = pf->format[pf->i];
-		pf->mod_flag[j + 1] = '\0';
-		(pf->i)++;
-		j++;
+		while (pf->mod_mask[i] == pf->format[pf->i])
+		{
+			while ((pf->format[pf->i] == 'l') && pf->i++)
+				pf->mod_flag[0] = 'l';
+			while ((pf->format[pf->i] == 'L') && pf->i++)
+				pf->mod_flag[1] = 'L';
+			while ((pf->format[pf->i] == 'h') && pf->i++)
+				pf->mod_flag[2] = 'h';
+			
+			j++;
+		}
+		i++;
 	}
-	i++;
 }
 
 void	handle_specifier(t_pf *pf)

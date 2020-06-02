@@ -16,7 +16,7 @@ void	print_double(t_pf *pf)
 
 //	printf("s is now: %p\n", s);
 
-	if (ft_strchr(pf->mod_flag, 'L'))
+	if (pf->mod_flag[1] == 'L')
 		dub = (long double)va_arg(pf->args, long double);
 	else
 		dub = (double)va_arg(pf->args, double);

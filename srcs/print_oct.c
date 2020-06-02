@@ -10,13 +10,13 @@ void	print_oct(t_pf *pf)
 
 	if (pf->spec_flag == 'O')
 		num = (unsigned long)va_arg(pf->args, unsigned long);
-	else if (ft_strcmp(pf->mod_flag, "hh") == 0)
-                num = (unsigned char)va_arg(pf->args, unsigned int);
-        else if (ft_strchr(pf->mod_flag, 'h'))
+//	else if (ft_strcmp(pf->mod_flag, "hh") == 0)
+//              num = (unsigned char)va_arg(pf->args, unsigned int);
+        else if (pf->mod_flag[2] == 'h')
                 num = (unsigned short)va_arg(pf->args, unsigned int);
-        else if (ft_strcmp(pf->mod_flag, "ll") == 0)
-                num = (unsigned long long)va_arg(pf->args, unsigned long long);
-        else if (ft_strchr(pf->mod_flag, 'l'))
+//      else if (ft_strcmp(pf->mod_flag, "ll") == 0)
+//              num = (unsigned long long)va_arg(pf->args, unsigned long long);
+        else if (pf->mod_flag[0] == 'l')
                 num = (unsigned long)va_arg(pf->args, unsigned long);
         else
 		num = (unsigned int)va_arg(pf->args, unsigned int);

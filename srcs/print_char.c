@@ -7,7 +7,7 @@ void	print_char(t_pf *pf)
 //	wint_t c;
 	char c;
 
-	if ((ft_strchr(pf->mod_flag, 'l')) || (pf->spec_flag == 'C'))
+	if ((pf->mod_flag[0] == 'l') || (pf->spec_flag == 'C'))
 		c = va_arg(pf->args, int); /*wint_t);*/
 	else
 		c = va_arg(pf->args, int);

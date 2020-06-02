@@ -13,7 +13,11 @@ void	reinit(t_pf *pf)
 		i++;
 	}
 	pf->spec_flag = '\0';
-
+	i = 0;
 	//THIS MIGHT CAUSE ISSUES, DOUBLE CHECK BEFORE TURNING IN
-	pf->mod_flag = "\0";
+	while (i < 3)
+	{
+		pf->mod_flag[i] = '\0';
+		i++;
+	}
 }

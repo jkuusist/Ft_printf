@@ -1,6 +1,7 @@
 #include "../includes/ft_printf.h"
 #include "../Libft/libft.h"
 
+
 int	handle_specs(t_pf *pf)
 {
 	int count;
@@ -12,6 +13,7 @@ int	handle_specs(t_pf *pf)
 	{
 		if (pf->format[pf->i] == '%')
 		{
+		
 			//PRINT FORMAT STRING UP TO %
 			print_format_str(pf, count);
 			reinit(pf);
