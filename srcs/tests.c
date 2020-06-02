@@ -16,7 +16,7 @@ int main()
 	printf("   printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 	ft_printf("ft_printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 	printf("\n");
-*/
+
 	//int test
 	printf("   printf output: %d\n", 93);
 	ft_printf("ft_printf output: %d\n", 93);
@@ -24,7 +24,7 @@ int main()
 	printf("   printf output: %i\n", 789878908);
 	ft_printf("ft_printf output: %i\n", 789878908);
 	printf("\n");
-
+*/
 /*
 	//int with plus flag test
 	printf("   printf output: %+d\n", 1563);
@@ -35,6 +35,7 @@ int main()
 //	printf("   printf output: % +d\n", 11500);
 	ft_printf("ft_printf output: % +d\n", 11500);
 	printf("\n");
+*/
 
 	//double test
 	printf("   printf output: %f\n", 1.61803398);
@@ -56,7 +57,7 @@ int main()
 	ft_printf("ft_printf output: %f\n", -56.485849);
 	printf("\n");
 
-
+/*
 	//double with # flag test
 	double pointy = 83525.0;
 	printf("   printf output: %#.0f\n", pointy);

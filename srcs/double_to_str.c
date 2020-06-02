@@ -66,7 +66,7 @@ void	double_to_str(double dub, char *result, int precision, char *flags)
 		result[0] = '0';
 		i = 1;
 	}
-	if (precision != 0)
+	if (precision != -1) /*0)*/
 	{
 		result[i] = '.';
 		frac_part = frac_part * ft_pow(10, precision);

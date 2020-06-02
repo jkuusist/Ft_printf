@@ -1,5 +1,6 @@
 #include "../includes/ft_printf.h"
 #include "../Libft/libft.h"
+#include <stdlib.h>
 
 void	print_double(t_pf *pf)
 {
@@ -10,14 +11,24 @@ void	print_double(t_pf *pf)
 	//int		len;
 
 	//MIGHT CAUSE PROBLEMS, CHECK BEFORE TURNING IN
-	s = NULL;
+	if (!(s = (char*)malloc(sizeof(char) * 25)))
+		exit(-1);
+
+//	printf("s is now: %p\n", s);
 
 	if (ft_strchr(pf->mod_flag, 'L'))
 		dub = (long double)va_arg(pf->args, long double);
 	else
 		dub = (double)va_arg(pf->args, double);
+	if (pf->precision == -1)
+		pf->precision = 6;
 	double_to_str(dub, s, pf->precision, pf->flags);
+
+//	printf("s is now: %p\n", s);
+
 	ft_putstr(s);
+	free(s);
+
 /*
 	int_part = (int)dub;
 	frac_part = dub - (double)int_part;
