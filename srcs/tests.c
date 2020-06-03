@@ -77,13 +77,13 @@ int main()
 	printf("   printf output: %lf\n", michael);
 	ft_printf("ft_printf output: %lf\n", michael);
 	printf("\n");
-*/
+
 	long double itd = 43543.232434566564534;
 	printf("   printf output: %Lf\n", itd);
 	ft_printf("ft_printf output: %Lf\n", itd);
 	printf("\n");
+*/
 
-/*
 	//char test
 	printf("   printf output: %c\n", 'E');
 	ft_printf("ft_printf output: %c\n", 'E');
@@ -93,6 +93,7 @@ int main()
 	ft_printf("ft_printf output: %c\n", '*');
 	printf("\n");
 
+/*
 	wint_t winc = 38;
 	printf("   printf output: %lc\n", winc);
 	ft_printf("ft_printf output: %lc\n", winc);

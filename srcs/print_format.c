@@ -1,9 +1,14 @@
 #include "../includes/ft_printf.h"
 #include "../Libft/libft.h"
 
+#include <stdio.h>
+
 void	print_format(t_pf *pf)
 {
-	if ((pf->spec_flag == 'c') && (pf->spec_flag == 'C'))
+
+//	printf("spec_flag is %c\n", pf->spec_flag);
+
+	if ((pf->spec_flag == 'c') || (pf->spec_flag == 'C'))
 		print_char(pf);
 	//else if (((pf->spec_flag == 's') && ft_strchr(pf->mod_flag, 'l')) || pf->spec_flag == 'S')
 		//print_wstr(pf);
