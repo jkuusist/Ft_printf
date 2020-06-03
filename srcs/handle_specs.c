@@ -1,6 +1,7 @@
 #include "../includes/ft_printf.h"
 #include "../Libft/libft.h"
 
+#include <stdio.h>
 
 int	handle_specs(t_pf *pf)
 {
@@ -11,6 +12,9 @@ int	handle_specs(t_pf *pf)
 		return (0);
 	while (pf->format[pf->i] != '\0')
 	{
+
+//		printf("pf->i is %d\n", pf->i);
+
 		if (pf->format[pf->i] == '%')
 		{
 		

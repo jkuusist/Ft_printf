@@ -138,7 +138,7 @@ int main()
 	ft_printf("ft_printf output: %#X\n", 14606046);
 	printf("\n");
 */
-
+/*
 	//pointer test
 	int a = 8329;
 	int *ap = &a;
@@ -156,9 +156,9 @@ int main()
 	printf("   printf output: %p\n", hupp);
 	ft_printf("ft_printf output: %p\n", hupp);
 	printf("\n");
-
+*/
 	
-/*
+
 	//h test
 	short sh = 32767;
 	printf("   printf output: %hd\n", sh);
@@ -170,10 +170,12 @@ int main()
 	printf("   printf output: %ho\n", sh);
 	ft_printf("ft_printf output: %ho\n", sh);
 	printf("\n");
-	printf("   printf output: %hu\n", sh);
-	ft_printf("ft_printf output: %hu\n", sh);
+
+//	printf("   printf output: %hu\n", sh);
+	ft_printf(/*"ft_printf output: */"%hu\n", sh);
 	printf("\n");
 
+/*
 	//hh test
 	char chh = '~';
 	printf("   printf output: %hhd\n", chh);
@@ -188,7 +190,7 @@ int main()
 	printf("   printf output: %hhu\n", chh);
 	ft_printf("ft_printf output: %hhu\n", chh);
 	printf("\n");
-
+*/
 	//l test
 	long banana = 3147483647;
 	printf("   printf output: %ld\n", banana);
@@ -204,7 +206,7 @@ int main()
 	ft_printf("ft_printf output: %lX\n", banana);
 	printf("\n");
 
-
+/*
 	//double flags test
 	double bub = 89843.3447658;
 	printf("%+#f\n", bub);

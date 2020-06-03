@@ -8,6 +8,8 @@ void	print_int(t_pf *pf)
 
 	if (pf->spec_flag == 'D')
 		num = (long)va_arg(pf->args, long);
+	else if (pf->spec_flag == 'u')
+		num = (unsigned int)va_arg(pf->args, unsigned int);
 //	else if (ft_strcmp(pf->mod_flag, "hh") == 0)
 //		num = (signed char)va_arg(pf->args, int);
 	else if (pf->mod_flag[2] == 'h')
@@ -40,7 +42,7 @@ void	print_int(t_pf *pf)
 		fill_width(pf, '0', (pf->width - len), 1);
 	else if (pf->flags[2] != '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
-	ft_putnbr(num);
+	ft_putlong(num);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
 	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;
