@@ -158,10 +158,9 @@ int main()
 	printf("\n");
 */
 	
-
+/*
 	//h test
 	short sh = 32767;
-/*
 	printf("   printf output: %hd\n", sh);
 	ft_printf("ft_printf output: %hd\n", sh);
 	printf("\n");
@@ -171,11 +170,12 @@ int main()
 	printf("   printf output: %ho\n", sh);
 	ft_printf("ft_printf output: %ho\n", sh);
 	printf("\n");
-*/
+
 	printf("   printf output: %hu\n", sh);
 	ft_printf("ft_printf output: %hu\n", sh);
 	printf("\n");
 
+*/
 /*
 	//hh test
 	char chh = '~';
@@ -191,14 +191,13 @@ int main()
 	printf("   printf output: %hhu\n", chh);
 	ft_printf("ft_printf output: %hhu\n", chh);
 	printf("\n");
-
+*/
+/*
 	//l test
 	long banana = 3147483647;
 	printf("   printf output: %ld\n", banana);
 	ft_printf("ft_printf output: %ld\n", banana);
 	printf("\n");
-*/
-/*
 	printf("   printf output: %lo\n", banana);
 	ft_printf("ft_printf output: %lo\n", banana);
 	printf("\n");
@@ -208,6 +207,7 @@ int main()
 	printf("   printf output: %lX\n", banana);
 	ft_printf("ft_printf output: %lX\n", banana);
 	printf("\n");
+
 */
 /*
 	//double flags test
@@ -215,6 +215,7 @@ int main()
 	printf("%+#f\n", bub);
 	ft_printf("%+#f\n", bub);
 	printf("\n");
+*/
 
 	//space flag test
 	printf("% d\n", 894);
@@ -223,7 +224,12 @@ int main()
 	printf("% d\n", -545);
 	ft_printf("% d\n", -545);
 	printf("\n");
-
+	printf("% d\n", 32543);
+	ft_printf("% d\n", 32543);
+	printf("\n");
+	printf("% d\n", 0);
+	ft_printf("% d\n", 0);
+	printf("\n");
 	printf("% f\n", 1.23562);
 	ft_printf("% f\n", 1.23562);
 	printf("\n");
@@ -234,7 +240,7 @@ int main()
 	ft_printf("% f\n", -2.655);
 	printf("\n");
 
-
+/*
 	//field width tests
 	printf("   printf output: %6d\n", 11);
 	ft_printf("ft_printf output: %6d\n", 11);

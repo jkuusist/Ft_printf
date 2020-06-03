@@ -42,6 +42,8 @@ void	print_int(t_pf *pf)
 		fill_width(pf, '0', (pf->width - len), 1);
 	else if (pf->flags[2] != '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
+	if ((pf->flags[4] == ' ') && (num >= 0))
+		ft_putchar(' ');
 	ft_putlong(num);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
