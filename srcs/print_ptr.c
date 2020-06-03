@@ -24,6 +24,7 @@ void	print_ptr(t_pf *pf)
 		fill_width(pf, ' ', (pf->width - len + 2), 1);
 	ft_putstr("0x");
 	fill_width(pf, '0', (pf->precision - len + 2), 1);
+	ft_strlower(s);
 	ft_putstr(s);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - len), 0);

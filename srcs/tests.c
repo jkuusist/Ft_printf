@@ -122,7 +122,7 @@ int main()
 //	ft_printf("ft_printf output: %#O\n", 6641);
 //	printf("\n");
 */
-
+/*
 	//hex test
 	printf("   printf output: %x\n", 147050);
 	ft_printf("ft_printf output: %x\n", 147050);
@@ -137,7 +137,8 @@ int main()
 	printf("   printf output: %#X\n", 14606046);
 	ft_printf("ft_printf output: %#X\n", 14606046);
 	printf("\n");
-/*
+*/
+
 	//pointer test
 	int a = 8329;
 	int *ap = &a;
@@ -157,7 +158,7 @@ int main()
 	printf("\n");
 
 	
-
+/*
 	//h test
 	short sh = 32767;
 	printf("   printf output: %hd\n", sh);
