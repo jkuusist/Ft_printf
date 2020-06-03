@@ -98,28 +98,30 @@ int main()
 	printf("   printf output: %lc\n", winc);
 	ft_printf("ft_printf output: %lc\n", winc);
 	printf("\n");
-*/
+
 
 	//string test
 	printf("   printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	ft_printf("ft_printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	printf("\n");
-
+*/
 /*
 	//octal test
+	//FOR SOME REASON, CAPITAL O SPECIFIER DOESN'T WORK ON THE OFFICIAL SCHOOL LINUX VM
 	printf("   printf output: %o\n", 9836);
 	ft_printf("ft_printf output: %o\n", 9836);
 	printf("\n");
-	printf("   printf output: %O\n", 37131);
-	ft_printf("ft_printf output: %O\n", 37131);
-	printf("\n");
+
+//	printf("   printf output: %O\n", 37131);
+//	ft_printf("ft_printf output: %O\n", 37131);
+//	printf("\n");
 	printf("   printf output: %#o\n", 93423);
 	ft_printf("ft_printf output: %#o\n", 93423);
 	printf("\n");
-	printf("   printf output: %#O\n", 6641);
-	ft_printf("ft_printf output: %#O\n", 6641);
-	printf("\n");
-
+//	printf("   printf output: %#O\n", 6641);
+//	ft_printf("ft_printf output: %#O\n", 6641);
+//	printf("\n");
+*/
 
 	//hex test
 	printf("   printf output: %x\n", 147050);
@@ -135,7 +137,7 @@ int main()
 	printf("   printf output: %#X\n", 14606046);
 	ft_printf("ft_printf output: %#X\n", 14606046);
 	printf("\n");
-
+/*
 	//pointer test
 	int a = 8329;
 	int *ap = &a;

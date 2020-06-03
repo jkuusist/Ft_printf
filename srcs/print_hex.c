@@ -7,7 +7,7 @@ void	print_hex(t_pf *pf)
 	char			*s;
 	unsigned long long	num;
 	int			len;
-	int			is_capital;
+//	int			is_capital;
 
 //	if (ft_strcmp(pf->mod_flag, "hh") == 0)
 //              num = (unsigned char)va_arg(pf->args, unsigned int);
@@ -24,8 +24,8 @@ void	print_hex(t_pf *pf)
 		fill_width(pf, ' ', pf->width, 1);
 		return ;
 	}
-	(pf->spec_flag == 'X') ? (is_capital = 1) : (is_capital = 0);
-	if (!(s = ft_itoa_base_pf(num, 16, pf->flags, is_capital)))
+//	(pf->spec_flag == 'X') ? (is_capital = 1) : (is_capital = 0);
+	if (!(s = ft_itoa_base/*_pf*/(num, 16))) //, pf->flags, is_capital)))
 		exit(-1);
 	if ((pf->flags[1] == '0') && (pf->precision == -1) && (pf->flags[2] != '-'))
 		pf->precision = pf->width;
@@ -38,6 +38,8 @@ void	print_hex(t_pf *pf)
 		ft_putstr("0x");
 	else if (num && (pf->flags[0] == '#') && pf->spec_flag == 'X')
 		ft_putstr("0X");
+	if (pf->spec_flag == 'x')
+		ft_strlower(s);
 	ft_putstr(s);
 	free(s);
 	if (pf->flags[2] == '-')
