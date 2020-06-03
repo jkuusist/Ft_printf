@@ -161,6 +161,7 @@ int main()
 
 	//h test
 	short sh = 32767;
+/*
 	printf("   printf output: %hd\n", sh);
 	ft_printf("ft_printf output: %hd\n", sh);
 	printf("\n");
@@ -170,9 +171,9 @@ int main()
 	printf("   printf output: %ho\n", sh);
 	ft_printf("ft_printf output: %ho\n", sh);
 	printf("\n");
-
-//	printf("   printf output: %hu\n", sh);
-	ft_printf(/*"ft_printf output: */"%hu\n", sh);
+*/
+	printf("   printf output: %hu\n", sh);
+	ft_printf("ft_printf output: %hu\n", sh);
 	printf("\n");
 
 /*
@@ -190,12 +191,14 @@ int main()
 	printf("   printf output: %hhu\n", chh);
 	ft_printf("ft_printf output: %hhu\n", chh);
 	printf("\n");
-*/
+
 	//l test
 	long banana = 3147483647;
 	printf("   printf output: %ld\n", banana);
 	ft_printf("ft_printf output: %ld\n", banana);
 	printf("\n");
+*/
+/*
 	printf("   printf output: %lo\n", banana);
 	ft_printf("ft_printf output: %lo\n", banana);
 	printf("\n");
@@ -205,7 +208,7 @@ int main()
 	printf("   printf output: %lX\n", banana);
 	ft_printf("ft_printf output: %lX\n", banana);
 	printf("\n");
-
+*/
 /*
 	//double flags test
 	double bub = 89843.3447658;

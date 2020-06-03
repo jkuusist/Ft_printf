@@ -14,7 +14,7 @@ void	print_format(t_pf *pf)
 		//print_wstr(pf);
 	else if (pf->spec_flag == 's')
 		print_str(pf);
-	else if ((pf->spec_flag == 'd') || (pf->spec_flag == 'i') || (pf->spec_flag == 'D'))
+	else if ((pf->spec_flag == 'd') || (pf->spec_flag == 'i') || (pf->spec_flag == 'D') || (pf->spec_flag == 'u'))
 		print_int(pf);
 	else if ((pf->spec_flag == 'f') || (pf->spec_flag == 'F'))
 		print_double(pf);
