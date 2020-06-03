@@ -83,7 +83,7 @@ int main()
 	ft_printf("ft_printf output: %Lf\n", itd);
 	printf("\n");
 */
-
+/*
 	//char test
 	printf("   printf output: %c\n", 'E');
 	ft_printf("ft_printf output: %c\n", 'E');
@@ -93,18 +93,19 @@ int main()
 	ft_printf("ft_printf output: %c\n", '*');
 	printf("\n");
 
-/*
+
 	wint_t winc = 38;
 	printf("   printf output: %lc\n", winc);
 	ft_printf("ft_printf output: %lc\n", winc);
 	printf("\n");
+*/
 
 	//string test
 	printf("   printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	ft_printf("ft_printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	printf("\n");
 
-
+/*
 	//octal test
 	printf("   printf output: %o\n", 9836);
 	ft_printf("ft_printf output: %o\n", 9836);
