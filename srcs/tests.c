@@ -300,6 +300,12 @@ int main()
 	ft_printf("ft_printf output: %16p\n", rp);
 	printf("\n");
 
+	int e = 44763;
+	int *ep = &e;
+	printf("   printf output: |%-16p|\n", ep);
+	ft_printf("ft_printf output: |%-16p|\n", ep);
+	printf("\n");
+
 /*
 	//% sign tests
 	printf("   printf output: %%\n");
@@ -365,6 +371,11 @@ int main()
 	printf("%04Xtest\n", 111);
 	ft_printf("%04Xtest\n", 111);
 	printf("\n");
+
+	int eb = 3621;
+	int *ebp = &eb;
+	printf("%016p\n", eb);
+	ft_printf("%016p\n", eb);
 */
 
 /*
