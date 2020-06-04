@@ -2,13 +2,15 @@
 #include "../Libft/libft.h"
 #include <stdlib.h>
 
+#include <stdio.h>
+
 void	print_double(t_pf *pf)
 {
 	long double	dub;
 	char		*s;
 	//int		int_part;
 	//double		frac_part;
-	//int		len;
+	int		len;
 
 	//MIGHT CAUSE PROBLEMS, CHECK BEFORE TURNING IN
 	if (!(s = (char*)malloc(sizeof(char) * 25)))
@@ -23,16 +25,16 @@ void	print_double(t_pf *pf)
 	if (pf->precision == -1)
 		pf->precision = 6;
 	double_to_str(dub, s, pf->precision, pf->flags);
-
-//	printf("s is now: %p\n", s);
-
-	ft_putstr(s);
-	free(s);
-
-/*
-	int_part = (int)dub;
-	frac_part = dub - (double)int_part;
+	len = ft_strlen(s);
 	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
-		fill_width(pf, '0', (pf->width - pf->precision), 
-*/	
+		fill_width(pf, '0', (pf->width - len), 1);
+	else if (pf->flags[2] != '-')
+		fill_width(pf, ' ', (pf->width - len), 1);
+	if ((pf->flags[4] == ' ') && (s[0] != '-'))
+		ft_putchar(' ');
+	ft_putstr(s);
+	if (pf->flags[2] == '-')
+		fill_width(pf, ' ', (pf->width - len), 1);
+	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;
+	free(s);	
 }

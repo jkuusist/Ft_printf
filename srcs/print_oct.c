@@ -2,6 +2,8 @@
 #include "../Libft/libft.h"
 #include <stdlib.h>
 
+#include <stdio.h>
+
 void	print_oct(t_pf *pf)
 {
 	char			*s;
@@ -27,7 +29,7 @@ void	print_oct(t_pf *pf)
 	}
 	if (!(s = ft_itoa_base/*_pf*/(num, 8))) //, pf->flags, 0)))
 		exit(-1);
-	if ((pf->flags[1] == '0') && (pf->precision == -1) && (pf->flags[2] != '-'))
+/*	if ((pf->flags[1] == '0') && (pf->precision == -1) && (pf->flags[2] != '-'))
 		pf->precision = pf->width;
 	len = numlen(num, 8);
 	if (num && (pf->flags[0] == '#'))
@@ -40,4 +42,18 @@ void	print_oct(t_pf *pf)
 	free(s);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - pf->precision), 0);
+*/
+	(pf->flags[0] == '#') ? (len = ft_strlen(s) + 1) : (len = ft_strlen(s));
+	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
+		fill_width(pf, '0', (pf->width - len), 1);
+	else if (pf->flags[2] != '-')
+		fill_width(pf, ' ', (pf->width - len), 1);
+	if ((pf->flags[4] == ' ') /*&& (num >= 0)*/)
+		ft_putchar(' ');
+	if (num && (pf->flags[0] == '#'))
+		ft_putchar('0');
+	ft_putstr(s);
+	if (pf->flags[2] == '-')
+		fill_width(pf, ' ', (pf->width - len), 1);
+	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;	
 }
