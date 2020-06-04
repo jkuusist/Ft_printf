@@ -2,12 +2,16 @@
 #include "../Libft/libft.h"
 #include <stdlib.h>
 
+#include <stdio.h>
+
 void	print_hex(t_pf *pf)
 {
 	char			*s;
 	unsigned long long	num;
 	int			len;
 //	int			is_capital;
+
+//	printf("width is %ld\n", pf->width);
 
 //	if (ft_strcmp(pf->mod_flag, "hh") == 0)
 //              num = (unsigned char)va_arg(pf->args, unsigned int);
@@ -27,7 +31,7 @@ void	print_hex(t_pf *pf)
 //	(pf->spec_flag == 'X') ? (is_capital = 1) : (is_capital = 0);
 	if (!(s = ft_itoa_base/*_pf*/(num, 16))) //, pf->flags, is_capital)))
 		exit(-1);
-	if ((pf->flags[1] == '0') && (pf->precision == -1) && (pf->flags[2] != '-'))
+/*	if ((pf->flags[1] == '0') && (pf->precision == -1) && (pf->flags[2] != '-'))
 		pf->precision = pf->width;
 	len = numlen(num, 16);
 	if (num && pf->width && (pf->flags[0] == '#'))
@@ -44,4 +48,19 @@ void	print_hex(t_pf *pf)
 	free(s);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - pf->precision), 0);
+*/
+	(pf->flags[0] == '#') ? (len = ft_strlen(s) + 2) : (len = ft_strlen(s));
+	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
+		fill_width(pf, '0', (pf->width - len), 1);
+	else if (pf->flags[2] != '-')
+		fill_width(pf, ' ', (pf->width - len), 1);
+	if ((pf->flags[4] == ' ') /*&& (num >= 0)*/)
+		ft_putchar(' ');
+	if (num && (pf->flags[0] == '#'))
+		(pf->spec_flag == 'x') ? (ft_putstr("0x")) : (ft_putstr("0X"));
+	(pf->spec_flag == 'X') ? (ft_putstr(s)) : (ft_putstr(ft_strlower(s)));
+	if (pf->flags[2] == '-')
+		fill_width(pf, ' ', (pf->width - len), 1);
+	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;
+	free(s);
 }

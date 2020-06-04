@@ -243,50 +243,43 @@ int main()
 */
 /*
 	//field width tests
-//works
+	
 	printf("   printf output: %6d\n", 11);
 	ft_printf("ft_printf output: %6d\n", 11);
 	printf("\n");
 
-//works
 	long dude = 3762065;
 	printf("   printf output: %9ld\n", dude);
 	ft_printf("ft_printf output: %9ld\n", dude);
 	printf("\n");
 
-//works
 	printf("   printf output: %11f\n", 4.34);
 	ft_printf("ft_printf output: %11f\n", 4.34);
 	printf("\n");
 
-//works
 	printf("   printf output: %5f\n", 65.89392);
 	ft_printf("ft_printf output: %5f\n", 65.89392);
 	printf("\n");
 
-//works
 	printf("   printf output: %4c\n", 'Q');
 	ft_printf("ft_printf output: %4c\n", 'Q'); 
 	printf("\n");
 
-//works
 	char *hi = "hi!";
 	printf("   printf output: %6s\n", hi);
 	ft_printf("ft_printf output: %6s\n", hi);
 	printf("\n");
 
-//works
 	printf("   printf output: %#7o\n", 983);
 	ft_printf("ft_printf output: %#7o\n", 983);
 	printf("\n");
-*/
 
-//works	
+
 	printf("   printf output: %#6x\n", 54743);
 	ft_printf("ft_printf output: %#6x\n", 54743);
 	printf("\n");
-
-//rest don't work
+*/
+/*
 	printf("   printf output: %#8x\n", 52015);
 	ft_printf("ft_printf output: %#8x\n", 52015);
 	printf("\n");
@@ -299,14 +292,14 @@ int main()
 	printf("   printf output: %#8X\n", 49943);
 	ft_printf("ft_printf output: %#8X\n", 49943);
 	printf("\n");
-
+*/
 
 	char r = 'r';
 	char *rp = &r;
 	printf("   printf output: %16p\n", rp);
 	ft_printf("ft_printf output: %16p\n", rp);
 	printf("\n");
-*/
+
 /*
 	//% sign tests
 	printf("   printf output: %%\n");
