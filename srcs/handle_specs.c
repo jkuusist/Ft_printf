@@ -43,5 +43,8 @@ int	handle_specs(t_pf *pf)
 		(pf->i)++;
 	}
 	print_format_str(pf, count);
+
+//	printf("pf->len is %d\n", pf->len);
+
 	return(pf->len);
 }

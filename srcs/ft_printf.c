@@ -1,4 +1,5 @@
 #include "../includes/ft_printf.h"
+#include "../Libft/libft.h"
 #include <stdarg.h>
 #include <stdlib.h>
 
@@ -13,9 +14,17 @@ int	ft_printf(const char *format, ...)
 	initializer(pf);
 	if (format)
 	{
-		va_start(pf->args, format);
-		pf->len = handle_specs(pf);
-		va_end(pf->args);
+		if (ft_strchr(format, '%'))
+		{
+			va_start(pf->args, format);
+			pf->len = handle_specs(pf);
+			va_end(pf->args);
+		}
+		else
+		{
+			ft_putstr(format);
+			return (ft_strlen(format));
+		}
 	}
 	ret = pf->len;
 	free(pf);

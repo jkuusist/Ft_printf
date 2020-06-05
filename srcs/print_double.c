@@ -30,8 +30,8 @@ void	print_double(t_pf *pf)
 		fill_width(pf, '0', (pf->width - len), 1);
 	else if (pf->flags[2] != '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
-	if ((pf->flags[4] == ' ') && (s[0] != '-'))
-		ft_putchar(' ');
+//	if ((pf->flags[4] == ' ') && (s[0] != '-'))
+//		ft_putchar(' ');
 	ft_putstr(s);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
