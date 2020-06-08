@@ -37,6 +37,15 @@ int main()
 	printf("   printf output: %+d\n", 1563);
 	printf("ft_printf output: %+d\n", 1563);
 	printf("\n");
+
+	printf("   printf output: %d\n", 0);
+	ft_printf("ft_printf output: %d\n", 0);
+	printf("\n");
+	printf("   printf output: %d\n", -0);
+	ft_printf("ft_printf output: %d\n", -0);
+	printf("\n");
+
+
 */
 /*
 	//double test
@@ -374,27 +383,40 @@ int main()
 	printf("\n");
 */
 
-
 	//return value tests
+/*
 //works
 	int real1 = printf("hello my name is test\n");
 	int my1 = ft_printf("hello my name is test\n");
 	printf("real1 is %d\nmy1 is   %d\n", real1, my1);
 	printf("\n");
 
-
-//doesn't work
+//works
 	int real2 = printf("test %d\n", 34);
 	int my2 = ft_printf("test %d\n", 34);
 	printf("real2 is %d\nmy2 is   %d\n", real2, my2);
 	printf("\n");
+	
+	int real22 = printf("test %d\n", 45498);
+	int my22 = ft_printf("test %d\n", 45498);	
+	printf("real22 is %d\nmy22 is   %d\n", real22, my22);
+*/
 
 //doesn't work
-	int real3 = printf("test oct %o and hex %x\n", 90, 91);
-	int my3 = ft_printf("test oct %o and hex %x\n", 90, 91);
+	int real3 = printf("test oct %o\n", 90);
+	int my3 = ft_printf("test oct %o\n", 90);
 	printf("real3 is %d\nmy3 is   %d\n", real3, my3);
 	printf("\n");
 
+	int real32 = printf("test hex %x\n", 91);
+	int my32 = ft_printf("test hex %x\n", 91);
+	printf("real32 is %d\nmy32 is   %d\n", real32, my32);
+
+	int real33 = printf("test HEX %X\n", 5261);
+	int my33 = ft_printf("test HEX %X\n", 5261);
+	printf("real33 is %d\nmy33 is   %d\n", real33, my33);
+
+/*
 //works
 	int real4 = printf("hello %s mountaineer\n", "Seattle I am a");
 	int my4 = ft_printf("hello %s mountaineer\n", "Seattle I am a");
@@ -443,7 +465,7 @@ int main()
 	printf("my122 is %d\n", my12);
 	printf("\n");
 
-
+*/
 /*
 	printf("BONUS PART:\n\n");
 	//binary test
