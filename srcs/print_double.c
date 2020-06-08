@@ -33,8 +33,9 @@ void	print_double(t_pf *pf)
 //	if ((pf->flags[4] == ' ') && (s[0] != '-'))
 //		ft_putchar(' ');
 	ft_putstr(s);
+	pf->len += ft_strlen(s);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
-	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;
+//	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;
 	free(s);	
 }

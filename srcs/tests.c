@@ -424,8 +424,8 @@ int main()
 	printf("real4 is %d\nmy4 is   %d\n", real4, my4);
 	printf("\n");
 */
-
-//doesn't work
+/*
+//works
 	int real5 = printf("%cel%co\n", 'h', 'l');
 	int my5 = ft_printf("%cel%co\n", 'h', 'l');
 	printf("real5 is %d\nmy5 is   %d\n", real5, my5);
@@ -436,8 +436,8 @@ int main()
 	printf("real52 is %d\nmy52 is   %d\n", real52, my52);
 	printf("\n");
 
-/*
-//doesn't work
+
+//works
 	int real6 = printf("floatin' %f\n", 3.605551275);
 	int my6 = ft_printf("floatin' %f\n", 3.605551275);
 	printf("real6 is %d\nmy6 is   %d\n", real6, my6);
@@ -448,6 +448,7 @@ int main()
 	int my7 = ft_printf("more floatin' %8f\n", 7.777777777);
 	printf("real7 is %d\nmy7 is   %d\n", real7, my7);
 	printf("\n");
+*/
 
 //doesn't work
 	int real8 = printf("good point: %p\n", &real7);
