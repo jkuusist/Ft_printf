@@ -400,9 +400,9 @@ int main()
 	int real22 = printf("test %d\n", 45498);
 	int my22 = ft_printf("test %d\n", 45498);	
 	printf("real22 is %d\nmy22 is   %d\n", real22, my22);
-*/
 
-//doesn't work
+
+//works
 	int real3 = printf("test oct %o\n", 90);
 	int my3 = ft_printf("test oct %o\n", 90);
 	printf("real3 is %d\nmy3 is   %d\n", real3, my3);
@@ -417,20 +417,26 @@ int main()
 	int my33 = ft_printf("test HEX %X\n", 5261);
 	printf("real33 is %d\nmy33 is   %d\n", real33, my33);
 
-/*
+
 //works
 	int real4 = printf("hello %s mountaineer\n", "Seattle I am a");
 	int my4 = ft_printf("hello %s mountaineer\n", "Seattle I am a");
 	printf("real4 is %d\nmy4 is   %d\n", real4, my4);
 	printf("\n");
-
+*/
 
 //doesn't work
-	int real5 = printf("%cel%co\n", 'b', 'l');
-	int my5 = ft_printf("%cel%co\n", 'b', 'l');
+	int real5 = printf("%cel%co\n", 'h', 'l');
+	int my5 = ft_printf("%cel%co\n", 'h', 'l');
 	printf("real5 is %d\nmy5 is   %d\n", real5, my5);
 	printf("\n");
 
+	int real52 = printf("%3c\n", '@');
+	int my52 = ft_printf("%3c\n", '@');
+	printf("real52 is %d\nmy52 is   %d\n", real52, my52);
+	printf("\n");
+
+/*
 //doesn't work
 	int real6 = printf("floatin' %f\n", 3.605551275);
 	int my6 = ft_printf("floatin' %f\n", 3.605551275);

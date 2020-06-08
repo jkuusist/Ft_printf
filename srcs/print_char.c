@@ -19,7 +19,7 @@ void	print_char(t_pf *pf)
 	//IF THERE'S TIME, CONSIDER ADDING PROPER HANDLING FOR WCHARS
 
 	ft_putchar(c);
-	
+	pf->len++;	
 	//MAY NEED TO HANDLE LEFT JUSTIFICATION WITH ZEROES, CHECK BEFORE TURNING IN
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - 1), 1);
