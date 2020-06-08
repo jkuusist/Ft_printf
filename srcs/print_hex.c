@@ -59,6 +59,7 @@ void	print_hex(t_pf *pf)
 	if (num && (pf->flags[0] == '#'))
 		(pf->spec_flag == 'x') ? (ft_putstr("0x")) : (ft_putstr("0X"));
 	(pf->spec_flag == 'X') ? (ft_putstr(s)) : (ft_putstr(ft_strlower(s)));
+	pf->len += ft_strlen(s);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
 	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;

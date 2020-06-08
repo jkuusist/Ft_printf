@@ -411,6 +411,7 @@ int main()
 	int real32 = printf("test hex %x\n", 91);
 	int my32 = ft_printf("test hex %x\n", 91);
 	printf("real32 is %d\nmy32 is   %d\n", real32, my32);
+	printf("\n");
 
 	int real33 = printf("test HEX %X\n", 5261);
 	int my33 = ft_printf("test HEX %X\n", 5261);
