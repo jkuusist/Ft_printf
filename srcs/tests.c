@@ -451,11 +451,12 @@ int main()
 */
 
 //doesn't work
-	int real8 = printf("good point: %p\n", &real7);
-	int my8 = ft_printf("good point: %p\n", &real7);
+	int real72 = 9;
+	int real8 = printf("good point: %p\n", &real72);
+	int my8 = ft_printf("good point: %p\n", &real72);
 	printf("real8 is %d\nmy8 is   %d\n", real8, my8);
 	printf("\n");
-
+/*
 //doesn't work (overshoot)
 	int real9 = printf("scary one: %06d\n", 11);
 	int my9 = ft_printf("scary one: %06d\n", 11);
