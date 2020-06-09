@@ -385,13 +385,11 @@ int main()
 
 	//return value tests
 /*
-//works
 	int real1 = printf("hello my name is test\n");
 	int my1 = ft_printf("hello my name is test\n");
 	printf("real1 is %d\nmy1 is   %d\n", real1, my1);
 	printf("\n");
 
-//works
 	int real2 = printf("test %d\n", 34);
 	int my2 = ft_printf("test %d\n", 34);
 	printf("real2 is %d\nmy2 is   %d\n", real2, my2);
@@ -402,7 +400,6 @@ int main()
 	printf("real22 is %d\nmy22 is   %d\n", real22, my22);
 */
 /*
-//works
 	int real3 = printf("test oct %o\n", 90);
 	int my3 = ft_printf("test oct %o\n", 90);
 	printf("real3 is %d\nmy3 is   %d\n", real3, my3);
@@ -418,14 +415,12 @@ int main()
 	printf("real33 is %d\nmy33 is   %d\n", real33, my33);
 
 
-//works
 	int real4 = printf("hello %s mountaineer\n", "Seattle I am a");
 	int my4 = ft_printf("hello %s mountaineer\n", "Seattle I am a");
 	printf("real4 is %d\nmy4 is   %d\n", real4, my4);
 	printf("\n");
 */
 /*
-//works
 	int real5 = printf("%cel%co\n", 'h', 'l');
 	int my5 = ft_printf("%cel%co\n", 'h', 'l');
 	printf("real5 is %d\nmy5 is   %d\n", real5, my5);
@@ -437,20 +432,17 @@ int main()
 	printf("\n");
 
 
-//works
 	int real6 = printf("floatin' %f\n", 3.605551275);
 	int my6 = ft_printf("floatin' %f\n", 3.605551275);
 	printf("real6 is %d\nmy6 is   %d\n", real6, my6);
 	printf("\n");
 
-//works
 	int real7 = printf("more floatin' %8f\n", 7.777777777);
 	int my7 = ft_printf("more floatin' %8f\n", 7.777777777);
 	printf("real7 is %d\nmy7 is   %d\n", real7, my7);
 	printf("\n");
 
 
-//works
 	int real72 = 9;
 	int real8 = printf("good point: %p\n", &real72);
 	int my8 = ft_printf("good point: %p\n", &real72);
@@ -458,24 +450,22 @@ int main()
 	printf("\n");
 */
 /*
-//works
 	int real9 = printf("scary one: %06d\n", 11);
 	int my9 = ft_printf("scary one: %06d\n", 11);
 	printf("real9 is %d\nmy9 is   %d\n", real9, my9);
 	printf("\n");
 
 
-//works
 	int real10 = printf("another scary: %6d\n", 9999);
 	int my10 = ft_printf("another scary: %6d\n", 9999);
 	printf("real10 is %d\nmy10 is   %d\n", real10, my10);
 	printf("\n");
 */
-//doesn't work
+/*
 	int my12 = ft_printf("this is bin: %b\n", 38);
 	printf("my122 is %d\n", my12);
 	printf("\n");
-
+*/
 
 /*
 	printf("BONUS PART:\n\n");
@@ -484,15 +474,15 @@ int main()
 	printf("\n");
 	ft_printf("ft_printf output: %b\n", 20543);
 	printf("\n");
-
+*/
 	
 	//filechecker test
 	
 	int r1 = printf("%10s is a string\n", "this");
 	int r2 = ft_printf("%10s is a string\n", "this");
 	printf("real %d\nmine %d\n\n", r1, r2);
-*/
-/*
+
+
 	int r3 = printf("%.2s is a string\n", "this");
 	int r4 = ft_printf("%.2s is a string\n", "this");
 	printf("\nreal %d\nmine %d\n\n", r3, r4);
@@ -500,7 +490,7 @@ int main()
 	int r5 = printf("%5.2s is a string\n", "this");
 	int r6 = ft_printf("%5.2s is a string\n", "this");
 	printf("\nreal %d\nmine %d\n\n", r5, r6);
-*/
+
 
 	return (0);
 }
