@@ -7,13 +7,13 @@
 
 int main()
 {
-/*
+
 	//just a string test
 	printf("   printf output: this is a test\n");	
 	ft_printf("ft_printf output: this is a test\n");
 	printf("\n");
-*/
-/*
+
+
 	//multiple format specifiers test
 	unsigned long ul = 95483845;
 	char c5 = '$';
@@ -22,8 +22,8 @@ int main()
 	printf("   printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 	ft_printf("ft_printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 	printf("\n");
-*/
-/*
+
+
 	//int test
 	printf("   printf output: %d\n", 93);
 	ft_printf("ft_printf output: %d\n", 93);
@@ -46,8 +46,6 @@ int main()
 	printf("\n");
 
 
-*/
-/*
 	//double test
 	printf("   printf output: %f\n", 1.61803398);
 	ft_printf("ft_printf output: %f\n", 1.61803398);
@@ -93,8 +91,8 @@ int main()
 	printf("   printf output: %Lf\n", itd);
 	ft_printf("ft_printf output: %Lf\n", itd);
 	printf("\n");
-*/
-/*
+
+
 	//char test
 	printf("   printf output: %c\n", 'E');
 	ft_printf("ft_printf output: %c\n", 'E');
@@ -114,8 +112,8 @@ int main()
 	printf("   printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	ft_printf("ft_printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	printf("\n");
-*/
-/*
+
+
 	//octal test
 	//FOR SOME REASON, CAPITAL O SPECIFIER DOESN'T WORK ON THE OFFICIAL SCHOOL LINUX VM
 	printf("   printf output: %o\n", 9836);
@@ -133,8 +131,8 @@ int main()
 //	printf("   printf output: %#O\n", 6641);
 //	ft_printf("ft_printf output: %#O\n", 6641);
 //	printf("\n");
-*/
-/*
+
+
 	//hex test
 	printf("   printf output: %x\n", 147050);
 	ft_printf("ft_printf output: %x\n", 147050);
@@ -149,8 +147,8 @@ int main()
 	printf("   printf output: %#X\n", 14606046);
 	ft_printf("ft_printf output: %#X\n", 14606046);
 	printf("\n");
-*/
-/*
+
+
 	//pointer test
 	int a = 8329;
 	int *ap = &a;
@@ -168,8 +166,8 @@ int main()
 	printf("   printf output: %p\n", hupp);
 	ft_printf("ft_printf output: %p\n", hupp);
 	printf("\n");
-*/	
-/*
+	
+
 	//h test
 	short sh = 32767;
 	printf("   printf output: %hd\n", sh);
@@ -185,8 +183,8 @@ int main()
 	printf("   printf output: %hu\n", sh);
 	ft_printf("ft_printf output: %hu\n", sh);
 	printf("\n");
-*/
-/*
+
+
 	//hh test
 	char chh = '~';
 	printf("   printf output: %hhd\n", chh);
@@ -201,8 +199,8 @@ int main()
 	printf("   printf output: %hhu\n", chh);
 	ft_printf("ft_printf output: %hhu\n", chh);
 	printf("\n");
-*/
-/*
+
+
 	//l test
 	long banana = 3147483647;
 	printf("   printf output: %ld\n", banana);
@@ -217,15 +215,15 @@ int main()
 	printf("   printf output: %lX\n", banana);
 	ft_printf("ft_printf output: %lX\n", banana);
 	printf("\n");
-*/
-/*
+
+
 	//double flags test
 	double bub = 89843.3447658;
 	printf("%+#f\n", bub);
 	ft_printf("%+#f\n", bub);
 	printf("\n");
-*/
-/*
+
+
 	//space flag test
 	printf("% d\n", 894);
 	ft_printf("% d\n", 894);
@@ -248,8 +246,8 @@ int main()
 	printf("% f\n", -2.655);
 	ft_printf("% f\n", -2.655);
 	printf("\n");
-*/
-/*
+
+
 	//field width tests
 	
 	printf("   printf output: %6d\n", 11);
@@ -313,8 +311,8 @@ int main()
 	printf("   printf output: |%-16p|\n", ep);
 	ft_printf("ft_printf output: |%-16p|\n", ep);
 	printf("\n");
-*/
-/*
+
+
 	//% sign tests
 	printf("   printf output: %%\n");
 	printf("ft_printf output: %%\n");
@@ -323,8 +321,8 @@ int main()
 	printf("   printf output: %d%%\n", 160);
 	ft_printf("ft_printf output: %d%%\n", 160);
 	printf("\n");
-*/	
-/*
+	
+
 	//minus flag tests
 	printf("%-4dtest\n", 2018);
 	ft_printf("%-4dtest\n", 2018);
@@ -359,8 +357,8 @@ int main()
 	printf("%-16ptest\n", fp);
 	ft_printf("%-16ptest\n", fp);
 	printf("\n");
-*/
-/*
+
+
 	//zero flag test
 	printf("%04dtest\n", 2018);
 	ft_printf("%-4dtest\n", 2018);
@@ -381,10 +379,10 @@ int main()
 	printf("%04Xtest\n", 111);
 	ft_printf("%04Xtest\n", 111);
 	printf("\n");
-*/
+
 
 	//return value tests
-/*
+
 	int real1 = printf("hello my name is test\n");
 	int my1 = ft_printf("hello my name is test\n");
 	printf("real1 is %d\nmy1 is   %d\n", real1, my1);
@@ -398,8 +396,8 @@ int main()
 	int real22 = printf("test %d\n", 45498);
 	int my22 = ft_printf("test %d\n", 45498);	
 	printf("real22 is %d\nmy22 is   %d\n", real22, my22);
-*/
-/*
+	printf("\n");
+
 	int real3 = printf("test oct %o\n", 90);
 	int my3 = ft_printf("test oct %o\n", 90);
 	printf("real3 is %d\nmy3 is   %d\n", real3, my3);
@@ -409,18 +407,19 @@ int main()
 	int my32 = ft_printf("test hex %x\n", 91);
 	printf("real32 is %d\nmy32 is   %d\n", real32, my32);
 	printf("\n");
+	printf("\n");
 
 	int real33 = printf("test HEX %X\n", 5261);
 	int my33 = ft_printf("test HEX %X\n", 5261);
 	printf("real33 is %d\nmy33 is   %d\n", real33, my33);
-
+	printf("\n");
 
 	int real4 = printf("hello %s mountaineer\n", "Seattle I am a");
 	int my4 = ft_printf("hello %s mountaineer\n", "Seattle I am a");
 	printf("real4 is %d\nmy4 is   %d\n", real4, my4);
 	printf("\n");
-*/
-/*
+
+
 	int real5 = printf("%cel%co\n", 'h', 'l');
 	int my5 = ft_printf("%cel%co\n", 'h', 'l');
 	printf("real5 is %d\nmy5 is   %d\n", real5, my5);
@@ -448,8 +447,8 @@ int main()
 	int my8 = ft_printf("good point: %p\n", &real72);
 	printf("real8 is %d\nmy8 is   %d\n", real8, my8);
 	printf("\n");
-*/
-/*
+
+
 	int real9 = printf("scary one: %06d\n", 11);
 	int my9 = ft_printf("scary one: %06d\n", 11);
 	printf("real9 is %d\nmy9 is   %d\n", real9, my9);
@@ -460,21 +459,21 @@ int main()
 	int my10 = ft_printf("another scary: %6d\n", 9999);
 	printf("real10 is %d\nmy10 is   %d\n", real10, my10);
 	printf("\n");
-*/
-/*
+
+
 	int my12 = ft_printf("this is bin: %b\n", 38);
 	printf("my122 is %d\n", my12);
 	printf("\n");
-*/
 
-/*
+
+
 	printf("BONUS PART:\n\n");
 	//binary test
 	ft_printf("ft_printf output: %b\n", 8);
 	printf("\n");
 	ft_printf("ft_printf output: %b\n", 20543);
 	printf("\n");
-*/
+
 	
 	//filechecker test
 	
