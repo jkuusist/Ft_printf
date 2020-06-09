@@ -48,5 +48,5 @@ void	print_int(t_pf *pf)
 	pf->len += numlen(num, 10);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
-	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;
+//	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;
 }
