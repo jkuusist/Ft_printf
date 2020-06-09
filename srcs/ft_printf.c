@@ -23,6 +23,7 @@ int	ft_printf(const char *format, ...)
 		else
 		{
 			ft_putstr(format);
+			free(pf);
 			return (ft_strlen(format));
 		}
 	}
