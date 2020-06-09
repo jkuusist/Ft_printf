@@ -35,6 +35,7 @@ void	print_bin(t_pf *pf)
 		ft_putchar('0');
 	fill_width(pf, '0', (pf->precision - len), 0);
 	ft_putstr(s);
+	pf->len += ft_strlen(s);
 	free(s);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - pf->precision), 0);

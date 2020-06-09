@@ -390,7 +390,7 @@ int main()
 	int my1 = ft_printf("hello my name is test\n");
 	printf("real1 is %d\nmy1 is   %d\n", real1, my1);
 	printf("\n");
-*/
+
 //works
 	int real2 = printf("test %d\n", 34);
 	int my2 = ft_printf("test %d\n", 34);
@@ -400,7 +400,7 @@ int main()
 	int real22 = printf("test %d\n", 45498);
 	int my22 = ft_printf("test %d\n", 45498);	
 	printf("real22 is %d\nmy22 is   %d\n", real22, my22);
-
+*/
 /*
 //works
 	int real3 = printf("test oct %o\n", 90);
@@ -457,26 +457,26 @@ int main()
 	printf("real8 is %d\nmy8 is   %d\n", real8, my8);
 	printf("\n");
 */
-
-//doesn't work (overshoot)
+/*
+//works
 	int real9 = printf("scary one: %06d\n", 11);
 	int my9 = ft_printf("scary one: %06d\n", 11);
 	printf("real9 is %d\nmy9 is   %d\n", real9, my9);
 	printf("\n");
 
 
-//doesn't work (overshoot)
+//works
 	int real10 = printf("another scary: %6d\n", 9999);
 	int my10 = ft_printf("another scary: %6d\n", 9999);
 	printf("real10 is %d\nmy10 is   %d\n", real10, my10);
 	printf("\n");
-/*
+*/
 //doesn't work
 	int my12 = ft_printf("this is bin: %b\n", 38);
 	printf("my122 is %d\n", my12);
 	printf("\n");
 
-*/
+
 /*
 	printf("BONUS PART:\n\n");
 	//binary test
