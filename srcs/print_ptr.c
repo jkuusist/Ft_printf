@@ -9,7 +9,7 @@ void	print_ptr(t_pf *pf)
 	int		len;
 
 	num = (unsigned long)va_arg(pf->args, unsigned long);
-	if (!(s = ft_itoa_base_pf(num, 16, pf->flags, 0)))
+	if (!(s = ft_itoa_base(num, 16))) /*, pf->flags, 0)))*/
 		exit (-1);
 /*	if ((num == 0) && (pf->precision == 0))
 		*s = '\0';

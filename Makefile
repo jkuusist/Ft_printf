@@ -18,7 +18,7 @@ LIBFT = ./Libft
 
 SRC_DIR = ./srcs
 
-SOURCES = double_to_str.c fill_width.c ft_itoa_base_pf.c ft_printf.c ft_strndup.c handlers.c handle_specs.c initializer.c numlen.c print_bin.c print_char.c print_double.c print_format.c print_format_str.c print_hex.c print_int.c print_oct.c print_percent.c print_ptr.c print_str.c reinit.c
+SOURCES = double_to_str.c fill_width.c ft_printf.c ft_strndup.c handlers.c handle_specs.c initializer.c numlen.c print_bin.c print_char.c print_double.c print_format.c print_format_str.c print_hex.c print_int.c print_oct.c print_percent.c print_ptr.c print_str.c reinit.c
 
 SRCS = $(addprefix $(SRC_DIR)/,$(SOURCES))
 

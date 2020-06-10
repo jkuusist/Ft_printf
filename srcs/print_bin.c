@@ -23,7 +23,7 @@ void	print_bin(t_pf *pf)
 		fill_width(pf, ' ', pf->width, 1);
 		return ;
 	}
-	if (!(s = ft_itoa_base_pf(num, 2, pf->flags, 0)))
+	if (!(s = ft_itoa_base(num, 2)))/*, pf->flags, 0)))*/
 		exit(-1);
 	if ((pf->flags[1] == '0') && (pf->precision == -1) && (pf->flags[2] != '-'))
 		pf->precision = pf->width;
