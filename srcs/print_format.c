@@ -1,20 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_format.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/01 12:00:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/06/10 12:26:30 by jkuusist         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 #include "../Libft/libft.h"
 
-#include <stdio.h>
-
 void	print_format(t_pf *pf)
 {
-
-//	printf("spec_flag is %c\n", pf->spec_flag);
-
 	if ((pf->spec_flag == 'c') || (pf->spec_flag == 'C'))
 		print_char(pf);
-	//else if (((pf->spec_flag == 's') && ft_strchr(pf->mod_flag, 'l')) || pf->spec_flag == 'S')
-		//print_wstr(pf);
 	else if (pf->spec_flag == 's')
 		print_str(pf);
-	else if ((pf->spec_flag == 'd') || (pf->spec_flag == 'i') || (pf->spec_flag == 'D') || (pf->spec_flag == 'u'))
+	else if ((pf->spec_flag == 'd') || (pf->spec_flag == 'i')
+		|| (pf->spec_flag == 'D') || (pf->spec_flag == 'u'))
 		print_int(pf);
 	else if ((pf->spec_flag == 'f') || (pf->spec_flag == 'F'))
 		print_double(pf);

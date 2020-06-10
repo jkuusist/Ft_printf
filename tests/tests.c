@@ -28,10 +28,15 @@ int main()
 	printf("   printf output: %d\n", 93);
 	ft_printf("ft_printf output: %d\n", 93);
 	printf("\n");
+
 	printf("   printf output: %i\n", 789878908);
 	ft_printf("ft_printf output: %i\n", 789878908);
 	printf("\n");
 
+	long long double_l = 9223372036854775807;
+	printf("   printf output: %lld\n", double_l);
+	ft_printf("ft_printf output: %lld\n", double_l);
+	printf("\n");
 
 	//int with plus flag test
 	printf("   printf output: %+d\n", 1563);
