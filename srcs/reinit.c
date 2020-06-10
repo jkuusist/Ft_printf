@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reinit.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/01 12:00:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/06/10 12:26:30 by jkuusist         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 void	reinit(t_pf *pf)
@@ -14,7 +26,6 @@ void	reinit(t_pf *pf)
 	}
 	pf->spec_flag = '\0';
 	i = 0;
-	//THIS MIGHT CAUSE ISSUES, DOUBLE CHECK BEFORE TURNING IN
 	while (i < 3)
 	{
 		pf->mod_flag[i] = '\0';

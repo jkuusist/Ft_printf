@@ -1,9 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_specs.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/28 12:00:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/06/10 12:26:30 by jkuusist         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 #include "../Libft/libft.h"
 
-#include <stdio.h>
+static void	handle_stuff(t_pf *pf)
+{
+	handle_flags(pf);
+	handle_width(pf);
+	handle_precision(pf);
+	handle_modifiers(pf);
+	handle_specifier(pf);
+	print_format(pf);
+}
 
-int	handle_specs(t_pf *pf)
+int		handle_specs(t_pf *pf)
 {
 	int count;
 
@@ -12,27 +32,12 @@ int	handle_specs(t_pf *pf)
 		return (0);
 	while (pf->format[pf->i] != '\0')
 	{
-
-//		printf("pf->i is %d\n", pf->i);
-
 		if (pf->format[pf->i] == '%')
 		{
-		
-			//PRINT FORMAT STRING UP TO %
 			print_format_str(pf, count);
 			reinit(pf);
-
-			//HANDLE FORMAT SPECIFIER	
 			(pf->i)++;
-			handle_flags(pf);
-			handle_width(pf);	
-			handle_precision(pf);
-			handle_modifiers(pf);
-			handle_specifier(pf);
-			
-			//PRINT FORMAT WITH PROPER EVERYTHING
-			print_format(pf);			
-
+			handle_stuff(pf);
 			count = 0;
 		}
 		else
@@ -43,8 +48,5 @@ int	handle_specs(t_pf *pf)
 		(pf->i)++;
 	}
 	print_format_str(pf, count);
-
-//	printf("pf->len is %d\n", pf->len);
-
-	return(pf->len);
+	return (pf->len);
 }
