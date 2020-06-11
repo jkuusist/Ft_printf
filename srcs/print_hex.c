@@ -41,7 +41,7 @@ void				print_hex(t_pf *pf)
 	}
 	if (!(s = ft_itoa_base(num, 16)))
 		exit(-1);
-	len = ft_strlen(s) + ((pf->flags[1] == '#') ? 2 : 0);
+	len = ft_strlen(s) + ((pf->flags[0] == '#') ? 2 : 0);
 	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
 		fill_width(pf, '0', (pf->width - len), 1);
 	else if (pf->flags[2] != '-')
