@@ -7,7 +7,7 @@
 
 int main()
 {
-
+/*
 	//just a string test
 	printf("   printf output: this is a test\n");	
 	ft_printf("ft_printf output: this is a test\n");
@@ -49,7 +49,7 @@ int main()
 	printf("   printf output: %d\n", -0);
 	ft_printf("ft_printf output: %d\n", -0);
 	printf("\n");
-
+*/
 
 	//double test
 	printf("   printf output: %f\n", 1.61803398);
@@ -112,7 +112,7 @@ int main()
 	ft_printf("ft_printf output: %lc\n", winc);
 	printf("\n");
 
-
+/*
 	//string test
 	printf("   printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	ft_printf("ft_printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
@@ -495,6 +495,6 @@ int main()
 	int r6 = ft_printf("%5.2s is a string\n", "this");
 	printf("\nreal %d\nmine %d\n\n", r5, r6);
 
-
+*/
 	return (0);
 }

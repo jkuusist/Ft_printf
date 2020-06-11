@@ -13,9 +13,7 @@
 #include "../Libft/libft.h"
 #include "../includes/ft_printf.h"
 
-#include <stdio.h>
-
-int		int_to_str(long num, char *str, int precision, int is_negative)
+static int	int_to_str(long num, char *str, int precision, int is_negative)
 {
 	int i;
 
@@ -41,32 +39,46 @@ int		int_to_str(long num, char *str, int precision, int is_negative)
 	return (i);
 }
 
-void	double_to_str(double dub, char *result, int precision, char *flags)
+static void	handle_space_plus(double dub, char *flags)
 {
-	int		int_part;
-	double	frac_part;
-	int		i;
-
-	int_part = (int)dub;
-	frac_part = dub - (double)int_part;
 	if ((flags[4] == ' ') && (flags[3] != '+') && (dub >= 0))
 		ft_putchar(' ');
 	else if ((flags[3] == '+') && (dub >= 0))
 		ft_putchar('+');
+}
+
+static int	handle_nega_posi(double dub, int *int_part,
+		double *frac_part, char *result)
+{
+	int i;
+
 	if (dub < 0)
 	{
-		int_part *= -1;
-		frac_part *= -1;
-		i = int_to_str(int_part, result, 0, 1);
+		*int_part *= -1;
+		*frac_part *= -1;
+		i = int_to_str(*int_part, result, 0, 1);
 	}
 	if (dub > 1.0)
-		i = int_to_str(int_part, result, 0, 0);
+		i = int_to_str(*int_part, result, 0, 0);
 	if ((dub < 1.0) && (dub >= 0.0))
 	{
 		result[0] = '0';
 		i = 1;
 	}
-	if (precision != -1) /*0)*/
+	return (i);
+}
+
+void		double_to_str(double dub, char *result, int precision, char *flags)
+{
+	int	int_part;
+	double	frac_part;
+	int	i;
+
+	int_part = (int)dub;
+	frac_part = dub - (double)int_part;
+	handle_space_plus(dub, flags);
+	i = handle_nega_posi(dub, &int_part, &frac_part, result);
+	if (precision != -1)
 	{
 		result[i] = '.';
 		frac_part = frac_part * ft_pow(10, precision);

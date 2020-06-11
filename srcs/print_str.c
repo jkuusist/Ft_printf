@@ -1,16 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_str.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/01 12:00:00 by jkuusist          #+#    #+#             */
+/*   Updated: 2020/06/10 12:26:30 by jkuusist         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 #include "../Libft/libft.h"
 #include <stdlib.h>
-
-#include <stdio.h>
 
 void	print_str(t_pf *pf)
 {
 	char	*s;
 	int	len;
 	int	is_malloced;
-
-//	printf("pf->precision is %ld\n", pf->precision);
 
 	s = va_arg(pf->args, char*);
 	is_malloced = 1;
@@ -29,8 +37,6 @@ void	print_str(t_pf *pf)
 	else if (pf->flags[2] != '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
 	ft_putstr(s);
-
-	//MAY NEED TO HANDLE LEFT JUSTIFICATION WITH ZEROES, CHECK BEFORE TURNING IN
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
 	if (is_malloced)
