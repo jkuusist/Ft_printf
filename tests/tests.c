@@ -7,7 +7,7 @@
 
 int main()
 {
-
+/*
 	//just a string test
 	printf("   printf output: this is a test\n");	
 	ft_printf("ft_printf output: this is a test\n");
@@ -317,7 +317,7 @@ int main()
 	ft_printf("ft_printf output: |%-16p|\n", ep);
 	printf("\n");
 
-
+*/
 	//% sign tests
 	printf("   printf output: %%\n");
 	printf("ft_printf output: %%\n");
@@ -326,8 +326,16 @@ int main()
 	printf("   printf output: %d%%\n", 160);
 	ft_printf("ft_printf output: %d%%\n", 160);
 	printf("\n");
-	
 
+	printf("   printf output: %5%\n");
+	ft_printf("ft_printf output: %5%\n");
+	printf("\n");
+	
+	printf("   printf output: %-5%|\n");
+	ft_printf("ft_printf output: %-5%|\n");
+	printf("\n");
+	
+/*
 	//minus flag tests
 	printf("%-4dtest\n", 2018);
 	ft_printf("%-4dtest\n", 2018);
@@ -494,7 +502,7 @@ int main()
 	int r5 = printf("%5.2s is a string\n", "this");
 	int r6 = ft_printf("%5.2s is a string\n", "this");
 	printf("\nreal %d\nmine %d\n\n", r5, r6);
-
+*/
 
 	return (0);
 }
