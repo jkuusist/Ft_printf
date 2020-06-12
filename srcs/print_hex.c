@@ -27,6 +27,18 @@ static unsigned long long	get_num(t_pf *pf)
 	return (num);
 }
 
+static void			check_flags(t_pf *pf, unsigned long long num, int len)
+{
+	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
+		fill_width(pf, '0', (pf->width - len), 1);
+	else if (pf->flags[2] != '-')
+		fill_width(pf, ' ', (pf->width - len), 1);
+	if (pf->flags[4] == ' ')
+		ft_putchar(' ');
+	if (num && (pf->flags[0] == '#'))
+		(pf->spec_flag == 'x') ? (ft_putstr("0x")) : (ft_putstr("0X"));
+}
+
 void				print_hex(t_pf *pf)
 {
 	char			*s;
@@ -42,14 +54,7 @@ void				print_hex(t_pf *pf)
 	if (!(s = ft_itoa_base(num, 16)))
 		exit(-1);
 	len = ft_strlen(s) + ((pf->flags[0] == '#') ? 2 : 0);
-	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
-		fill_width(pf, '0', (pf->width - len), 1);
-	else if (pf->flags[2] != '-')
-		fill_width(pf, ' ', (pf->width - len), 1);
-	if (pf->flags[4] == ' ')
-		ft_putchar(' ');
-	if (num && (pf->flags[0] == '#'))
-		(pf->spec_flag == 'x') ? (ft_putstr("0x")) : (ft_putstr("0X"));
+	check_flags(pf, num, len);
 	(pf->spec_flag == 'X') ? (ft_putstr(s)) : (ft_putstr(ft_strlower(s)));
 	pf->len += ft_strlen(s);
 	if (pf->flags[2] == '-')

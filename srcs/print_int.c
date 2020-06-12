@@ -30,6 +30,25 @@ static long long	get_num(t_pf *pf)
 	return (num);
 }
 
+static void	handle_zeroes(t_pf *pf)
+{
+	if (pf->flags[3] == '+')
+		ft_putchar('+');
+	if (pf->flags[4] == ' ')
+		ft_putchar(' ');
+	fill_width(pf, ' ', pf->width, 1);
+}
+
+static void	check_flags(t_pf *pf, long long num, int len)
+{
+	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
+		fill_width(pf, '0', (pf->width - len), 1);
+	else if (pf->flags[2] != '-')
+		fill_width(pf, ' ', (pf->width - len), 1);
+	if ((pf->flags[4] == ' ') && (num >= 0))
+		ft_putchar(' ');
+}
+
 void			print_int(t_pf *pf)
 {
 	long long	num;
@@ -38,11 +57,7 @@ void			print_int(t_pf *pf)
 	num = get_num(pf);
 	if ((num == 0) && (pf->precision == 0))
 	{
-		if (pf->flags[3] == '+')
-			ft_putchar('+');
-		if (pf->flags[4] == ' ')
-			ft_putchar(' ');
-		fill_width(pf, ' ', pf->width, 1);
+		handle_zeroes(pf);
 		return ;
 	}
 	len = numlen(num, 10);
@@ -53,12 +68,7 @@ void			print_int(t_pf *pf)
 			|| (pf->flags[4] == ' '))
 			(pf->precision)--;
 	}
-	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
-		fill_width(pf, '0', (pf->width - len), 1);
-	else if (pf->flags[2] != '-')
-		fill_width(pf, ' ', (pf->width - len), 1);
-	if ((pf->flags[4] == ' ') && (num >= 0))
-		ft_putchar(' ');
+	check_flags(pf, num, len);
 	ft_putlong(num);
 	pf->len += numlen(num, 10);
 	if (pf->flags[2] == '-')
