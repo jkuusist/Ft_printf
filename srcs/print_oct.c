@@ -61,6 +61,5 @@ void				print_oct(t_pf *pf)
 	pf->len += ft_strlen(s);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
-	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;
 	free(s);
 }

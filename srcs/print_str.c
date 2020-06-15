@@ -25,9 +25,9 @@ void	print_str(t_pf *pf)
 	if (s && (pf->precision > -1))
 		s = ft_strndup(s, pf->precision);
 	else if (!s && (pf->precision > -1))
-		s = ft_strndup("null", pf->precision);
+		s = ft_strndup("(null)", pf->precision);
 	else if (!s && (pf->precision == -1))
-		s = ft_strdup("null");
+		s = ft_strdup("(null)");
 	else
 		is_malloced = 0;
 	len = ft_strlen(s);

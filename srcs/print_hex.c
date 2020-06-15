@@ -36,7 +36,10 @@ static void			check_flags(t_pf *pf, unsigned long long num, int len)
 	if (pf->flags[4] == ' ')
 		ft_putchar(' ');
 	if (num && (pf->flags[0] == '#'))
+	{
 		(pf->spec_flag == 'x') ? (ft_putstr("0x")) : (ft_putstr("0X"));
+		pf->len += 2;
+	}
 }
 
 void				print_hex(t_pf *pf)
