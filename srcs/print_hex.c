@@ -29,13 +29,18 @@ static unsigned long long	get_num(t_pf *pf)
 
 static void			check_flags(t_pf *pf, unsigned long long num, int len)
 {
+	if (num && (pf->flags[0] == '#') && (pf->flags[1] == '0'))
+	{
+		(pf->spec_flag == 'x') ? (ft_putstr("0x")) : (ft_putstr("0X"));
+		pf->len += 2;
+	}
 	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
 		fill_width(pf, '0', (pf->width - len), 1);
 	else if (pf->flags[2] != '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
 	if (pf->flags[4] == ' ')
 		ft_putchar(' ');
-	if (num && (pf->flags[0] == '#'))
+	if (num && (pf->flags[0] == '#') && !(pf->flags[1] == '0'))
 	{
 		(pf->spec_flag == 'x') ? (ft_putstr("0x")) : (ft_putstr("0X"));
 		pf->len += 2;

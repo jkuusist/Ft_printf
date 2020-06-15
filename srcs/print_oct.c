@@ -38,7 +38,10 @@ static void			check_flags(t_pf *pf, unsigned long long num, int len)
 	if (pf->flags[4] == ' ')
 		ft_putchar(' ');
 	if (num && (pf->flags[0] == '#'))
+	{
 		ft_putchar('0');
+		pf->len++;
+	}
 }
 
 void				print_oct(t_pf *pf)

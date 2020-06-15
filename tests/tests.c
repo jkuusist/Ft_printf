@@ -317,7 +317,7 @@ int main()
 	ft_printf("ft_printf output: |%-16p|\n", ep);
 	printf("\n");
 
-*/
+
 	//% sign tests
 	printf("   printf output: %%\n");
 	printf("ft_printf output: %%\n");
@@ -335,7 +335,7 @@ int main()
 	ft_printf("ft_printf output: %-5%|\n");
 	printf("\n");
 	
-/*
+
 	//minus flag tests
 	printf("%-4dtest\n", 2018);
 	ft_printf("%-4dtest\n", 2018);
@@ -474,12 +474,43 @@ int main()
 	printf("\n");
 
 
-	int my12 = ft_printf("this is bin: %b\n", 38);
-	printf("my122 is %d\n", my12);
+	int my11 = ft_printf("this is bin: %b\n", 38);
+	printf("my11 is %d\n", my11);
+	printf("\n");
+
+	int real12 = printf("%10x\n", 42);
+	int my12 = ft_printf("%10x\n", 42);
+	printf("real12 is %d\nmy12 is %d\n", real12, my12);
+	printf("\n");
+
+	int real13 = printf("%-10x\n", 42);
+	int my13 = ft_printf("%-10x\n", 42);
+	printf("real13 is %d\nmy13 is %d\n", real13, my13);	
+	printf("\n");
+
+	int real14 = printf("%010x\n", 42);
+	int my14 = ft_printf("%010x\n", 42);
+	printf("real14 is %d\nmy14 is %d\n", real14, my14);
 	printf("\n");
 
 
+	int real15 = printf("%.2x\n", 5427);
+	int my15 = ft_printf("%.2x\n", 5427);
+	printf("real15 is %d\nmy15 is %d\n", real15, my15);
+	printf("\n");
 
+	int real16 = printf("%5.2x\n", 5427);
+	int my16 = ft_printf("%5.2x\n", 5427);
+	printf("real16 is %d\nmy16 is %d\n", real16, my16);
+	printf("\n");
+
+	int real17 = printf("%s\n", NULL);
+	int my17 = ft_printf("%s\n", NULL);
+	printf("real17 is %d\nmy17 is %d\n", real17, my17);
+	printf("\n");
+*/	
+
+/*
 	printf("BONUS PART:\n\n");
 	//binary test
 	ft_printf("ft_printf output: %b\n", 8);
@@ -488,7 +519,7 @@ int main()
 	printf("\n");
 
 	
-	//filechecker test
+	//filechecker tests
 	
 	int r1 = printf("%10s is a string\n", "this");
 	int r2 = ft_printf("%10s is a string\n", "this");
@@ -503,6 +534,20 @@ int main()
 	int r6 = ft_printf("%5.2s is a string\n", "this");
 	printf("\nreal %d\nmine %d\n\n", r5, r6);
 */
-
+	int r7 = printf("   printf output: %#08x\n", 42);
+	int r8 = ft_printf("ft_printf output: %#08x\n", 42);
+	printf("real is %d\nmine is %d\n", r7, r8);
+	printf("\n");
+	
+	int r72 = printf("   printf output: %#8x\n", 42);
+	int r82 = ft_printf("ft_printf output: %#8x\n", 42);
+	printf("real is %d\nmine is %d\n", r72, r82);
+	printf("\n");
+/*
+	int r9 = printf("   printf output: %#6o\n", 42);
+	int r10 = ft_printf("ft_printf output: %#6o\n", 42);
+	printf("real is %d\nmine is %d\n", r9, r10);
+	printf("\n");
+*/
 	return (0);
 }
