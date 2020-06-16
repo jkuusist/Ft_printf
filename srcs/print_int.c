@@ -45,8 +45,16 @@ static void	check_flags(t_pf *pf, long long num, int len)
 		fill_width(pf, '0', (pf->width - len), 1);
 	else if (pf->flags[2] != '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
-	if ((pf->flags[4] == ' ') && (num >= 0))
+	if ((pf->flags[3] == '+') && (num >= 0))
+	{
+		ft_putchar('+');
+		pf->len++;
+	}
+	else if ((pf->flags[4] == ' ') && (num >= 0))
+	{
 		ft_putchar(' ');
+		pf->len++;
+	}
 }
 
 void			print_int(t_pf *pf)
