@@ -533,7 +533,7 @@ int main()
 	int r5 = printf("%5.2s is a string\n", "this");
 	int r6 = ft_printf("%5.2s is a string\n", "this");
 	printf("\nreal %d\nmine %d\n\n", r5, r6);
-*/
+
 	int r7 = printf("   printf output: %#08x\n", 42);
 	int r8 = ft_printf("ft_printf output: %#08x\n", 42);
 	printf("real is %d\nmine is %d\n", r7, r8);
@@ -543,11 +543,16 @@ int main()
 	int r82 = ft_printf("ft_printf output: %#8x\n", 42);
 	printf("real is %d\nmine is %d\n", r72, r82);
 	printf("\n");
-/*
+
 	int r9 = printf("   printf output: %#6o\n", 42);
 	int r10 = ft_printf("ft_printf output: %#6o\n", 42);
 	printf("real is %d\nmine is %d\n", r9, r10);
 	printf("\n");
 */
+	int r11 = printf("%-5.10o\n", 2500);
+	int r12 = ft_printf("%-5.10o\n", 2500);
+	printf("real is %d\nmine is %d\n", r11, r12);
+	printf("\n");
+
 	return (0);
 }

@@ -14,6 +14,8 @@
 #include "../Libft/libft.h"
 #include <stdlib.h>
 
+#include <stdio.h>
+
 static unsigned long long	get_num(t_pf *pf)
 {
 	unsigned long long num;
@@ -33,6 +35,8 @@ static void			check_flags(t_pf *pf, unsigned long long num, int len)
 {
 	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
 		fill_width(pf, '0', (pf->width - len), 1);
+	else if (pf->precision > len)
+		fill_width(pf, '0', (pf->precision - len), 1);
 	else if (pf->flags[2] != '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
 	if (pf->flags[4] == ' ')
@@ -62,7 +66,7 @@ void				print_oct(t_pf *pf)
 	check_flags(pf, num, len);
 	ft_putstr(s);
 	pf->len += ft_strlen(s);
-	if (pf->flags[2] == '-')
+	if ((pf->flags[2] == '-') && (pf->precision <= len))
 		fill_width(pf, ' ', (pf->width - len), 1);
 	free(s);
 }

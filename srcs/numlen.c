@@ -16,7 +16,10 @@ int	numlen(long long num, int base)
 
 	res = 1;
 	if (num < 0)
+	{
 		res++;
+		num *= -1;
+	}
 	while (num > (base - 1))
 	{
 		num /= base;
