@@ -110,26 +110,77 @@ int main()
 	int r44 = ft_printf("%hhd\n", 128);
 	printf("real is %d. mine is %d\n\n", r43, r44);
 
-	int r45 = printf("%hhd", -129);
-	int r46 = ft_printf("%hhd", -129);
+	int r45 = printf("%hhd\n", -129);
+	int r46 = ft_printf("%hhd\n", -129);
 	printf("real is %d. mine is %d\n\n", r45, r46);
 
-	int r47 = printf("%lld", -9223372036854775808);
-	int r48 = ft_printf("%lld", -9223372036854775808);
+	int r47 = printf("%lld\n", -9223372036854775808);
+	int r48 = ft_printf("%lld\n", -9223372036854775808);
 	printf("real is %d. mine is %d\n\n", r47, r48);
 
-	int r49 = printf("%4.15d", 42);
-	int r50 = ft_printf("%4.15d", 42);
+	int r49 = printf("%4.15d\n", 42);
+	int r50 = ft_printf("%4.15d\n", 42);
 	printf("real is %d. mine is %d\n\n", r49, r50);
 
+	int r51 = printf("%.10d\n", 4242);
+	int r52 = ft_printf("%.10d\n", 4242);
+	printf("real is %d. mine is %d\n\n", r51, r52);
 
+	int r53 = printf("%10.5d\n", 4242);
+	int r54 = ft_printf("%10.5d\n", 4242);
+	printf("real is %d. mine is %d\n\n", r53, r54);
 
+	int r55 = printf("%-10.5d\n", 4242);
+	int r56 = ft_printf("%-10.5d\n", 4242);
+	printf("real is %d. mine is %d\n\n", r55, r56);
 
+	int r57 = printf("% 10.5d\n", 4242);
+	int r58 = ft_printf("% 10.5d\n", 4242);
+	printf("real is %d. mine is %d\n\n", r57, r58);
 
+	int r59 = printf("%+10.5d\n", 4242);
+	int r60 = ft_printf("%+10.5d\n", 4242);
+	printf("real is %d. mine is %d\n\n", r59, r60);
 
+	int r61 = printf("%-+10.5d\n", 4242);
+	int r62 = ft_printf("%-+10.5d\n", 4242);
+	printf("real is %d. mine is %d\n\n", r61, r62);
 
+	int r63 = printf("%03.2d\n", 0);
+	int r64 = ft_printf("%03.2d\n", 0);
+	printf("real is %d. mine is %d\n\n", r63, r64);
 
+	int r65 = printf("%03.2d\n", 1);
+	int r66 = ft_printf("%03.2d\n", 1);
+	printf("real is %d. mine is %d\n\n", r65, r66);
 
+	int r67 = printf("%.10d\n", -42);
+	int r68 = ft_printf("%.10d\n", -42);
+	printf("real is %d. mine is %d\n\n", r67, r68);
+
+	int r69 = printf("% u\n", 4294967295);
+	int r70 = ft_printf("% u\n", 4294967295);
+	printf("real is %d. mine is %d\n\n", r69, r70);
+
+	int r71 = printf("%+u\n", 4294967295);
+	int r72 = ft_printf("%+u\n", 4294967295);
+	printf("real is %d. mine is %d\n\n", r71, r72);
+
+	int r73 = printf("%lu\n", 4294967296);
+	int r74 = ft_printf("%lu\n", 4294967296);
+	printf("real is %d. mine is %d\n\n", r73, r74);
+
+	int r75 = printf("%lu\n", -42);
+	int r76 = ft_printf("%lu\n", -42);
+	printf("real is %d. mine is %d\n\n", r75, r76);
+
+	int r77 = printf("%llu\n", 4999999999);
+	int r78 = ft_printf("%llu\n", 4999999999);
+	printf("real is %d. mine is %d\n\n", r77, r78);
+
+	int r79 = printf("%.5u\n", 42);
+	int r80 = ft_printf("%.5u\n", 42);
+	printf("real is %d. mine is %d\n\n", r79, r80);
 
 
 	return 0;
