@@ -43,6 +43,12 @@ int main()
 	int r16 = ft_printf("%0+5d\n", 42);
 	printf("real is %d\nmine is %d\n", r15, r16);
 	printf("\n");
+	
+	int r152 = printf("%0+7d\n", 7142);
+	int r162 = ft_printf("%0+7d\n", 7142);
+	printf("real is %d\nmine is %d\n", r152, r162);
+	printf("\n");
+
 /*
 	int r17 = printf("%05d\n", -42);
 	int r18 = ft_printf("%05d\n", -42);
