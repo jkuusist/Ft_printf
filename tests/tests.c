@@ -23,7 +23,7 @@ int main()
 	ft_printf("ft_printf output: unsigned long is %lu. char is %c. double is %f.\n", ul, c5, f5);
 	printf("\n");
 
-
+*/
 	//int test
 	printf("   printf output: %d\n", 93);
 	ft_printf("ft_printf output: %d\n", 93);
@@ -50,7 +50,7 @@ int main()
 	ft_printf("ft_printf output: %d\n", -0);
 	printf("\n");
 
-
+/*
 	//double test
 	printf("   printf output: %f\n", 1.61803398);
 	ft_printf("ft_printf output: %f\n", 1.61803398);
@@ -171,7 +171,7 @@ int main()
 	printf("   printf output: %p\n", hupp);
 	ft_printf("ft_printf output: %p\n", hupp);
 	printf("\n");
-	
+*/	
 
 	//h test
 	short sh = 32767;
@@ -221,7 +221,7 @@ int main()
 	ft_printf("ft_printf output: %lX\n", banana);
 	printf("\n");
 
-
+/*
 	//double flags test
 	double bub = 89843.3447658;
 	printf("%+#f\n", bub);
@@ -252,7 +252,7 @@ int main()
 	ft_printf("% f\n", -2.655);
 	printf("\n");
 
-
+*/
 	//field width tests
 	
 	printf("   printf output: %6d\n", 11);
@@ -263,7 +263,7 @@ int main()
 	printf("   printf output: %9ld\n", dude);
 	ft_printf("ft_printf output: %9ld\n", dude);
 	printf("\n");
-
+/*
 	printf("   printf output: %11f\n", 4.34);
 	ft_printf("ft_printf output: %11f\n", 4.34);
 	printf("\n");
@@ -400,7 +400,7 @@ int main()
 	int my1 = ft_printf("hello my name is test\n");
 	printf("real1 is %d\nmy1 is   %d\n", real1, my1);
 	printf("\n");
-
+*/
 	int real2 = printf("test %d\n", 34);
 	int my2 = ft_printf("test %d\n", 34);
 	printf("real2 is %d\nmy2 is   %d\n", real2, my2);
@@ -410,7 +410,7 @@ int main()
 	int my22 = ft_printf("test %d\n", 45498);	
 	printf("real22 is %d\nmy22 is   %d\n", real22, my22);
 	printf("\n");
-
+/*
 	int real3 = printf("test oct %o\n", 90);
 	int my3 = ft_printf("test oct %o\n", 90);
 	printf("real3 is %d\nmy3 is   %d\n", real3, my3);
@@ -460,7 +460,7 @@ int main()
 	int my8 = ft_printf("good point: %p\n", &real72);
 	printf("real8 is %d\nmy8 is   %d\n", real8, my8);
 	printf("\n");
-
+*/
 
 	int real9 = printf("scary one: %06d\n", 11);
 	int my9 = ft_printf("scary one: %06d\n", 11);
@@ -473,7 +473,7 @@ int main()
 	printf("real10 is %d\nmy10 is   %d\n", real10, my10);
 	printf("\n");
 
-
+/*
 	int my11 = ft_printf("this is bin: %b\n", 38);
 	printf("my11 is %d\n", my11);
 	printf("\n");
@@ -549,10 +549,5 @@ int main()
 	printf("real is %d\nmine is %d\n", r9, r10);
 	printf("\n");
 */
-	int r11 = printf("%-5.10o\n", 2500);
-	int r12 = ft_printf("%-5.10o\n", 2500);
-	printf("real is %d\nmine is %d\n", r11, r12);
-	printf("\n");
-
 	return (0);
 }

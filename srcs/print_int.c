@@ -69,6 +69,7 @@ void			print_int(t_pf *pf)
 		return ;
 	}
 	len = numlen(num, 10);
+/*
 	if ((pf->flags[1] == '0') && (pf->precision == -1) && (pf->flags[2] != '-'))
 	{
 		pf->precision = pf->width;
@@ -76,6 +77,7 @@ void			print_int(t_pf *pf)
 			|| (pf->flags[4] == ' '))
 			(pf->precision)--;
 	}
+*/
 	check_flags(pf, num, len);
 	ft_putlong(num);
 	pf->len += numlen(num, 10);
