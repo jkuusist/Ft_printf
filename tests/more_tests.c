@@ -61,7 +61,7 @@ int main()
 	printf("real is %d\nmine is %d\n", r19, r20);
 	printf("\n");
 */
-	
+//first three work now	
 	int r21 = printf("|%-5o|\n", 2500);
 	int r22 = ft_printf("|%-5o|\n", 2500);	
 	printf("real is %d. mine is %d\n\n", r21, r22);
@@ -73,6 +73,7 @@ int main()
 	int r25 = printf("|%-05o|\n", 2500);
 	int r26 = ft_printf("|%-05o|\n", 2500);
 	printf("real is %d. mine is %d\n\n", r25, r26);
+
 
 	int r27 = printf("% d\n", -42);
 	int r28 = ft_printf("% d\n", -42);
