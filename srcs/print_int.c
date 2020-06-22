@@ -43,8 +43,6 @@ static void	handle_zeroes(t_pf *pf)
 
 static void	check_flags(t_pf *pf, long long num, int len, int is_nega)
 {
-//	printf("is_nega is %d\n", is_nega);
-
 	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
 	{
 		if ((pf->flags[3] == '+') && (is_nega == 0))
@@ -62,7 +60,7 @@ static void	check_flags(t_pf *pf, long long num, int len, int is_nega)
 		ft_putchar('+');
 		pf->len++;
 	}
-	else if ((pf->flags[4] == ' ') && (num >= 0))
+	else if ((pf->flags[3] != '+') && (pf->flags[4] == ' ') && (is_nega == 0))
 	{
 		ft_putchar(' ');
 		pf->len++;
@@ -73,33 +71,23 @@ void			print_int(t_pf *pf)
 {
 	long long	num;
 	int		len;
-	int		is_nega;
 
 	num = get_num(pf);
-	is_nega = 0;
 	if ((num == 0) && (pf->precision == 0))
 	{
 		handle_zeroes(pf);
 		return ;
 	}
 	len = numlen(num, 10);
-/*
-	if ((pf->flags[1] == '0') && (pf->precision == -1) && (pf->flags[2] != '-'))
-	{
-		pf->precision = pf->width;
-		if ((num < 0) || (pf->flags[2] == '-') || (pf->flags[3] == '+')
-			|| (pf->flags[4] == ' '))
-			(pf->precision)--;
-	}
-*/
 	if (num < 0)
 	{
+		check_flags(pf, num, len, 1);
 		ft_putchar('-');
 		pf->len++;
 		num *= -1;
-		is_nega = 1;
 	}
-	check_flags(pf, num, len, is_nega);
+	else
+		check_flags(pf, num, len, 0);
 	ft_putlong(num);
 	pf->len += numlen(num, 10);
 	if (pf->flags[2] == '-')
