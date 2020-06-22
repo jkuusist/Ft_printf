@@ -1,6 +1,7 @@
-ll and hh flags may need to be handled somehow
-
-[FAIL] test_precision_p_zero -> printf("%.p, %.0p", 0, 0)
+make makefile compile with the -Wall -Wextra -Werror flags properly
+change test files to the proper names and directory for turn-in
 
 fix norme stuff
 test frigging everything
+
+

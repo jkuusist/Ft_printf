@@ -13,8 +13,6 @@
 #include "../includes/ft_printf.h"
 #include "../Libft/libft.h"
 
-#include <stdio.h>
-
 static long long	get_num(t_pf *pf)
 {
 	long long num;
@@ -25,8 +23,12 @@ static long long	get_num(t_pf *pf)
 		num = (unsigned int)va_arg(pf->args, unsigned int);
 	else if (pf->mod_flag[2] == 'h')
 		num = (short)va_arg(pf->args, int);
+	else if (pf->mod_flag[4] == 'h')
+		num = (signed char)va_arg(pf->args, int);
 	else if (pf->mod_flag[0] == 'l')
 		num = (long)va_arg(pf->args, long);
+	else if (pf->mod_flag[3] == 'l')
+		num = (long long)va_arg(pf->args, long long);
 	else
 		num = (int)va_arg(pf->args, int);
 	return (num);
@@ -77,6 +79,12 @@ void			print_int(t_pf *pf)
 	{
 		handle_zeroes(pf);
 		return ;
+	}
+	if (num < -9223372036854775807)
+	{
+		ft_putstr("-9223372036854775808");
+		pf->len += 20;
+		return ; 
 	}
 	len = numlen(num, 10);
 	if (num < 0)

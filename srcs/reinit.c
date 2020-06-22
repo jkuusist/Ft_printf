@@ -26,7 +26,7 @@ void	reinit(t_pf *pf)
 	}
 	pf->spec_flag = '\0';
 	i = 0;
-	while (i < 3)
+	while (i < 5)
 	{
 		pf->mod_flag[i] = '\0';
 		i++;

@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include "../Libft/libft.h"
+
+#include <stdio.h>
 
 void	handle_flags(t_pf *pf)
 {
@@ -66,24 +69,38 @@ void	handle_precision(t_pf *pf)
 void	handle_modifiers(t_pf *pf)
 {
 	int i;
-	int j;
+	int l_is_found;
+	int h_is_found;
 
 	i = 0;
-	j = 0;
-	while (pf->mod_mask[i])
-	{
-		while (pf->mod_mask[i] == pf->format[pf->i])
+	l_is_found = 0;
+	h_is_found = 0;
+		while (ft_strchr(pf->mod_mask, pf->format[pf->i]))
 		{
-			while ((pf->format[pf->i] == 'l') && pf->i++)
+			if ((pf->format[pf->i] == 'l') && (l_is_found == 0) && pf->i++)
+			{
 				pf->mod_flag[0] = 'l';
+				l_is_found = 1;
+			}
+			else if ((l_is_found == 1) && pf->i++)
+			{
+				pf->mod_flag[0] = '\0';
+				pf->mod_flag[3] = 'l';	
+			}
 			while ((pf->format[pf->i] == 'L') && pf->i++)
 				pf->mod_flag[1] = 'L';
-			while ((pf->format[pf->i] == 'h') && pf->i++)
+			if ((pf->format[pf->i] == 'h') && (h_is_found == 0) && pf->i++)
+			{
 				pf->mod_flag[2] = 'h';
-			j++;
+				h_is_found = 1;
+			}
+			else if ((h_is_found == 1) && pf->i++)
+			{
+				pf->mod_flag[2] = '\0';
+				pf->mod_flag[4] = 'h';
+			}
+						
 		}
-		i++;
-	}
 }
 
 void	handle_specifier(t_pf *pf)

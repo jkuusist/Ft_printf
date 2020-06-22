@@ -17,7 +17,7 @@ typedef struct	s_pf
 	char		spec_flag;
 	char		*flag_mask;
 	char		*mod_mask;
-	char		mod_flag[3];
+	char		mod_flag[5];
 }		t_pf;
 
 int     ft_printf(const char *format, ...);
