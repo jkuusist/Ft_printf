@@ -45,7 +45,10 @@ static void	handle_zeroes(t_pf *pf)
 
 static void	check_flags(t_pf *pf, long long num, int len, int is_nega)
 {
-	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
+	int to_fill;
+
+	to_fill = ((pf->precision > len) ? (pf->precision - len) : (pf->width - len));
+	if (((pf->flags[1] == '0') && (pf->flags[2] != '-')) || pf->precision > len)
 	{
 		if ((pf->flags[3] == '+') && (is_nega == 0))
 		{
@@ -53,10 +56,10 @@ static void	check_flags(t_pf *pf, long long num, int len, int is_nega)
 			pf->len++;
 			len++;
 		}
-		fill_width(pf, '0', (pf->width - len), 1);
+		fill_width(pf, '0', to_fill/*(pf->width - len)*/, 1);
 	}
 	else if (pf->flags[2] != '-')
-		fill_width(pf, ' ', (pf->width - len), 1);
+		fill_width(pf, ' ', to_fill/*(pf->width - len)*/, 1);
 	if ((pf->flags[3] == '+') && (is_nega == 0) && (pf->flags[1] != '0'))
 	{
 		ft_putchar('+');
