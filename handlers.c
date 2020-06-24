@@ -53,6 +53,7 @@ void	handle_width(t_pf *pf)
 
 void	handle_precision(t_pf *pf)
 {
+
 	while (pf->format[pf->i] == '.')
 	{
 		(pf->i)++;

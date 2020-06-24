@@ -32,7 +32,7 @@ LIBFTOBJS = $(LIBFTSRCS:.c=.o)
 
 CC = gcc
 
-FLAGS = -c -Wall -Wextra -Werror
+FLAGS = -c -Wall -Wextra -Werror -g
 
 all: $(NAME)
 

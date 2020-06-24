@@ -3,7 +3,7 @@
 
 int main()
 {
-/*
+
 	int r1 = printf("%d\n", -4242);
 	int r2 = ft_printf("%d\n", -4242);
 	printf("real is %d\nmine is %d\n", r1, r2);
@@ -44,8 +44,8 @@ int main()
 	int r142 = ft_printf("|%-12.5o|\n", 2500);
 	printf("real is %d\nmine is %d\n", r132, r142);
 	printf("\n");
-*/
-/*
+
+
 	int r15 = printf("%0+5d\n", 42);
 	int r16 = ft_printf("%0+5d\n", 42);
 	printf("real is %d\nmine is %d\n", r15, r16);
@@ -66,8 +66,8 @@ int main()
 	int r20 = ft_printf("%0+5d\n", -42);
 	printf("real is %d\nmine is %d\n", r19, r20);
 	printf("\n");
-*/
-/*
+
+
 	int r21 = printf("|%-5o|\n", 2500);
 	int r22 = ft_printf("|%-5o|\n", 2500);	
 	printf("real is %d. mine is %d\n\n", r21, r22);
@@ -124,27 +124,28 @@ int main()
 	int r47 = printf("%lld\n", -9223372036854775808);
 	int r48 = ft_printf("%lld\n", -9223372036854775808);
 	printf("real is %d. mine is %d\n\n", r47, r48);
-*/
 
-	int r49 = printf("%4.15d\n", 42);
-	int r50 = ft_printf("%4.15d\n", 42);
+
+	int r49 = printf("|%4.15d|\n", 42);
+	int r50 = ft_printf("|%4.15d|\n", 42);
 	printf("real is %d. mine is %d\n\n", r49, r50);
 
-	int r51 = printf("%.10d\n", 4242);
-	int r52 = ft_printf("%.10d\n", 4242);
+	int r51 = printf("|%.10d|\n", 4242);
+	int r52 = ft_printf("|%.10d|\n", 4242);
 	printf("real is %d. mine is %d\n\n", r51, r52);
 
-	int r53 = printf("%10.5d\n", 4242);
-	int r54 = ft_printf("%10.5d\n", 4242);
+	int r53 = printf("|%10.5d|\n", 4242);
+	int r54 = ft_printf("|%10.5d|\n", 4242);
 	printf("real is %d. mine is %d\n\n", r53, r54);
 
-	int r55 = printf("%-10.5d\n", 4242);
-	int r56 = ft_printf("%-10.5d\n", 4242);
+	int r55 = printf("|%-10.5d|\n", 4242);
+	int r56 = ft_printf("|%-10.5d|\n", 4242);
 	printf("real is %d. mine is %d\n\n", r55, r56);
 
-	int r57 = printf("% 10.5d\n", 4242);
-	int r58 = ft_printf("% 10.5d\n", 4242);
+	int r57 = printf("|% 10.5d|\n", 4242);
+	int r58 = ft_printf("|% 10.5d|\n", 4242);
 	printf("real is %d. mine is %d\n\n", r57, r58);
+
 /*
 	int r59 = printf("%+10.5d\n", 4242);
 	int r60 = ft_printf("%+10.5d\n", 4242);
