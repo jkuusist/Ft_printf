@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reinit.c                                           :+:      :+:    :+:   */
+/*   print_percent.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,25 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "includes/ft_printf.h"
+#include "Libft/libft.h"
 
-void	reinit(t_pf *pf)
+void	print_percent(t_pf *pf)
 {
-	int i;
-
-	i = 0;
-	pf->precision = -1;
-	pf->width = 0;
-	while (i < 6)
+/*
+	if ((pf->flags[1] == '0') && (pf->precision <= 0) && (pf->flags[2] != '-'))
 	{
-		pf->flags[i] = '\0';
-		i++;
+		pf->precision = pf->width;
+		pf->width = 0;
 	}
-	pf->spec_flag = '\0';
-	i = 0;
-	while (i < 5)
-	{
-		pf->mod_flag[i] = '\0';
-		i++;
-	}
+	if (pf->flags[2] != '-')
+		fill_width(pf, ' ', (pf->width - 1), 1);
+	if (pf->flags[1] == 0)
+		fill_width(pf, '0', (pf->precision - 1), 1);
+*/
+	ft_putchar('%');
+/*
+	if (pf->flags[2] == '-')
+		fill_width(pf, ' ', (pf->width - 1), 1);
+*/
+	pf->len++;
 }

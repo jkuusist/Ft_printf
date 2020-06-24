@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_ptr.c                                        :+:      :+:    :+:   */
+/*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,33 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include "../Libft/libft.h"
+#include "includes/ft_printf.h"
+#include "Libft/libft.h"
 #include <stdlib.h>
 
-void	print_ptr(t_pf *pf)
+void	print_str(t_pf *pf)
 {
-	char		*s;
-	unsigned long	num;
-	int		len;
+	char	*s;
+	int	len;
+	int	is_malloced;
 
-	num = (unsigned long)va_arg(pf->args, unsigned long);
-	if (!(s = ft_itoa_base(num, 16)))
-		exit(-1);
-	len = ft_strlen(s) + 2;
+	s = va_arg(pf->args, char*);
+	is_malloced = 1;
+	if (s && (pf->precision > -1))
+		s = ft_strndup(s, pf->precision);
+	else if (!s && (pf->precision > -1))
+		s = ft_strndup("(null)", pf->precision);
+	else if (!s && (pf->precision == -1))
+		s = ft_strdup("(null)");
+	else
+		is_malloced = 0;
+	len = ft_strlen(s);
+	pf->len += len;
 	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
 		fill_width(pf, '0', (pf->width - len), 1);
 	else if (pf->flags[2] != '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
-	if (pf->flags[4] == ' ')
-		ft_putchar(' ');
-	if (num && (pf->flags[0] == '#'))
-		(pf->spec_flag == 'x') ? (ft_putstr("0x")) : (ft_putstr("0X"));
-	ft_putstr("0x");
-	ft_putstr(ft_strlower(s));
-	pf->len += (ft_strlen(s) + 2);
+	ft_putstr(s);
 	if (pf->flags[2] == '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
-	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;
-	free(s);
+	if (is_malloced)
+		free(s);
 }

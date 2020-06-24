@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_double.c                                     :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,33 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include "../Libft/libft.h"
-#include <stdlib.h>
+#include "includes/ft_printf.h"
+#include "Libft/libft.h"
+#include <ctype.h>
 
-void	print_double(t_pf *pf)
+void	print_char(t_pf *pf)
 {
-	long double	dub;
-	char		*s;
-	int		len;
+	char c;
 
-	if (!(s = (char*)malloc(sizeof(char) * 25)))
-		exit(-1);
-	if (pf->mod_flag[1] == 'L')
-		dub = (long double)va_arg(pf->args, long double);
+	if ((pf->mod_flag[0] == 'l') || (pf->spec_flag == 'C'))
+		c = va_arg(pf->args, int);
 	else
-		dub = (double)va_arg(pf->args, double);
-	if (pf->precision == -1)
-		pf->precision = 6;
-	double_to_str(dub, s, pf->precision, pf->flags);
-	len = ft_strlen(s);
+		c = va_arg(pf->args, int);
 	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
-		fill_width(pf, '0', (pf->width - len), 1);
+		fill_width(pf, '0', (pf->width - 1), 1);
 	else if (pf->flags[2] != '-')
-		fill_width(pf, ' ', (pf->width - len), 1);
-	ft_putstr(s);
-	pf->len += ft_strlen(s);
+		fill_width(pf, ' ', (pf->width - 1), 1);
+	ft_putchar(c);
+	pf->len++;
 	if (pf->flags[2] == '-')
-		fill_width(pf, ' ', (pf->width - len), 1);
-	free(s);
+		fill_width(pf, ' ', (pf->width - 1), 1);
 }

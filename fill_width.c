@@ -1,45 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   fill_width.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/28 16:21:34 by jkuusist          #+#    #+#             */
+/*   Created: 2020/06/01 12:00:00 by jkuusist          #+#    #+#             */
 /*   Updated: 2020/06/10 12:26:30 by jkuusist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include "../Libft/libft.h"
-#include <stdarg.h>
+#include "includes/ft_printf.h"
+#include "Libft/libft.h"
 #include <stdlib.h>
 
-int	ft_printf(const char *format, ...)
-{
-	t_pf	*pf;
-	int	ret;
+#include <stdio.h>
 
-	if (!(pf = (t_pf*)malloc(sizeof(t_pf))))
-		return (-1);
-	pf->format = format;
-	initializer(pf);
-	if (format)
+void	fill_width(t_pf *pf, char c, int len, int is_update)
+{
+	char *s;
+
+	if (len > 0)
 	{
-		if (ft_strchr(format, '%'))
-		{
-			va_start(pf->args, format);
-			pf->len = handle_specs(pf);
-			va_end(pf->args);
-		}
-		else
-		{
-			ft_putstr(format);
-			free(pf);
-			return (ft_strlen(format));
-		}
+		if (is_update)
+			pf->len += len;
+		if (!(s = ft_strnew(len)))
+			exit(-1);
+		ft_memset(s, c, len);
+
+//	printf("\n|%s|\n", s);
+
+		ft_putstr(s);
+		free(s);
 	}
-	ret = pf->len;
-	free(pf);
-	return (ret);
 }

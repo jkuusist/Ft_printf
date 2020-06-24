@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_format_str.c                                 :+:      :+:    :+:   */
+/*   reinit.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,18 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include "../Libft/libft.h"
-#include <stdlib.h>
+#include "includes/ft_printf.h"
 
-void	print_format_str(t_pf *pf, int count)
+void	reinit(t_pf *pf)
 {
-	char *str;
+	int i;
 
-	str = NULL;
-	if (count <= 0)
-		return ;
-	str = ft_strndup(pf->format + (pf->i - count), count);
-	ft_putstr(str);
-	free(str);
+	i = 0;
+	pf->precision = -1;
+	pf->width = 0;
+	while (i < 6)
+	{
+		pf->flags[i] = '\0';
+		i++;
+	}
+	pf->spec_flag = '\0';
+	i = 0;
+	while (i < 5)
+	{
+		pf->mod_flag[i] = '\0';
+		i++;
+	}
 }

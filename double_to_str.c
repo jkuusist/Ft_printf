@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
-#include "../includes/ft_printf.h"
+#include "Libft/libft.h"
+#include "includes/ft_printf.h"
 
 static int	int_to_str(long num, char *str, int precision, int is_negative)
 {

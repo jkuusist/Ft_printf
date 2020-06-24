@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   print_format_str.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,35 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include "../Libft/libft.h"
+#include "includes/ft_printf.h"
+#include "Libft/libft.h"
 #include <stdlib.h>
 
-void	print_str(t_pf *pf)
+void	print_format_str(t_pf *pf, int count)
 {
-	char	*s;
-	int	len;
-	int	is_malloced;
+	char *str;
 
-	s = va_arg(pf->args, char*);
-	is_malloced = 1;
-	if (s && (pf->precision > -1))
-		s = ft_strndup(s, pf->precision);
-	else if (!s && (pf->precision > -1))
-		s = ft_strndup("(null)", pf->precision);
-	else if (!s && (pf->precision == -1))
-		s = ft_strdup("(null)");
-	else
-		is_malloced = 0;
-	len = ft_strlen(s);
-	pf->len += len;
-	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
-		fill_width(pf, '0', (pf->width - len), 1);
-	else if (pf->flags[2] != '-')
-		fill_width(pf, ' ', (pf->width - len), 1);
-	ft_putstr(s);
-	if (pf->flags[2] == '-')
-		fill_width(pf, ' ', (pf->width - len), 1);
-	if (is_malloced)
-		free(s);
+	str = NULL;
+	if (count <= 0)
+		return ;
+	str = ft_strndup(pf->format + (pf->i - count), count);
+	ft_putstr(str);
+	free(str);
 }

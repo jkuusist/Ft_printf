@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_char.c                                       :+:      :+:    :+:   */
+/*   print_ptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkuusist <jkuusist@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include "../Libft/libft.h"
-#include <ctype.h>
+#include "includes/ft_printf.h"
+#include "Libft/libft.h"
+#include <stdlib.h>
 
-void	print_char(t_pf *pf)
+void	print_ptr(t_pf *pf)
 {
-	char c;
+	char		*s;
+	unsigned long	num;
+	int		len;
 
-	if ((pf->mod_flag[0] == 'l') || (pf->spec_flag == 'C'))
-		c = va_arg(pf->args, int);
-	else
-		c = va_arg(pf->args, int);
+	num = (unsigned long)va_arg(pf->args, unsigned long);
+	if (!(s = ft_itoa_base(num, 16)))
+		exit(-1);
+	len = ft_strlen(s) + 2;
 	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
-		fill_width(pf, '0', (pf->width - 1), 1);
+		fill_width(pf, '0', (pf->width - len), 1);
 	else if (pf->flags[2] != '-')
-		fill_width(pf, ' ', (pf->width - 1), 1);
-	ft_putchar(c);
-	pf->len++;
+		fill_width(pf, ' ', (pf->width - len), 1);
+	if (pf->flags[4] == ' ')
+		ft_putchar(' ');
+	if (num && (pf->flags[0] == '#'))
+		(pf->spec_flag == 'x') ? (ft_putstr("0x")) : (ft_putstr("0X"));
+	ft_putstr("0x");
+	ft_putstr(ft_strlower(s));
+	pf->len += (ft_strlen(s) + 2);
 	if (pf->flags[2] == '-')
-		fill_width(pf, ' ', (pf->width - 1), 1);
+		fill_width(pf, ' ', (pf->width - len), 1);
+	pf->len += (pf->precision <= pf->width) ? pf->width : pf->precision;
+	free(s);
 }

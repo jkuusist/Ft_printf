@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include "../Libft/libft.h"
+#include "includes/ft_printf.h"
+#include "Libft/libft.h"
 
 void	print_format(t_pf *pf)
 {

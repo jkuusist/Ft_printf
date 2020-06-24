@@ -145,7 +145,7 @@ int main()
 	int r57 = printf("% 10.5d\n", 4242);
 	int r58 = ft_printf("% 10.5d\n", 4242);
 	printf("real is %d. mine is %d\n\n", r57, r58);
-
+/*
 	int r59 = printf("%+10.5d\n", 4242);
 	int r60 = ft_printf("%+10.5d\n", 4242);
 	printf("real is %d. mine is %d\n\n", r59, r60);
@@ -189,7 +189,7 @@ int main()
 	int r79 = printf("%.5u\n", 42);
 	int r80 = ft_printf("%.5u\n", 42);
 	printf("real is %d. mine is %d\n\n", r79, r80);
-
+*/
 
 	return 0;
 }

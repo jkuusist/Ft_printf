@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include "../Libft/libft.h"
+#include "includes/ft_printf.h"
+#include "Libft/libft.h"
 
 #include <stdio.h>
 
@@ -68,11 +68,11 @@ void	handle_precision(t_pf *pf)
 
 void	handle_modifiers(t_pf *pf)
 {
-	int i;
+//	int i;
 	int l_is_found;
 	int h_is_found;
 
-	i = 0;
+//	i = 0;
 	l_is_found = 0;
 	h_is_found = 0;
 		while (ft_strchr(pf->mod_mask, pf->format[pf->i]))
