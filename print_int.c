@@ -72,7 +72,7 @@ static void	check_flags(t_pf *pf, int len, int is_nega)
 		ft_putchar('-');
 	while ((pf->flags[2] != '-') && (to_fill < width))
 	{
-		(pf->flags[1] == '0') ? ft_putchar('0') : ft_putchar(' ');
+		((pf->flags[1] == '0') && (pf->precision == -1)) ? ft_putchar('0') : ft_putchar(' ');
 		pf->len++;
 		width--;
 	}

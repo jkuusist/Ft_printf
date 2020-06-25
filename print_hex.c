@@ -34,7 +34,7 @@ static void			check_flags(t_pf *pf, unsigned long long num, int len)
 		(pf->spec_flag == 'x') ? (ft_putstr("0x")) : (ft_putstr("0X"));
 		pf->len += 2;
 	}
-	if ((pf->flags[1] == '0') && (pf->flags[2] != '-'))
+	if ((pf->flags[1] == '0') && (pf->flags[2] != '-') && (pf->precision == -1))
 		fill_width(pf, '0', (pf->width - len), 1);
 	else if (pf->flags[2] != '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
