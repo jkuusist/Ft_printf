@@ -22,7 +22,14 @@ static long long	get_num(t_pf *pf)
 	if (pf->spec_flag == 'D')
 		num = (long)va_arg(pf->args, long);
 	else if (pf->spec_flag == 'u')
-		num = (unsigned int)va_arg(pf->args, unsigned int);
+	{
+		if (pf->mod_flag[0] == 'l')
+			num = (unsigned long)va_arg(pf->args, unsigned long);
+		else if (pf->mod_flag[3] == 'l')
+			num = (unsigned long long)va_arg(pf->args, unsigned long long);
+		else
+			num = (unsigned int)va_arg(pf->args, unsigned int);
+	}
 	else if (pf->mod_flag[2] == 'h')
 		num = (short)va_arg(pf->args, int);
 	else if (pf->mod_flag[4] == 'h')
@@ -38,9 +45,9 @@ static long long	get_num(t_pf *pf)
 
 static void	handle_zeroes(t_pf *pf)
 {
-	if (pf->flags[3] == '+')
+	if ((pf->flags[3] == '+') && (pf->spec_flag != 'u'))
 		ft_putchar('+');
-	if (pf->flags[4] == ' ')
+	if ((pf->flags[4] == ' ') && (pf->spec_flag != 'u'))
 		ft_putchar(' ');
 	fill_width(pf, ' ', pf->width, 1);
 }
@@ -54,7 +61,7 @@ static void	check_flags(t_pf *pf, int len, int is_nega)
 	preci = pf->precision;
 	width = pf->width;
 	to_fill = (preci > len) ? preci : len;
-	if ((pf->flags[3] == '+') && (is_nega == 0))
+	if ((pf->flags[3] == '+') && (is_nega == 0) && (pf->spec_flag != 'u'))
 	{
 		ft_putchar('+');
 		pf->len++;
@@ -69,7 +76,7 @@ static void	check_flags(t_pf *pf, int len, int is_nega)
 		pf->len++;
 		width--;
 	}
-	if ((pf->width == 0) && (pf->flags[3] != '+') && (pf->flags[4] == ' ') && (is_nega == 0))
+	if ((pf->width == 0) && (pf->flags[3] != '+') && (pf->flags[4] == ' ') && (is_nega == 0) && (pf->spec_flag != 'u'))
 	{
 		ft_putchar(' ');
 		pf->len++;
