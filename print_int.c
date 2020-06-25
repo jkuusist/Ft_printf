@@ -61,19 +61,15 @@ static void	check_flags(t_pf *pf, int len, int is_nega)
 	preci = pf->precision;
 	width = pf->width;
 	to_fill = (preci > len) ? preci : len;
-
-/*	if ((pf->flags[3] == '+') && (is_nega == 0) && (pf->spec_flag != 'u'))
-	{
-		ft_putchar('+');
-		pf->len++;
-		len++;
-		to_fill++;
-	}
-*/
 	if (is_nega && (pf->flags[1] == '0'))
 		ft_putchar('-');
 	if ((pf->flags[3] == '+') && (is_nega == 0) && (pf->spec_flag != 'u'))
 		to_fill++;
+	if ((pf->flags[1] == '0') && (pf->flags[3] == '+') && (is_nega == 0) && (pf->spec_flag != 'u'))
+	{
+		ft_putchar('+');
+		pf->len++;
+	}
 	while ((pf->flags[2] != '-') && (to_fill < width))
 	{
 		((pf->flags[1] == '0') && (pf->precision == -1)) ? ft_putchar('0') : ft_putchar(' ');
@@ -91,13 +87,15 @@ static void	check_flags(t_pf *pf, int len, int is_nega)
 		ft_putchar('-');
 		len--;
 	}
-	if ((pf->flags[3] == '+') && (is_nega == 0) && (pf->spec_flag != 'u'))
+	if ((pf->flags[1] != '0') && (pf->flags[3] == '+') && (is_nega == 0) && (pf->spec_flag != 'u'))
 	{
+
 		ft_putchar('+');
 		pf->len++;
 	}
 	while (preci > len)
 	{
+
 		ft_putchar('0');
 		pf->len++;
 		preci--;
