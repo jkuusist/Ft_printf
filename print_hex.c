@@ -22,6 +22,8 @@ static unsigned long long	get_num(t_pf *pf)
 		num = (unsigned short)va_arg(pf->args, unsigned int);
 	else if (pf->mod_flag[0] == 'l')
 		num = (unsigned long)va_arg(pf->args, unsigned long);
+	else if (pf->mod_flag[3] == 'l')
+		num = (unsigned long long)va_arg(pf->args, unsigned long long);
 	else
 		num = (unsigned int)va_arg(pf->args, unsigned int);
 	return (num);

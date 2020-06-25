@@ -38,7 +38,9 @@ static void			check_flags(t_pf *pf, unsigned long long num, int len)
 	else if (pf->precision > len)
 		fill_width(pf, '0', (pf->precision - len), 1);
 	else if (pf->flags[2] != '-')
+	{
 		fill_width(pf, ' ', (pf->width - len), 1);
+	}
 	if (pf->flags[4] == ' ')
 		ft_putchar(' ');
 	if (num && (pf->flags[0] == '#'))
@@ -66,15 +68,12 @@ void				print_oct(t_pf *pf)
 	check_flags(pf, num, len);
 	ft_putstr(s);
 	pf->len += ft_strlen(s);
-	if ((pf->flags[2] == '-') && (pf->precision != -1) && (pf->precision <= pf->width))
-{
+	
+//	printf("\nwidth is %ld. len is %d.\n", pf->width, len);
+
+	if ((pf->flags[2] == '-') && (pf->precision != -1) && (pf->precision >= pf->width))
 		fill_width(pf, ' ', (pf->width - pf->precision), 1);
-//		printf("\nin if\n");
-}
 	else if (pf->flags[2] == '-')
-{
 		fill_width(pf, ' ', (pf->width - len), 1);
-//		printf("\nin else if\n");
-}
 	free(s);
 }

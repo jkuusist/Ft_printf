@@ -3,7 +3,7 @@
 
 int main()
 {
-
+/*
 	int r1 = printf("%d\n", -4242);
 	int r2 = ft_printf("%d\n", -4242);
 	printf("real is %d\nmine is %d\n", r1, r2);
@@ -66,7 +66,7 @@ int main()
 	int r20 = ft_printf("%0+5d\n", -42);
 	printf("real is %d\nmine is %d\n", r19, r20);
 	printf("\n");
-
+*/
 
 	int r21 = printf("|%-5o|\n", 2500);
 	int r22 = ft_printf("|%-5o|\n", 2500);	
@@ -80,7 +80,7 @@ int main()
 	int r26 = ft_printf("|%-05o|\n", 2500);
 	printf("real is %d. mine is %d\n\n", r25, r26);
 
-
+/*
 	int r27 = printf("% d\n", -42);
 	int r28 = ft_printf("% d\n", -42);
 	printf("real is %d. mine is %d\n\n", r27, r28);
@@ -192,6 +192,39 @@ int main()
 	int r80 = ft_printf("%.5u\n", 42);
 	printf("real is %d. mine is %d\n\n", r79, r80);
 
+	int r81 = printf("%llX\n", 4294967296);
+	int r82 = ft_printf("%llX\n", 4294967296);
+	printf("real is %d. mine is %d\n\n", r81, r82);
 
+	int r83 = printf("%llx\n", 9223372036854775807);
+	int r84 = ft_printf("%llx\n", 9223372036854775807);
+	printf("real is %d. mine is %d\n\n", r83, r84);
+
+
+	int r87 = printf("%#llx\n", 9223372036854775807);
+	int r88 = ft_printf("%#llx\n", 9223372036854775807);
+	printf("real is %d. mine is %d\n\n", r87, r88);
+*/
+
+	int r89 = printf("|%-5.10o|\n", 2551);
+	int r90 = ft_printf("|%-5.10o|\n", 2551);
+	printf("real is %d. mine is %d\n\n", r89, r90);
+
+	int r892 = printf("|%5.10o|\n", 2551);
+	int r902 = ft_printf("|%5.10o|\n", 2551);
+	printf("real is %d. mine is %d\n\n", r892, r902);
+	
+	int r91 = printf("%0+5d\n", 25);
+	int r92 = ft_printf("%0+5d\n", 25);
+	printf("real is %d. mine is %d\n\n", r91, r92);
+
+	int r93 = printf("%03.2d\n", -1);
+	int r94 = ft_printf("%03.2d\n", -1);
+	printf("real is %d. mine is %d\n\n", r93, r94);
+/*
+	int r95 = printf("%lu\n", -15);
+	int r96 = ft_printf("%lu\n", -15);
+	printf("real is %d. mine is %d\n\n", r95, r96);
+*/
 	return 0;
 }
