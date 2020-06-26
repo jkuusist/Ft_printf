@@ -3,7 +3,7 @@
 
 int main()
 {
-
+/*
 	int r1 = printf("%d\n", -4242);
 	int r2 = ft_printf("%d\n", -4242);
 	printf("real is %d\nmine is %d\n", r1, r2);
@@ -237,6 +237,19 @@ int main()
 	int r95 = printf("%lu\n", -15);
 	int r96 = ft_printf("%lu\n", -15);
 	printf("real is %d. mine is %d\n\n", r95, r96);
+*/
+	int r97 = printf("|%-5d|\n", -67);
+	int r98 = ft_printf("|%-5d|\n", -67);
+	printf("real is %d. mine is %d\n\n", r97, r98);
+	
+	int r99 = printf("|%-05d|\n", -27);
+	int r100 = ft_printf("|%-05d|\n", -27);
+	printf("real is %d. mine is %d\n\n", r99, r100);
+
+	int r101 = printf("%lu\n", -42);
+	int r102 = ft_printf("%lu\n", -42);
+	printf("real is %d. mine is %d\n\n", r101, r102);
+
 
 	return 0;
 }

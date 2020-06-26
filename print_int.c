@@ -111,8 +111,10 @@ void			print_int(t_pf *pf)
 {
 	long long	num;
 	int		len;
+	int		is_nega;
 
 	num = get_num(pf);
+	is_nega = 0;
 	if ((num == 0) && (pf->precision == 0))
 	{
 		handle_zeroes(pf);
@@ -127,20 +129,21 @@ void			print_int(t_pf *pf)
 	len = numlen(num, 10);
 	if (num < 0)
 	{
+		is_nega = 1;
 		len--;
-		check_flags(pf, len, 1);
+		check_flags(pf, len, is_nega);
 		pf->len++;
 		num *= -1;
 	}
 	else
-		check_flags(pf, len, 0);
+		check_flags(pf, len, is_nega);
 	ft_putlong(num);
 	pf->len += numlen(num, 10);
 	if (pf->precision > len)
 		len = pf->precision;
 	if (pf->flags[2] == '-')
 	{
-		if (pf->flags[3] == '+')
+		if ((pf->flags[3] == '+') || is_nega)
 			len++;
 		fill_width(pf, ' ', (pf->width - len), 1);
 	}

@@ -1,7 +1,5 @@
-make makefile compile with the -Wall -Wextra -Werror flags properly
-change test files to the proper names and directory for turn-in
+CHECK MEMORY LEAKS
+FIX NORME
+TEST FRIGGING EVERYTHING
 
-fix norme stuff
-test frigging everything
-
-
+CHANGE TEST FILES TO THE PROPER DIR AND NAMES (CHECK SLACK)
