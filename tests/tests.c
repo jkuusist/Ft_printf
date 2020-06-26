@@ -7,7 +7,7 @@
 
 int main()
 {
-/*
+
 	//just a string test
 	printf("   printf output: this is a test\n");	
 	ft_printf("ft_printf output: this is a test\n");
@@ -117,7 +117,7 @@ int main()
 	printf("   printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	ft_printf("ft_printf output: %s\n", "rgs3859230#$^&4ts	24505y6iepgdjkfv.s");
 	printf("\n");
-*/
+
 
 	//octal test
 	//FOR SOME REASON, CAPITAL O SPECIFIER DOESN'T WORK ON THE OFFICIAL SCHOOL LINUX VM
@@ -137,7 +137,7 @@ int main()
 //	ft_printf("ft_printf output: %#O\n", 6641);
 //	printf("\n");
 
-/*
+
 	//hex test
 	printf("   printf output: %x\n", 147050);
 	ft_printf("ft_printf output: %x\n", 147050);
@@ -280,12 +280,12 @@ int main()
 	printf("   printf output: %6s\n", hi);
 	ft_printf("ft_printf output: %6s\n", hi);
 	printf("\n");
-*/
+
 	printf("   printf output: %#7o\n", 983);
 	ft_printf("ft_printf output: %#7o\n", 983);
 	printf("\n");
 
-/*
+
 	printf("   printf output: %#6x\n", 54743);
 	ft_printf("ft_printf output: %#6x\n", 54743);
 	printf("\n");
@@ -384,11 +384,11 @@ int main()
 	printf("%012ftest\n", 4.5465);
 	ft_printf("%012ftest\n", 4.5465);
 	printf("\n");
-*/
+
 	printf("%04otest\n", 40);
 	ft_printf("%04otest\n", 40);
 	printf("\n");
-/*
+
 	printf("%04Xtest\n", 111);
 	ft_printf("%04Xtest\n", 111);
 	printf("\n");
@@ -411,12 +411,12 @@ int main()
 	printf("real22 is %d\nmy22 is   %d\n", real22, my22);
 	printf("\n");
 
-*/
+
 	int real3 = printf("test oct %o\n", 90);
 	int my3 = ft_printf("test oct %o\n", 90);
 	printf("real3 is %d\nmy3 is   %d\n", real3, my3);
 	printf("\n");
-/*
+
 	int real32 = printf("test hex %x\n", 91);
 	int my32 = ft_printf("test hex %x\n", 91);
 	printf("real32 is %d\nmy32 is   %d\n", real32, my32);
@@ -548,6 +548,6 @@ int main()
 	int r10 = ft_printf("ft_printf output: %#6o\n", 42);
 	printf("real is %d\nmine is %d\n", r9, r10);
 	printf("\n");
-*/
+
 	return (0);
 }
