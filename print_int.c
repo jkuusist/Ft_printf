@@ -80,13 +80,9 @@ static void	check_flags(t_pf *pf, int len, int is_nega)
 		width--;
 		len++;
 	}
-	while ((pf->flags[2] != '-') && (to_fill < width))
-	{
-		((pf->flags[1] == '0') && (pf->precision == -1)) ? ft_putchar('0')
-			: ft_putchar(' ');
-		pf->len++;
-		width--;
-	}
+	if (pf->flags[2] != '-')
+		((pf->flags[1] == '0') && (pf->precision == -1)) ? fill_width(pf, '0', width - to_fill, 1)
+	: fill_width(pf, ' ', width - to_fill, 1);
 	if ((pf->width == 0) && (pf->flags[3] != '+') && (pf->flags[4] == ' ')
 		&& (is_nega == 0) && (pf->spec_flag != 'u'))
 	{
