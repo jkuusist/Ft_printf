@@ -27,9 +27,6 @@ void	fill_width(t_pf *pf, char c, int len, int is_update)
 		if (!(s = ft_strnew(len)))
 			exit(-1);
 		ft_memset(s, c, len);
-
-//	printf("\n|%s|\n", s);
-
 		ft_putstr(s);
 		free(s);
 	}
