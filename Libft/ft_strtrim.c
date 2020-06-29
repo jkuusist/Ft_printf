@@ -25,14 +25,12 @@ char			*ft_strtrim(char const *s)
 {
 	int		start;
 	int		end;
-//	int		i;
 	char	*res;
 
 	if (!s)
 		return (0);
 	start = 0;
 	end = ft_strlen(s);
-//	i = 0;
 	while (is_whitespace(s[start]))
 		start++;
 	while (s[end] == '\0')
