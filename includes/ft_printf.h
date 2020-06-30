@@ -46,5 +46,6 @@ void	print_bin(t_pf *pf);
 void	print_percent(t_pf *pf);
 char    *ft_strndup(const char *s1, unsigned int n);
 void	ft_putchar_pf(char c, t_pf *pf, int is_update);
+void	print_negative_int(t_pf *pf, long long num);
 
 #endif

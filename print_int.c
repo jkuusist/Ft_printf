@@ -13,8 +13,6 @@
 #include "includes/ft_printf.h"
 #include "Libft/libft.h"
 
-#include <stdio.h>
-
 static long long	get_num(t_pf *pf)
 {
 	long long num;
@@ -52,7 +50,7 @@ static void	handle_zeroes(t_pf *pf)
 	fill_width(pf, ' ', pf->width, 1);
 }
 
-static void	check_flags(t_pf *pf, int len, int is_nega)
+static void	check_flags(t_pf *pf, int len)
 {
 	int preci;
 	int width;
@@ -61,78 +59,49 @@ static void	check_flags(t_pf *pf, int len, int is_nega)
 	preci = pf->precision;
 	width = pf->width;
 	to_fill = (preci > len) ? preci : len;
-	if (is_nega && (pf->flags[1] == '0'))
-	{
-		ft_putchar('-');
+	if ((pf->flags[3] == '+') && (pf->spec_flag != 'u'))
 		to_fill++;
-	}
-	if ((pf->flags[3] == '+') && (is_nega == 0) && (pf->spec_flag != 'u'))
-		to_fill++;
-	if ((pf->flags[1] == '0') && (pf->flags[3] == '+') && (is_nega == 0)
-		&& (pf->spec_flag != 'u'))
+	if ((pf->flags[1] == '0') && (pf->flags[3] == '+') && (pf->spec_flag != 'u'))
 		ft_putchar_pf('+', pf, 1);
-	if (is_nega && (pf->flags[1] != '0') && (pf->flags[3] != '+')
-		&& (pf->flags[4] != ' '))
-	{
-		width--;
-		len++;
-	}
 	if (pf->flags[2] != '-')
 		((pf->flags[1] == '0') && (pf->precision == -1)) ? fill_width(pf, '0', width - to_fill, 1)
 	: fill_width(pf, ' ', width - to_fill, 1);
 	if ((pf->width == 0) && (pf->flags[3] != '+') && (pf->flags[4] == ' ')
-		&& (is_nega == 0) && (pf->spec_flag != 'u'))
+		 && (pf->spec_flag != 'u'))
 		ft_putchar_pf(' ', pf, 1);
-	if (is_nega && (pf->flags[1] != '0'))
-	{
-		ft_putchar('-');
-		len--;
-	}
-	if ((pf->flags[1] != '0') && (pf->flags[3] == '+') && (is_nega == 0)
+	if ((pf->flags[1] != '0') && (pf->flags[3] == '+')
 		&& (pf->spec_flag != 'u'))
 		ft_putchar_pf('+', pf, 1);
 	if (preci > len)
 		fill_width(pf, '0', preci - len, 1);
 }
 
-void			print_int(t_pf *pf)
+void	print_int(t_pf *pf)
 {
 	long long	num;
 	int		len;
-	int		is_nega;
 
 	num = get_num(pf);
-	is_nega = 0;
-	if ((num == 0) && (pf->precision == 0))
-	{
-		handle_zeroes(pf);
-		return ;
-	}
-	if (num < -9223372036854775807)
-	{
-		ft_putstr("-9223372036854775808");
-		pf->len += 20;
-		return ;
-	}
-	len = numlen(num, 10);
 	if (num < 0)
-	{
-		is_nega = 1;
-		len--;
-		check_flags(pf, len, is_nega);
-		pf->len++;
-		num *= -1;
-	}
+		print_negative_int(pf, num);	
 	else
-		check_flags(pf, len, is_nega);
-	ft_putlong(num);
-	pf->len += numlen(num, 10);
-	if (pf->precision > len)
-		len = pf->precision;
-	if (pf->flags[2] == '-')
 	{
-		if ((pf->flags[3] == '+') || is_nega)
-			len++;
-		fill_width(pf, ' ', (pf->width - len), 1);
+		if ((num == 0) && (pf->precision == 0))
+		{
+			handle_zeroes(pf);
+			return ;
+		}
+		len = numlen(num, 10);
+		check_flags(pf, len);
+		ft_putlong(num);
+		pf->len += len;
+		if (pf->precision > len)
+			len = pf->precision;
+		if (pf->flags[2] == '-')
+		{
+			if (pf->flags[3] == '+')
+				len++;
+			fill_width(pf, ' ', (pf->width - len), 1);
+		}
 	}
 }
