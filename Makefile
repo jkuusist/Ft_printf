@@ -16,9 +16,9 @@ HEDR = includes/ft_printf.h
 
 LIBFT = ./Libft
 
-SRCS = double_to_str.c fill_width.c ft_printf.c ft_strndup.c handlers.c handle_specs.c initializer.c numlen.c print_bin.c print_char.c print_double.c print_format.c print_format_str.c print_hex.c print_int.c print_oct.c print_percent.c print_ptr.c print_str.c reinit.c ft_putchar_pf.c print_negative_int.c
+SRCS = double_to_str.c fill_width.c ft_printf.c ft_strndup.c handlers.c handle_specs.c initializer.c numlen.c print_bin.c print_char.c print_double.c print_format.c print_format_str.c print_hex.c print_int.c print_oct.c print_percent.c print_ptr.c print_str.c reinit.c ft_putchar_pf.c print_negative_int.c handle_modifiers.c
 
-OBJS = double_to_str.o fill_width.o ft_printf.o ft_strndup.o handlers.o handle_specs.o initializer.o numlen.o print_bin.o print_char.o print_double.o print_format.o print_format_str.o print_hex.o print_int.o print_oct.o print_percent.o print_ptr.o print_str.o reinit.o ft_putchar_pf.o print_negative_int.o
+OBJS = double_to_str.o fill_width.o ft_printf.o ft_strndup.o handlers.o handle_specs.o initializer.o numlen.o print_bin.o print_char.o print_double.o print_format.o print_format_str.o print_hex.o print_int.o print_oct.o print_percent.o print_ptr.o print_str.o reinit.o ft_putchar_pf.o print_negative_int.o handle_modifiers.o
 
 LIBFTSRCS = ft_atoi.c ft_bzero.c ft_isascii.c ft_isalnum.c ft_isdigit.c ft_isalpha.c ft_isprint.c ft_lstnew.c ft_lstdelone.c \
 ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_memcmp.c ft_memchr.c ft_memcpy.c ft_itoa.c ft_memalloc.c ft_memdel.c \
