@@ -49,7 +49,7 @@ static void		check_flags(t_pf *pf, int len)
 		fill_width(pf, '0', preci - len, 1);
 }
 
-void	print_positive_int(t_pf *pf, long long num)
+void			print_positive_int(t_pf *pf, long long num)
 {
 	int len;
 

@@ -70,9 +70,9 @@ static int	handle_nega_posi(double dub, int *int_part,
 
 void		double_to_str(double dub, char *result, int precision, char *flags)
 {
-	int	int_part;
+	int		int_part;
 	double	frac_part;
-	int	i;
+	int		i;
 
 	int_part = (int)dub;
 	frac_part = dub - (double)int_part;

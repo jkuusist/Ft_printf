@@ -18,7 +18,7 @@
 int	ft_printf(const char *format, ...)
 {
 	t_pf	*pf;
-	int	ret;
+	int		ret;
 
 	if (!(pf = (t_pf*)malloc(sizeof(t_pf))))
 		return (-1);

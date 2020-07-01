@@ -16,9 +16,9 @@
 
 void	print_ptr(t_pf *pf)
 {
-	char		*s;
+	char			*s;
 	unsigned long	num;
-	int		len;
+	int				len;
 
 	num = (unsigned long)va_arg(pf->args, unsigned long);
 	if (!(s = ft_itoa_base(num, 16)))

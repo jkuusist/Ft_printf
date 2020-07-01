@@ -13,8 +13,6 @@
 #include "includes/ft_printf.h"
 #include "Libft/libft.h"
 
-#include <stdio.h>
-
 static void	handle_stuff(t_pf *pf)
 {
 	handle_flags(pf);
@@ -25,7 +23,7 @@ static void	handle_stuff(t_pf *pf)
 	print_format(pf);
 }
 
-int		handle_specs(t_pf *pf)
+int			handle_specs(t_pf *pf)
 {
 	int count;
 

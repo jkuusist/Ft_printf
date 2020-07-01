@@ -17,8 +17,8 @@
 void	print_str(t_pf *pf)
 {
 	char	*s;
-	int	len;
-	int	is_malloced;
+	int		len;
+	int		is_malloced;
 
 	s = va_arg(pf->args, char*);
 	is_malloced = 1;

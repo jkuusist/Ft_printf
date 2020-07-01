@@ -13,7 +13,7 @@
 #include "includes/ft_printf.h"
 #include "Libft/libft.h"
 
-static void	check_flags_nega(t_pf *pf, int len)
+static void		check_flags_nega(t_pf *pf, int len)
 {
 	int preci;
 	int width;
@@ -34,8 +34,9 @@ static void	check_flags_nega(t_pf *pf, int len)
 		len++;
 	}
 	if (pf->flags[2] != '-')
-		((pf->flags[1] == '0') && (pf->precision == -1)) ? fill_width(pf, '0', width - to_fill, 1)
-	: fill_width(pf, ' ', width - to_fill, 1);
+		((pf->flags[1] == '0') && (pf->precision == -1))
+		? fill_width(pf, '0', width - to_fill, 1)
+		: fill_width(pf, ' ', width - to_fill, 1);
 	if (pf->flags[1] != '0')
 	{
 		ft_putchar('-');

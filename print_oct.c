@@ -31,7 +31,8 @@ static unsigned long long	get_num(t_pf *pf)
 	return (num);
 }
 
-static void			check_flags(t_pf *pf, unsigned long long num, int len)
+static void					check_flags(t_pf *pf,
+		unsigned long long num, int len)
 {
 	if ((pf->precision != -1) && (pf->flags[2] != '-')
 		&& (pf->width > pf->precision))
@@ -51,11 +52,11 @@ static void			check_flags(t_pf *pf, unsigned long long num, int len)
 	}
 }
 
-void				print_oct(t_pf *pf)
+void						print_oct(t_pf *pf)
 {
-	char			*s;
+	char				*s;
 	unsigned long long	num;
-	int			len;
+	int					len;
 
 	num = get_num(pf);
 	if ((num == 0) && (pf->precision == 0) && (pf->flags[0] != '#'))

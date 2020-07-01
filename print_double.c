@@ -18,7 +18,7 @@ void	print_double(t_pf *pf)
 {
 	long double	dub;
 	char		*s;
-	int		len;
+	int			len;
 
 	if (!(s = (char*)malloc(sizeof(char) * 25)))
 		exit(-1);

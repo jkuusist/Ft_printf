@@ -41,7 +41,7 @@ static long long	get_num(t_pf *pf)
 	return (num);
 }
 
-void			print_int(t_pf *pf)
+void				print_int(t_pf *pf)
 {
 	long long	num;
 

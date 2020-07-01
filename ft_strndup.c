@@ -15,7 +15,7 @@
 char	*ft_strndup(const char *s1, unsigned int n)
 {
 	unsigned int	len;
-	char		*result;
+	char			*result;
 
 	len = 0;
 	while (s1[len] != '\0')
