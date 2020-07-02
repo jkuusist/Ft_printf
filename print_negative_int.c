@@ -13,15 +13,24 @@
 #include "includes/ft_printf.h"
 #include "Libft/libft.h"
 
+static void		handle_zero_space(t_pf *pf, int width, int to_fill)
+{
+	if (pf->flags[2] != '-')
+	{
+		if ((pf->flags[1] == '0') && (pf->precision == -1))
+			fill_width(pf, '0', width - to_fill, 1);
+		else
+			fill_width(pf, ' ', width - to_fill, 1);
+	}
+}
+
 static void		check_flags_nega(t_pf *pf, int len)
 {
-	int preci;
 	int width;
 	int to_fill;
 
-	preci = pf->precision;
 	width = pf->width;
-	to_fill = (preci > len) ? preci : len;
+	to_fill = (pf->precision > len) ? pf->precision : len;
 	if (pf->flags[1] == '0')
 	{
 		ft_putchar('-');
@@ -33,17 +42,14 @@ static void		check_flags_nega(t_pf *pf, int len)
 		width--;
 		len++;
 	}
-	if (pf->flags[2] != '-')
-		((pf->flags[1] == '0') && (pf->precision == -1))
-		? fill_width(pf, '0', width - to_fill, 1)
-		: fill_width(pf, ' ', width - to_fill, 1);
+	handle_zero_space(pf, width, to_fill);
 	if (pf->flags[1] != '0')
 	{
 		ft_putchar('-');
 		len--;
 	}
-	if (preci > len)
-		fill_width(pf, '0', preci - len, 1);
+	if (pf->precision > len)
+		fill_width(pf, '0', pf->precision - len, 1);
 }
 
 void			print_negative_int(t_pf *pf, long long num)
