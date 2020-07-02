@@ -14,8 +14,6 @@
 #include "Libft/libft.h"
 #include <stdlib.h>
 
-#include <stdio.h>
-
 void	fill_width(t_pf *pf, char c, int len, int is_update)
 {
 	char *s;

@@ -14,8 +14,6 @@
 #include "Libft/libft.h"
 #include <stdlib.h>
 
-#include <stdio.h>
-
 static unsigned long long	get_num(t_pf *pf)
 {
 	unsigned long long num;
