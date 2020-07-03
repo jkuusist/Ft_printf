@@ -1,0 +1,23 @@
+#include "../includes/ft_printf.h"
+#include <stdio.h>
+
+int main()
+{
+
+	int r1 = ft_printf("%b\n", 8);
+	printf("ret is %d\n", r1);
+	
+	int r2 = ft_printf("%b\n", 20543);
+	printf("ret is %d\n", r2);
+
+	int r3 = ft_printf("|%5.8b|\n", 5);
+	printf("ret is %d\n", r3);
+
+	int r4 = ft_printf("|%-5.10b|\n", 9);
+	printf("ret is %d\n", r4);
+
+	int r5 = ft_printf("|% b|\n", 37);
+	printf("ret is %d\n", r5);
+
+	return 0;
+}

@@ -41,8 +41,6 @@ static void					check_flags(t_pf *pf,
 		fill_width(pf, '0', (pf->precision - len), 1);
 	else if (pf->flags[2] != '-')
 		fill_width(pf, ' ', (pf->width - len), 1);
-	if (pf->flags[4] == ' ')
-		ft_putchar(' ');
 	if (num && (pf->flags[0] == '#'))
 	{
 		ft_putchar('0');

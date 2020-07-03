@@ -249,6 +249,9 @@ int main()
 	int r102 = ft_printf("%lu\n", -42);
 	printf("real is %d. mine is %d\n\n", r101, r102);
 
+	int r103 = printf("");
+	int r104 = ft_printf("");
+	printf("\nreal is %d. mine is %d\n", r103, r104);
 
 	return 0;
 }
