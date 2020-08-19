@@ -8,4 +8,4 @@ The following flags are supported: #0-+ and space, with behaviors as close to th
 
 Also supported, where it makes sense, are the length modifiers l, ll, L, h, and hh.
 
-Usage: ft_printf("format string", <variadic arguments if format specifiers are used in the format string>);
+Usage: ft_printf("format string", \<variadic arguments if format specifiers are used in the format string\>);
